@@ -26,7 +26,7 @@ Route::group(['namespace'=>'admin'],function (){
   Route::post('admin/register', 'RegisterController@register');
    // Route::post('admin/login','loginController@login')->middleware('auth_admin');
 });
-  Route::get('home/admin','AdminController@index');
+Route::get('home/admin','AdminController@index');
 
 Route::group(['namespace'=>'Customer'],function(){
  Route::get('login', 'LoginController@showLoginForm');
