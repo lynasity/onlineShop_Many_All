@@ -13,9 +13,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
-        ],
+    //     'App\Events\SomeEvent' => [
+    //         'App\Listeners\EventListener',
+    //     ],
     //      'Illuminate\Auth\Events\Attempting' => [
     //     'App\Listeners\LogAuthenticationAttempt',
     // ],
@@ -35,6 +35,9 @@ class EventServiceProvider extends ServiceProvider
     // 'Illuminate\Auth\Events\Lockout' => [
     //     'App\Listeners\LogLockout',
     // ],
+    'SocialiteProviders\Manager\SocialiteWasCalled' => [
+        'SocialiteProviders\Weibo\WeiboExtendSocialite@handle',
+    ],
     ];
 
     /**

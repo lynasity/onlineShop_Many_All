@@ -26,21 +26,16 @@ trait RegistersUsers
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function register(Request $request)
-    // {
-    //     $this->validator($request->all())->validate();
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
 
-    //     event(new Registered($user = $this->create($request->all())));
+        event(new Registered($user = $this->create($request->all())));
+         echo '{"status":"success"}';
+        // $this->guard()->login($user);
+        // return redirect($this->redirectPath());
+    }
 
-    //     $this->guard()->login($user);
-
-    //     return redirect($this->redirectPath());
-    // }
-      public function register(request $request){      
-         $this->validator($request->all())->validate();
-         event(new Registered($user = $this->create($request->all())));
-               echo '{"status":"success"}';
-   }
     /**
      * Get the guard to be used during registration.
      *

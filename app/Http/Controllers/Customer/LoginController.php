@@ -68,15 +68,13 @@ class LoginController extends Controller
                return view('customer.home');
         }      
         $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
-      $callback='http://www.test.manyhong.cn:8081/laravel-shop/public/customer/weiboCallBack';
-      $oauth=$weibo->getAuthorizeURL($callback);
-      // var_dump($oauth);
-        // return  redirect()->header(301,$oauth);
+        $callback=route('callback');
+        $oauth=$weibo->getAuthorizeURL($callback);
         return redirect::to($oauth,301);
     }
       public function weiboCallBack(request $request){
            $key['code']=$request->input('code');
-           $key['redirect_uri']='http://www.test.manyhong.cn:8081/laravel-shop/public/customer/weiboCallBack';
+           $key['redirect_uri']=route('callback');
           $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
           // 第一次获取accessToken
            $oauth=$weibo->getAccessToken($key);

@@ -3903,6 +3903,41 @@
         "homepage": "https://laravel.com"
     },
     {
+        "name": "laravist/geecaptcha",
+        "version": "1.1",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/JellyBool/geeCaptcha.git",
+            "reference": "931432be8cb44404773e892f49ba4afc78837d9c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/JellyBool/geeCaptcha/931432be8cb44404773e892f49ba4afc78837d9c.zip",
+            "reference": "931432be8cb44404773e892f49ba4afc78837d9c",
+            "shasum": ""
+        },
+        "time": "2016-04-10 15:36:31",
+        "type": "php",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravist\\GeeCaptcha\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JellyBool",
+                "email": "jellybool@outlook.com"
+            }
+        ],
+        "description": "A geetest captcha package by laravist"
+    },
+    {
         "name": "laravel/framework",
         "version": "v5.3.10",
         "version_normalized": "5.3.10.0",
@@ -4033,26 +4068,97 @@
         ]
     },
     {
-        "name": "laravist/geecaptcha",
-        "version": "1.1",
-        "version_normalized": "1.1.0.0",
+        "name": "guzzlehttp/promises",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/JellyBool/geeCaptcha.git",
-            "reference": "931432be8cb44404773e892f49ba4afc78837d9c"
+            "url": "https://github.com/guzzle/promises.git",
+            "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/JellyBool/geeCaptcha/931432be8cb44404773e892f49ba4afc78837d9c.zip",
-            "reference": "931432be8cb44404773e892f49ba4afc78837d9c",
+            "url": "https://packagist.phpcomposer.com/files/guzzle/promises/c10d860e2a9595f8883527fa0021c7da9e65f579.zip",
+            "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579",
             "shasum": ""
         },
-        "time": "2016-04-10 15:36:31",
-        "type": "php",
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2016-05-18 16:56:05",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Laravist\\GeeCaptcha\\": "src/"
+                "GuzzleHttp\\Promise\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle promises library",
+        "keywords": [
+            "promise"
+        ]
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "6.2.1",
+        "version_normalized": "6.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "3f808fba627f2c5b69e2501217bf31af349c1427"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/guzzle/guzzle/3f808fba627f2c5b69e2501217bf31af349c1427.zip",
+            "reference": "3f808fba627f2c5b69e2501217bf31af349c1427",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.3.1",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "^4.0",
+            "psr/log": "^1.0"
+        },
+        "time": "2016-07-15 17:22:37",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/functions_include.php"
+            ],
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -4061,10 +4167,325 @@
         ],
         "authors": [
             {
-                "name": "JellyBool",
-                "email": "jellybool@outlook.com"
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
             }
         ],
-        "description": "A geetest captcha package by laravist"
+        "description": "Guzzle is a PHP HTTP client library",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "league/oauth1-client",
+        "version": "1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/oauth1-client.git",
+            "reference": "fca5f160650cb74d23fc11aa570dd61f86dcf647"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/thephpleague/oauth1-client/fca5f160650cb74d23fc11aa570dd61f86dcf647.zip",
+            "reference": "fca5f160650cb74d23fc11aa570dd61f86dcf647",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "^6.0",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "^0.9",
+            "phpunit/phpunit": "^4.0",
+            "squizlabs/php_codesniffer": "^2.0"
+        },
+        "time": "2016-08-17 00:36:58",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\OAuth1\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ben Corlett",
+                "email": "bencorlett@me.com",
+                "homepage": "http://www.webcomm.com.au",
+                "role": "Developer"
+            }
+        ],
+        "description": "OAuth 1.0 Client Library",
+        "keywords": [
+            "Authentication",
+            "SSO",
+            "authorization",
+            "bitbucket",
+            "identity",
+            "idp",
+            "oauth",
+            "oauth1",
+            "single sign on",
+            "trello",
+            "tumblr",
+            "twitter"
+        ]
+    },
+    {
+        "name": "illuminate/session",
+        "version": "v5.3.4",
+        "version_normalized": "5.3.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/session.git",
+            "reference": "0f818548aa248f64d89f8129229a4de84184f59e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/illuminate/session/0f818548aa248f64d89f8129229a4de84184f59e.zip",
+            "reference": "0f818548aa248f64d89f8129229a4de84184f59e",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/contracts": "5.3.*",
+            "illuminate/support": "5.3.*",
+            "nesbot/carbon": "~1.20",
+            "php": ">=5.6.4",
+            "symfony/finder": "3.1.*",
+            "symfony/http-foundation": "3.1.*"
+        },
+        "suggest": {
+            "illuminate/console": "Required to use the session:table command (5.3.*)."
+        },
+        "time": "2016-08-11 22:24:39",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Session\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Session package.",
+        "homepage": "https://laravel.com"
+    },
+    {
+        "name": "illuminate/http",
+        "version": "v5.3.4",
+        "version_normalized": "5.3.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/http.git",
+            "reference": "333263fe8aa6db11187a256ea55c2e9e97f28c4b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/illuminate/http/333263fe8aa6db11187a256ea55c2e9e97f28c4b.zip",
+            "reference": "333263fe8aa6db11187a256ea55c2e9e97f28c4b",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/session": "5.3.*",
+            "illuminate/support": "5.3.*",
+            "php": ">=5.6.4",
+            "symfony/http-foundation": "3.1.*",
+            "symfony/http-kernel": "3.1.*"
+        },
+        "time": "2016-08-22 10:25:11",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Http\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Http package.",
+        "homepage": "https://laravel.com"
+    },
+    {
+        "name": "laravel/socialite",
+        "version": "v2.0.18",
+        "version_normalized": "2.0.18.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/socialite.git",
+            "reference": "76ee5397fcdea5a062361392abca4eb397e519a3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/laravel/socialite/76ee5397fcdea5a062361392abca4eb397e519a3.zip",
+            "reference": "76ee5397fcdea5a062361392abca4eb397e519a3",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "~5.0|~6.0",
+            "illuminate/contracts": "~5.0",
+            "illuminate/http": "~5.0",
+            "illuminate/support": "~5.0",
+            "league/oauth1-client": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.0|~5.0"
+        },
+        "time": "2016-06-22 12:40:16",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravel\\Socialite\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            }
+        ],
+        "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
+        "keywords": [
+            "laravel",
+            "oauth"
+        ]
+    },
+    {
+        "name": "socialiteproviders/manager",
+        "version": "v2.1.8",
+        "version_normalized": "2.1.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocialiteProviders/Manager.git",
+            "reference": "a8c01c35e40e1ffe5d12ad8da128b792b2b30a30"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Manager/a8c01c35e40e1ffe5d12ad8da128b792b2b30a30.zip",
+            "reference": "a8c01c35e40e1ffe5d12ad8da128b792b2b30a30",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/socialite": "~2.0",
+            "php": "^5.6 || ^7.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "^0.9.4",
+            "phpunit/phpunit": "^5.0"
+        },
+        "time": "2016-08-04 18:16:57",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "SocialiteProviders\\Manager\\": "src/",
+                "SocialiteProviders\\Manager\\Test\\": "tests/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andy Wendt",
+                "email": "andy@awendt.com"
+            }
+        ],
+        "description": "Easily add new or override built-in providers in Laravel Socialite."
+    },
+    {
+        "name": "socialiteproviders/weibo",
+        "version": "v2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocialiteProviders/Weibo.git",
+            "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Weibo/10ff7fd36edacfcc1513440e01b863e88c9ff05e.zip",
+            "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.6 || ^7.0",
+            "socialiteproviders/manager": "~2.0"
+        },
+        "time": "2016-04-01 07:00:54",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "SocialiteProviders\\Weibo\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "xyxu",
+                "email": "techxu@gmail.com"
+            }
+        ],
+        "description": "weibo.com OAuth2 Provider for Laravel Socialite"
     }
 ]
