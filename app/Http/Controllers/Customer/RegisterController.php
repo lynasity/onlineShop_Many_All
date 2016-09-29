@@ -65,17 +65,6 @@ class RegisterController extends Controller
     public function showRegistrationForm(){
          return view('customer.register');
     }
-
-    // public function register(request $request){
-    //     $captcha = new \Laravist\GeeCaptcha\GeeCaptcha(env('CAPTCHA_ID'),env('PRIVATE_KEY'));
-    //     if ($captcha->isFromGTServer() && $captcha->success()){
-    //         $this->validator($request->all())->validate();
-    //         event(new Registered($user = $this->create($request->all())));
-    //            echo '{"status":"success"}';
-    //       }else{
-    //            echo '{"status":"failed"}';
-    //       }  
-   // }
     /**
      * Create a new user instance after a valid registration.
      *

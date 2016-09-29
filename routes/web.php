@@ -36,7 +36,7 @@ Route::group(['namespace'=>'Customer'],function(){
  Route::get('customer/registerForm', 'RegisterController@showRegistrationForm');
  Route::post('customer/register', 'RegisterController@register')->middleware('geetest');
  Route::any('customer/weibo','LoginController@weibo');
- Route::any('customer/weiboCallBack','LoginController@weiboCallBack');
+ Route::any('customer/weiboCallBack','LoginController@weiboCallBack')->name('weiboCallBack');
 });
   Route::get('home/customer','CustomerController@index');
  // Route::post('gee/login',function(){

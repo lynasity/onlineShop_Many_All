@@ -39,7 +39,7 @@
         #notice {
             color: red;
         }
-        /* 以下遮罩层为demo.用户可自行设计实现 */
+      /*以下遮罩层为demo.用户可自行设计实现 */
         #mask {
             display: none;
             position: fixed;
