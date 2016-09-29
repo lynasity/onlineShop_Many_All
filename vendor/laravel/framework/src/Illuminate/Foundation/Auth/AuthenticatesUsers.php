@@ -28,12 +28,7 @@ trait AuthenticatesUsers
      */
     public function login(Request $request)
     {
-
         $this->validateLogin($request);
-      // $captcha = new \Laravist\GeeCaptcha\GeeCaptcha($captcha_id, $private_key);
-       // if ($captcha->isFromGTServer() && $captcha->success()) 
-       // {
-     // 登录的代码逻辑在这里   
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
@@ -56,9 +51,6 @@ trait AuthenticatesUsers
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
-      // }else{
-      //   return redirect('customer/LoginForm');
-      // }
     }
 
     /**
@@ -130,12 +122,12 @@ trait AuthenticatesUsers
 
     /**
      * Get the login username to be used by the controller.
-     *设置表单登录时使用的账号类型，会影响验证结果
+     *
      * @return string
      */
     public function username()
     {
-        return 'username';
+        return 'email';
     }
 
     /**
