@@ -16,25 +16,28 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
         ],
-    //      'Illuminate\Auth\Events\Attempting' => [
-    //     'App\Listeners\LogAuthenticationAttempt',
-    // ],
+         'Illuminate\Auth\Events\Attempting' => [
+        'App\Listeners\LogAuthenticationAttempt',
+    ],
 
-    // 'Illuminate\Auth\Events\Authenticated' => [
-    //     'App\Listeners\LogAuthenticated',
-    // ],
+    'Illuminate\Auth\Events\Authenticated' => [
+        'App\Listeners\LogAuthenticated',
+    ],
 
-    // 'Illuminate\Auth\Events\Login' => [
-    //     'App\Listeners\LogSuccessfulLogin',
-    // ],
+    'Illuminate\Auth\Events\Login' => [
+        'App\Listeners\LogSuccessfulLogin',
+    ],
 
-    // 'Illuminate\Auth\Events\Logout' => [
-    //     'App\Listeners\LogSuccessfulLogout',
-    // ],
+    'Illuminate\Auth\Events\Logout' => [
+        'App\Listeners\LogSuccessfulLogout',
+    ],
 
-    // 'Illuminate\Auth\Events\Lockout' => [
-    //     'App\Listeners\LogLockout',
-    // ],
+    'Illuminate\Auth\Events\Lockout' => [
+        'App\Listeners\LogLockout',
+    ],
+    'SocialiteProviders\Manager\SocialiteWasCalled' => [
+        'SocialiteProviders\Weibo\WeiboExtendSocialite@handle',
+    ],
     ];
 
     /**
