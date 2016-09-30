@@ -383,6 +383,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
     public static $classMap = array (
         'BuildAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074339_build_admins_table.php',
         'BuildCustomersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074304_build_customers_table.php',
+        'CreatePasswordResetTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_075257_create_password_reset_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

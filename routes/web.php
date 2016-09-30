@@ -31,12 +31,13 @@ Route::get('home/admin','AdminController@index');
 Route::group(['namespace'=>'Customer'],function(){
  Route::get('login', 'LoginController@showLoginForm');
  Route::post('customer/login', 'LoginController@login');
- Route::get('customer/hello', 'LoginController@hello');
  Route::get('customer/logout', 'LoginController@logout');
  Route::get('customer/registerForm', 'RegisterController@showRegistrationForm');
  Route::post('customer/register', 'RegisterController@register')->middleware('geetest');
  Route::any('customer/weibo','LoginController@weibo');
  Route::any('customer/weiboCallBack','LoginController@weiboCallBack')->name('weiboCallBack');
+ Route::get('customer/shopCart','shopController@showShopCart');
+ Route::get('customer/checkOut','shopController@checkOut');
 });
   Route::get('home/customer','CustomerController@index');
  // Route::post('gee/login',function(){
