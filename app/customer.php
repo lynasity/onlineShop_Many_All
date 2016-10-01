@@ -21,4 +21,14 @@ class customer extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    /**
+    * Send the password reset notification.
+    * 重写通知方法
+    * @param  string  $token
+    * @return void
+    */
+   //  public function sendPasswordResetNotification($token)
+   // {
+   //  $this->notify(new ResetPasswordNotification($token));
+   //  }
 }

@@ -38,6 +38,9 @@ Route::group(['namespace'=>'Customer'],function(){
  Route::any('customer/weiboCallBack','LoginController@weiboCallBack')->name('weiboCallBack');
  Route::get('customer/shopCart','shopController@showShopCart');
  Route::get('customer/checkOut','shopController@checkOut');
+Route::get('customer/emailForm','ForgotPasswordController@showLinkRequestForm');
+Route::post('customer/sendEmail','ForgotPasswordController@sendResetLinkEmail');
+
 });
   Route::get('home/customer','CustomerController@index');
  // Route::post('gee/login',function(){
