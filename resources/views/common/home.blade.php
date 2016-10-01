@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('./customer/css/reset.css')}}"/>
     <link rel="stylesheet" href="{{asset('./customer/css/main.css')}}"/>
     <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}"/>
-    <title>$yield('title','title')</title>
+    <title>@yield('title','title')</title>
   </head>
   <body>
     <div class="page-index">
