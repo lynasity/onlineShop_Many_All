@@ -43,7 +43,7 @@
                       <input type="checkbox" name="remember" id="auto-login"/>
                       <label for="auto-login">自动登录</label>
                     </li>
-                    <li><a href="forget-pwd">忘记密码?</a></li>
+                    <li><a href="{{url('customer/emailForm')}}">忘记密码?</a></li>
                   </ul>
                 </li>
                 <li class="btn-login">

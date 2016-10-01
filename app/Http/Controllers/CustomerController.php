@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Auth;
 class CustomerController extends Controller
 {
 	 public function __construct(){
-        $this->middleware('auth:customer');
+        // $this->middleware('auth:customer');
      }
      public function index(Request $request){
      	// if(session()->get(''))
      	// {
      	$customer = Auth::guard('customer')->user();
-    	return view('customer.home',['customer'=>$customer]);
+    	return view('customer.index',['customer'=>$customer]);
         // }
     	// dd('后台首页，当前用户名：'.auth('customer')->user()->name);
     }
