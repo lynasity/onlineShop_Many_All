@@ -33,7 +33,7 @@ Route::group(['namespace'=>'Customer'],function(){
  Route::post('customer/login', 'LoginController@login');
  Route::get('customer/logout', 'LoginController@logout');
  Route::get('customer/registerForm', 'RegisterController@showRegistrationForm');
- Route::post('customer/register', 'RegisterController@register')->middleware('geetest');
+ Route::any('customer/register', 'RegisterController@register')->middleware('geetest');
  Route::any('customer/weibo','LoginController@weibo');
  Route::any('customer/weiboCallBack','LoginController@weiboCallBack')->name('weiboCallBack');
  Route::get('customer/shopCart','shopController@showShopCart');

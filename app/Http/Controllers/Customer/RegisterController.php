@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 class RegisterController extends Controller
 {
     /*
@@ -87,7 +88,12 @@ class RegisterController extends Controller
     {
         return Auth::guard('customer');
     }
-     // public function loginAfterRegister(){
-        // return redirect('login');
-    // }
+    
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+        echo '{"status":"success"}';
+    }
 }
