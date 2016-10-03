@@ -12,7 +12,7 @@ class Auth extends Facade
 {
     /**
      * Get the registered name of the component.
-     *所有facade都继承了抽象基类Facade,必须实现getFacadeAccessor方法,否则会抛出错误
+     *
      * @return string
      */
     protected static function getFacadeAccessor()

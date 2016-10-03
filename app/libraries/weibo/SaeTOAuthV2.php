@@ -16,7 +16,9 @@
  * @author Elmer Zhang
  * @version 1.0
  */
+
 namespace app\libraries\weibo;
+use OAuthException;
 class SaeTOAuthV2 {
 	/**
 	 * @ignore

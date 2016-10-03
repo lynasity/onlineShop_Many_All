@@ -44,14 +44,9 @@ class ResetPassword extends Notification
      */
     public function toMail($notifiable)
     {
-//        return (new MailMessage)
-//            ->line('You are receiving this email because we received a password reset request for your account.')
-//            ->action('Reset Password', url('customer/password/reset', $this->token))
-//            ->line('If you did not request a password reset, no further action is required.');
         return (new MailMessage)
-            ->greeting('尊敬的用户，您好！')
-            ->line('请点击下方链接重置密码')
-            ->action('重置密码', url('customer/password/reset', $this->token))
-            ->line('如果你没有注册过Many&All，请忽略此邮件。');
+            ->line('You are receiving this email because we received a password reset request for your account.')
+            ->action('Reset Password', url('password/reset', $this->token))
+            ->line('If you did not request a password reset, no further action is required.');
     }
 }

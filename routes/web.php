@@ -18,17 +18,20 @@ Route::get('/', function () {
 // 	return view('testCaptcha');
 // });
 
-Route::group(['namespace'=>'admin'],function (){
+Route::group(['namespace'=>'Admin\Auth'],function (){
 	Route::get('admin/login','loginController@showLoginForm');
 	Route::post('admin/login','loginController@login');
-  Route::post('admin/logout','loginController@logout');
-  Route::get('admin/register', 'RegisterController@showRegistrationForm');
-  Route::post('admin/register', 'RegisterController@register');
+    Route::post('admin/logout','loginController@logout');
+    Route::get('admin/register', 'RegisterController@showRegistrationForm');
+    Route::post('admin/register', 'RegisterController@register');
    // Route::post('admin/login','loginController@login')->middleware('auth_admin');
 });
-Route::get('home/admin','AdminController@index');
+Route::group(['namespace'=>'Admin'],function () {
+    Route::get('home/admin','AdminController@index');
+});
 
-Route::group(['namespace'=>'Customer'],function(){
+
+Route::group(['namespace'=>'Customer\Auth'],function(){
  Route::get('login', 'LoginController@showLoginForm');
  Route::post('customer/login', 'LoginController@login');
  Route::get('customer/logout', 'LoginController@logout');
@@ -43,23 +46,18 @@ Route::post('customer/sendEmail','ForgotPasswordController@sendResetLinkEmail');
   Route::get('customer/password/reset/{token?}','ResetPasswordController@showResetForm');
     Route::post('customer/password/reset','ResetPasswordController@reset');
 
+    Route::any('auth/{service}', 'authController@redirectToProvider');
+    Route::any('auth/{service}/callback', 'authController@handleProviderCallback');
 });
-  Route::get('home/customer','CustomerController@index');
- // Route::post('gee/login',function(){
- //  $captcha = new \Laravist\GeeCaptcha\GeeCaptcha(env('CAPTCHA_ID'),env('PRIVATE_KEY'));
- //       if ($captcha->isFromGTServer() && $captcha->success()) 
- //      {
- //        echo "success";
- //           // 登录的代码逻辑在这里   
- //     }
- // });
+Route::group(['namespace'=>'Customer'],function (){
+    Route::get('home/customer','CustomerController@index');
+});
+
  Route::get('getCaptcha',function(){
     $captcha = new \Laravist\GeeCaptcha\GeeCaptcha(env('CAPTCHA_ID'),env('PRIVATE_KEY'));
     echo $captcha->GTServerIsNormal();
  });
- Route::get('test',function(){
-  return view('customer.geetest');
-   });
+
  // 设置只有认证过的用户才能进到的路由
 // Route::get('profile', ['middleware' => 'auth', function() {
     // 只有认证过的用户能进来这里...
@@ -71,6 +69,3 @@ Route::post('customer/sendEmail','ForgotPasswordController@sendResetLinkEmail');
     // 还需要设置设置guard
     //  $this->middleware('auth:api');
 // }
-
-
- // Route::get('home/customer', 'CustomerController@index');

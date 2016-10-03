@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Customer;
+namespace App\Http\Controllers\Customer\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -64,23 +64,23 @@ class LoginController extends Controller
     }
     public function weibo(request $request){
          if(session()->get('weibo_access_token')){        
-               return view('customer.home');
+               return view('customer.index');
         }      
         $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
-        $callback=route('callback');
+        $callback=route('weiboCallBack');
         $oauth=$weibo->getAuthorizeURL($callback);
         return redirect::to($oauth,301);
     }
       public function weiboCallBack(request $request){
            $key['code']=$request->input('code');
-           $key['redirect_uri']=route('callback');
+           $key['redirect_uri']=route('weiboCallBack');
           $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
           // 第一次获取accessToken
            $oauth=$weibo->getAccessToken($key);
            $request->session()->put('weibo_access_token',$oauth['access_token']);
            if(session()->get('weibo_access_token')){
                 // echo session()->get('weibo_access_token');
-               return view('customer.home');
+               return view('customer.index');
            }      
      }
     public function username()
