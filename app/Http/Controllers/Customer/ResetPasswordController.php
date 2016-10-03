@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 class ResetPasswordController extends Controller
 {
     /*
@@ -37,6 +39,7 @@ class ResetPasswordController extends Controller
     {
         return Password::broker('customers');
     }
+//   该控制器方法从路由中获取token，然后传给重置密码的表单，增加到一个隐藏域中，将会被顺带提交
     public function showResetForm(Request $request, $token = null)
     {
         return view('customer.passwords.reset')->with(

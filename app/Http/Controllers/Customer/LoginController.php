@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use app\libraries\weibo\SaeTOAuthV2;
 use Illuminate\Support\Facades\Redirect;
@@ -21,8 +20,7 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-   // 登录限流ThrottlesLogins
-    // use ThrottlesLogins;
+//   已经包含了登录限流trait
     use AuthenticatesUsers;
 
     /**
@@ -45,6 +43,7 @@ class LoginController extends Controller
 
     protected function guard()
    {
+//  返回Illuminate\Auth\SessionGuard对象
       return Auth::guard('customer');
    }
 
@@ -84,4 +83,8 @@ class LoginController extends Controller
                return view('customer.home');
            }      
      }
+    public function username()
+    {
+        return 'username';
+    }
 }

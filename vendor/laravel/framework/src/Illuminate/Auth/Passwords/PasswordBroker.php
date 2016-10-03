@@ -86,7 +86,7 @@ class PasswordBroker implements PasswordBrokerContract
         // assume that it is a redirect and simply return it from this method and
         // the user is properly redirected having an error message on the post.
         $user = $this->validateReset($credentials);
-
+//       if the user doesn's have the permission to change his password,return hiself directly
         if (! $user instanceof CanResetPasswordContract) {
             return $user;
         }

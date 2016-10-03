@@ -4,7 +4,7 @@ namespace Illuminate\Notifications;
 
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Notifications\Dispatcher;
-
+//use Illuminate\Notifications\ChannelManager;
 trait RoutesNotifications
 {
     /**
@@ -15,6 +15,8 @@ trait RoutesNotifications
      */
     public function notify($instance)
     {
+//       Illuminate\Notifications\ChannelManager;实现了interface Dispatcher
+//        dd(app(Dispatcher::class));
         app(Dispatcher::class)->send([$this], $instance);
     }
 

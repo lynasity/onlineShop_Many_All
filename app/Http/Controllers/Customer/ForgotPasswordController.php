@@ -33,7 +33,7 @@ class ForgotPasswordController extends Controller
     {
         return view('customer.passwords.email');
     }
-    protected function broker()
+    public function broker()
     {
         return Password::broker('customers');
     }

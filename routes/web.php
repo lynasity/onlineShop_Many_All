@@ -40,6 +40,8 @@ Route::group(['namespace'=>'Customer'],function(){
  Route::get('customer/checkOut','shopController@checkOut');
 Route::get('customer/emailForm','ForgotPasswordController@showLinkRequestForm');
 Route::post('customer/sendEmail','ForgotPasswordController@sendResetLinkEmail');
+  Route::get('customer/password/reset/{token?}','ResetPasswordController@showResetForm');
+    Route::post('customer/password/reset','ResetPasswordController@reset');
 
 });
   Route::get('home/customer','CustomerController@index');
