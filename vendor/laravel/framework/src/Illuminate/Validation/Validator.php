@@ -1540,7 +1540,7 @@ class Validator implements ValidatorContract
 
         $count = count($segments);
 
-        for ($i = 0; $i < $count; $i = $i + 2) {
+        for ($i = 0; $i < $count; $i += 2) {
             $extra[$segments[$i]] = $segments[$i + 1];
         }
 
@@ -2123,7 +2123,7 @@ class Validator implements ValidatorContract
         );
 
         foreach ($customMessages as $key => $message) {
-            if (Str::contains($key, ['*']) && Str::is($key, $shortKey)) {
+            if ($shortKey === $key || (Str::contains($key, ['*']) && Str::is($key, $shortKey))) {
                 return $message;
             }
         }
@@ -2242,12 +2242,15 @@ class Validator implements ValidatorContract
                 return $this->customAttributes[$expectedAttributeName];
             }
 
-            $key = "validation.attributes.{$expectedAttributeName}";
+            $line = Arr::get(
+                $this->translator->get('validation.attributes'),
+                $expectedAttributeName
+            );
 
             // We allow for the developer to specify language lines for each of the
             // attributes allowing for more displayable counterparts of each of
             // the attributes. This provides the ability for simple formats.
-            if (($line = $this->translator->trans($key)) !== $key) {
+            if ($line) {
                 return $line;
             }
         }
@@ -3352,7 +3355,11 @@ class Validator implements ValidatorContract
      */
     protected function callClassBasedReplacer($callback, $message, $attribute, $rule, $parameters)
     {
-        list($class, $method) = explode('@', $callback);
+        if (Str::contains($callback, '@')) {
+            list($class, $method) = explode('@', $callback);
+        } else {
+            list($class, $method) = [$callback, 'replace'];
+        }
 
         return call_user_func_array([$this->container->make($class), $method], array_slice(func_get_args(), 1));
     }

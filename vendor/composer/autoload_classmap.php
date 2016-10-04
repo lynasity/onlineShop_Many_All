@@ -8,9 +8,10 @@ $baseDir = dirname($vendorDir);
 return array(
     'BuildAdminsTable' => $baseDir . '/database/migrations/2016_09_26_074339_build_admins_table.php',
     'BuildCustomersTable' => $baseDir . '/database/migrations/2016_09_26_074304_build_customers_table.php',
+    'Cate' => $baseDir . '/database/migrations/2016_10_04_121015_cate.php',
     'CreateAdminPasswordResetTable' => $baseDir . '/database/migrations/2016_09_30_084135_create_admin_password_reset_table.php',
     'CreateCustomerPasswordResetTable' => $baseDir . '/database/migrations/2016_09_30_084104_create_customer_password_reset_table.php',
-    'CreatePasswordResetTable' => $baseDir . '/database/migrations/2016_09_30_075257_create_password_reset_table.php',
+    'CreateNotificationsTable' => $baseDir . '/database/migrations/2016_10_03_091500_create_notifications_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
@@ -453,6 +454,8 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'Product' => $baseDir . '/database/migrations/2016_10_04_120146_product.php',
+    'ProductAlbum' => $baseDir . '/database/migrations/2016_10_04_121612_product_album.php',
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -534,6 +537,7 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'app\\libraries\\weibo\\OAuthException' => $baseDir . '/app/libraries/weibo/SaeTOAuthV2.php',
     'app\\libraries\\weibo\\SaeTClientV2' => $baseDir . '/app/libraries/weibo/SaeTClientV2.php',
     'app\\libraries\\weibo\\SaeTOAuthV2' => $baseDir . '/app/libraries/weibo/SaeTOAuthV2.php',
 );

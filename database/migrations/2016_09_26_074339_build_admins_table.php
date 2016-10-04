@@ -13,14 +13,17 @@ class BuildAdminsTable extends Migration
      */
     public function up()
     {
+        if(!Schema::hasTable('admins')){
         Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username',20)->unique();
             $table->string('password',255);
             $table->rememberToken();
-             $table->string('email',50)->unique();
+            $table->string('email',50)->unique();
+            $table->enum('level',['A','B','C'])->default('C');
             $table->timestamps();
         });
+      }
     }
 
     /**
@@ -30,6 +33,6 @@ class BuildAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('admins');
+        // Schema::drop('admins');
     }
 }

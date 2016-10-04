@@ -37,7 +37,6 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        // admin将作为guard参数传递给guest中间件
         $this->middleware('guest', ['except' => 'logout']);
     }
 

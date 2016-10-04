@@ -39,7 +39,6 @@ class Authenticate
     public function handle($request, Closure $next, ...$guards)
     {
         $this->authenticate($guards);
-
         return $next($request);
     }
 
@@ -56,13 +55,15 @@ class Authenticate
         if (empty($guards)) {
             return $this->auth->authenticate();
         }
-
+           
         foreach ($guards as $guard) {
-            if ($this->auth->guard($guard)->check()) {
+            if ($this->auth->guard($guard)->check()) {             
                 return $this->auth->shouldUse($guard);
             }
         }
-
-        throw new AuthenticationException;
+        $this->redirect();
+        // exit;
+        // 采用下面会无故跳转到/login目录下
+        // throw new AuthenticationException;
     }
 }

@@ -16,12 +16,4 @@ class shopController extends Controller
     public function checkOut(request $request){
            return view('customer.checkOut');
     }
-    public function customerCenter(request $request){
-        $customer = Auth::guard('customer')->user();
-        return view('customer.center',['customer'=>$customer]);
-    }
-    public function messageCenter(){
-        $customer = Auth::guard('customer')->user();
-        dd($customer->notifications);
-    }
 }
