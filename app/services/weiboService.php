@@ -17,21 +17,27 @@ class weibo implements Guard{
      *
      * @return bool
      */
-    public function guest();
+    public function guest(){
+
+    }
 
     /**
      * Get the currently authenticated user.
      *
      * @return \Illuminate\Contracts\Auth\Authenticatable|null
      */
-    public function user();
+    public function user(){
+
+    }
 
     /**
      * Get the ID for the currently authenticated user.
      *
      * @return int|null
      */
-    public function id();
+    public function id(){
+
+    }
 
     /**
      * Validate a user's credentials.
@@ -39,7 +45,9 @@ class weibo implements Guard{
      * @param  array  $credentials
      * @return bool
      */
-    public function validate(array $credentials = []);
+    public function validate(array $credentials = []){
+
+    }
 
     /**
      * Set the current user.
@@ -47,6 +55,8 @@ class weibo implements Guard{
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
      * @return void
      */
-    public function setUser(Authenticatable $user);
+    public function setUser(Authenticatable $user){
+
+    }
 
 }

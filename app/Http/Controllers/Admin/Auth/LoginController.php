@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 class LoginController extends Controller
 {
     /*
@@ -17,7 +18,8 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
+   // 登录限流ThrottlesLogins
+    // use ThrottlesLogins;
     use AuthenticatesUsers;
 
     /**
@@ -25,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home/admin';
 
     /**
      * Create a new controller instance.
@@ -34,6 +36,15 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        // admin将作为guard参数传递给guest中间件
+        $this->middleware('guest:admin', ['except' => 'logout']);
     }
+    protected function guard()
+   {
+      return Auth::guard('admin');
+   }
+   public function showLoginForm(){
+    return view('admin.login');
+   }
+
 }

@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Customer;
+namespace App\Http\Controllers\Customer\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use app\libraries\weibo\SaeTOAuthV2;
 use Illuminate\Support\Facades\Redirect;
@@ -21,8 +20,7 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-   // 登录限流ThrottlesLogins
-    // use ThrottlesLogins;
+//   已经包含了登录限流trait
     use AuthenticatesUsers;
 
     /**
@@ -45,6 +43,7 @@ class LoginController extends Controller
 
     protected function guard()
    {
+//  返回Illuminate\Auth\SessionGuard对象
       return Auth::guard('customer');
    }
 
@@ -64,24 +63,23 @@ class LoginController extends Controller
         return redirect('/home/customer');
     }
     public function weibo(request $request){
-         if(session()->get('weibo_access_token')){        
-               return view('customer.home');
-        }      
         $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
-        $callback=route('callback');
+        $callback=route('weiboCallBack');
         $oauth=$weibo->getAuthorizeURL($callback);
         return redirect::to($oauth,301);
     }
+//    暂时不添加refresh token的逻辑
       public function weiboCallBack(request $request){
            $key['code']=$request->input('code');
-           $key['redirect_uri']=route('callback');
-          $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
-          // 第一次获取accessToken
+           $key['redirect_uri']=route('weiboCallBack');
+           $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
            $oauth=$weibo->getAccessToken($key);
-           $request->session()->put('weibo_access_token',$oauth['access_token']);
-           if(session()->get('weibo_access_token')){
-                // echo session()->get('weibo_access_token');
-               return view('customer.home');
-           }      
+          //将用户uid和access_token配对存储
+           $request->session()->put($oauth['uid'],$oauth['access_token']);
+               return redirect('home/customer');
      }
+    public function username()
+    {
+        return 'username';
+    }
 }
