@@ -54,7 +54,7 @@
                     <p>使用合作网站账号登录:</p>
                     <ul>
                       <li><span class="fa fa-qq icon-qq"> </span><a href="">QQ</a></li>
-                      <li><span class="fa fa-weibo icon-weibo"> </span><a href="{{url('customer/weiboCallBack')}}">微博</a></li>
+                      <li><span class="fa fa-weibo icon-weibo"> </span><a href="{{url('customer/weibo')}}">微博</a></li>
                       <li><span class="fa fa-wechat icon-wechat"> </span><a href="">微信</a></li>
                     </ul>
                   </div>

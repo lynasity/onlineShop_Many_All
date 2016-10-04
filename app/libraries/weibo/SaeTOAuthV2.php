@@ -18,7 +18,11 @@
  */
 
 namespace app\libraries\weibo;
-use OAuthException;
+if ( ! class_exists( 'OAuthException')) {
+    class OAuthException extends \Exception {
+        // pass
+    }
+}
 class SaeTOAuthV2 {
 	/**
 	 * @ignore
@@ -172,7 +176,7 @@ class SaeTOAuthV2 {
 	 *  - 当$type为token时： array('refresh_token'=>...)
 	 * @return array
 	 */
-	function getAccessToken($keys,$type = 'code' ) {
+	function getAccessToken($keys,$type='code') {
 		$params = array();
 		$params['client_id'] = $this->client_id;
 		$params['client_secret'] = $this->client_secret;

@@ -63,25 +63,20 @@ class LoginController extends Controller
         return redirect('/home/customer');
     }
     public function weibo(request $request){
-         if(session()->get('weibo_access_token')){        
-               return view('customer.index');
-        }      
         $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
         $callback=route('weiboCallBack');
         $oauth=$weibo->getAuthorizeURL($callback);
         return redirect::to($oauth,301);
     }
+//    暂时不添加refresh token的逻辑
       public function weiboCallBack(request $request){
            $key['code']=$request->input('code');
            $key['redirect_uri']=route('weiboCallBack');
-          $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
-          // 第一次获取accessToken
+           $weibo=new SaeTOAuthV2(env('WEIBO_KEY'),env('WEIBO_SECRET'));
            $oauth=$weibo->getAccessToken($key);
-           $request->session()->put('weibo_access_token',$oauth['access_token']);
-           if(session()->get('weibo_access_token')){
-                // echo session()->get('weibo_access_token');
-               return view('customer.index');
-           }      
+          //将用户uid和access_token配对存储
+           $request->session()->put($oauth['uid'],$oauth['access_token']);
+               return redirect('home/customer');
      }
     public function username()
     {
