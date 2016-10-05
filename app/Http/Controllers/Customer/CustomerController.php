@@ -11,7 +11,7 @@ class CustomerController extends Controller
 {
 	private $range = array('A','B','C'); 
 	   public function __construct(){
-         $this->middleware('auth:customer');
+         $this->middleware('auth.customer:customer');
      }
      public function index(Request $request){
      	$customer = Auth::guard('customer')->user();

@@ -19,8 +19,8 @@ Route::get('/', function () {
 // });
 
 Route::group(['namespace'=>'Admin\Auth'],function (){
-	Route::get('admin/login','loginController@showLoginForm');
-	Route::post('admin/login','loginController@login')->name('adminLogin');
+	Route::get('admin/login','loginController@showLoginForm')->name('adminLogin');
+	Route::post('admin/login','loginController@login');
     Route::post('admin/logout','loginController@logout');
     Route::get('admin/register', 'RegisterController@showRegistrationForm');
     Route::post('admin/register', 'RegisterController@register');
@@ -33,7 +33,7 @@ Route::group(['namespace'=>'Admin'],function () {
 
 
 Route::group(['namespace'=>'Customer\Auth'],function(){
- Route::get('login', 'LoginController@showLoginForm');
+ Route::get('login', 'LoginController@showLoginForm')->name('customerLogin');
  Route::post('customer/login', 'LoginController@login');
  Route::get('customer/logout', 'LoginController@logout');
  Route::get('customer/registerForm', 'RegisterController@showRegistrationForm');

@@ -40,7 +40,6 @@ trait AuthenticatesUsers
         }
 
         $credentials = $this->credentials($request);
-
         if ($this->guard()->attempt($credentials, $request->has('remember'))) {
             return $this->sendLoginResponse($request);
         }
