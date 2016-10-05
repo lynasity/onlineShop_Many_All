@@ -8,6 +8,6 @@ use Illuminate\Auth\Middleware\Authenticate;
 class customerAuthMiddleware extends Authenticate
 {
     public   function redirectNow(){
-         return  redirect()->route('customerLogin');
+         return  redirect()->route('customerLoginForm');
     }
 }

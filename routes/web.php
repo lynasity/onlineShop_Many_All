@@ -19,11 +19,11 @@ Route::get('/', function () {
 // });
 
 Route::group(['namespace'=>'Admin\Auth'],function (){
-	Route::get('admin/login','loginController@showLoginForm')->name('adminLogin');
+	Route::get('admin/login','loginController@showLoginForm')->name('adminLoginForm');
 	Route::post('admin/login','loginController@login');
     Route::post('admin/logout','loginController@logout');
     Route::get('admin/register', 'RegisterController@showRegistrationForm');
-    Route::post('admin/register', 'RegisterController@register');
+    Route::post('admin/register', 'RegisterController@register')->name('adminRegister');
    // Route::post('admin/login','loginController@login')->middleware('auth_admin');
 });
 Route::group(['namespace'=>'Admin'],function () {
@@ -33,7 +33,7 @@ Route::group(['namespace'=>'Admin'],function () {
 
 
 Route::group(['namespace'=>'Customer\Auth'],function(){
- Route::get('login', 'LoginController@showLoginForm')->name('customerLogin');
+ Route::get('login', 'LoginController@showLoginForm')->name('customerLoginForm');
  Route::post('customer/login', 'LoginController@login');
  Route::get('customer/logout', 'LoginController@logout');
  Route::get('customer/registerForm', 'RegisterController@showRegistrationForm');

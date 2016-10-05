@@ -36,7 +36,9 @@ abstract class Authenticate
      */
     public function handle($request, Closure $next, ...$guards)
     {
-        return $this->authenticate($guards);
+        if(!$this->authenticate($guards)){
+            return $this->redirectNow();
+        }
         return $next($request);
     }
 
@@ -59,8 +61,8 @@ abstract class Authenticate
             if ($this->auth->guard($guard)->check()) {          
                 return $this->auth->shouldUse($guard);
             }
-        }      
-        return $this->redirectNow();
+        }     
+          return false; 
          // return $this->redirect();
         // 下面语句会无故跳转到/login目录下，已经做了某些绑定？？
         // throw new AuthenticationException;
