@@ -19,7 +19,7 @@ Route::get('/', function () {
 // });
 
 Route::group(['namespace'=>'Admin\Auth'],function (){
-	Route::get('admin/login','loginController@showLoginForm');
+	Route::get('admin/login','loginController@showLoginForm')->name('adminLogin');
 	Route::post('admin/login','loginController@login');
     Route::post('admin/logout','loginController@logout');
     Route::get('admin/register', 'RegisterController@showRegistrationForm');
@@ -33,7 +33,7 @@ Route::group(['namespace'=>'Admin'],function () {
 
 
 Route::group(['namespace'=>'Customer\Auth'],function(){
- Route::get('login', 'LoginController@showLoginForm');
+ Route::get('login', 'LoginController@showLoginForm')->name('customerLogin');
  Route::post('customer/login', 'LoginController@login');
  Route::get('customer/logout', 'LoginController@logout');
  Route::get('customer/registerForm', 'RegisterController@showRegistrationForm');
@@ -47,13 +47,15 @@ Route::post('customer/sendEmail','ForgotPasswordController@sendResetLinkEmail');
     Route::any('auth/{service}', 'authController@redirectToProvider');
     Route::any('auth/{service}/callback', 'authController@handleProviderCallback');
 });
-
+// shop是购物相关模块，customer是用户功能模块
 Route::group(['namespace'=>'Customer'],function (){
     Route::get('home/customer','CustomerController@index')->name('customerHome');
     Route::get('customer/shopCart','shopController@showShopCart');
     Route::get('customer/checkOut','shopController@checkOut');
-    Route::get('customer/center','shopController@customerCenter')->name('customerCenter');
-    Route::get('customer/message','shopController@messageCenter')->name('messageCenter');
+    Route::get('customer/center','CustomerController@customerCenter')->name('customerCenter');
+    Route::get('customer/message','CustomerController@messageCenter')->name('messageCenter');
+Route::get('customer/HighLevel','CustomerController@forHighLevel')->name('HighLevel');
+   
 });
 
  Route::get('getCaptcha',function(){
@@ -61,7 +63,6 @@ Route::group(['namespace'=>'Customer'],function (){
     echo $captcha->GTServerIsNormal();
  });
 
- Route::controller('user','userController');
  // 设置只有认证过的用户才能进到的路由
 // Route::get('profile', ['middleware' => 'auth', function() {
     // 只有认证过的用户能进来这里...

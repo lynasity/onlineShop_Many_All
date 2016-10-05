@@ -12,6 +12,7 @@ class CreateNotificationsTable extends Migration
      */
     public function up()
     {
+         if(!Schema::hasTable('notifications')){
         Schema::create('notifications', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('type');
@@ -19,8 +20,8 @@ class CreateNotificationsTable extends Migration
             $table->text('data');
             $table->timestamp('read_at')->nullable();
             $table->timestamps();
-
         });
+      }
     }
 
     /**
@@ -30,6 +31,6 @@ class CreateNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notifications');
+        // Schema::dropIfExists('notifications');
     }
 }

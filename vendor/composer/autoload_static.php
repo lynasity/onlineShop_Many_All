@@ -108,6 +108,8 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -320,6 +322,14 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -366,9 +376,25 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         ),
         'D' => 
         array (
+            'Doctrine\\DBAL\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
+            ),
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
             'Doctrine\\Common\\Inflector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+            'Doctrine\\Common\\Annotations\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
             ),
         ),
         'C' => 
@@ -383,9 +409,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
     public static $classMap = array (
         'BuildAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074339_build_admins_table.php',
         'BuildCustomersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074304_build_customers_table.php',
+        'Cate' => __DIR__ . '/../..' . '/database/migrations/2016_10_04_121015_cate.php',
         'CreateAdminPasswordResetTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_084135_create_admin_password_reset_table.php',
         'CreateCustomerPasswordResetTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_084104_create_customer_password_reset_table.php',
-        'CreatePasswordResetTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_075257_create_password_reset_table.php',
+        'CreateNotificationsTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_03_091500_create_notifications_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
@@ -828,6 +855,8 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'Product' => __DIR__ . '/../..' . '/database/migrations/2016_10_04_120146_product.php',
+        'ProductAlbum' => __DIR__ . '/../..' . '/database/migrations/2016_10_04_121612_product_album.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -909,6 +938,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'app\\libraries\\weibo\\OAuthException' => __DIR__ . '/../..' . '/app/libraries/weibo/SaeTOAuthV2.php',
         'app\\libraries\\weibo\\SaeTClientV2' => __DIR__ . '/../..' . '/app/libraries/weibo/SaeTClientV2.php',
         'app\\libraries\\weibo\\SaeTOAuthV2' => __DIR__ . '/../..' . '/app/libraries/weibo/SaeTOAuthV2.php',
     );

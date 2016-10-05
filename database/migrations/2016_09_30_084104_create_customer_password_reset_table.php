@@ -13,11 +13,13 @@ class CreateCustomerPasswordResetTable extends Migration
      */
     public function up()
     {
+         if(!Schema::hasTable('customer_password_resets')){
         Schema::create('customer_password_resets', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token')->index();
             $table->timestamp('created_at')->nullable();
-        });
+          });
+        }
     }
 
     /**
@@ -27,6 +29,6 @@ class CreateCustomerPasswordResetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customer_password_resets');
+        // Schema::dropIfExists('customer_password_resets');
     }
 }

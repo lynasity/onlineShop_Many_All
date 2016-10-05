@@ -37,14 +37,14 @@ class LoginController extends Controller
     public function __construct()
     {
         // admin将作为guard参数传递给guest中间件
-        $this->middleware('guest:admin', ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
     protected function guard()
    {
       return Auth::guard('admin');
    }
    public function showLoginForm(){
-    return view('admin.login');
+     return view('admin.loginForm');
    }
 
 }

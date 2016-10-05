@@ -13,6 +13,7 @@ class BuildCustomersTable extends Migration
      */
     public function up()
     {
+        if(!Schema::hasTable('customers')){
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username',20)->unique();
@@ -22,8 +23,19 @@ class BuildCustomersTable extends Migration
              $table->string('email',50)->unique();
             $table->enum('gender',['male','female','secret'])->default('secret');
             $table->string('face',255)->nullable();
+        $table->enum('level',['A','B','C','D','E'])->default('E');
             $table->timestamps();
+
         });
+       }else{
+            if(!Schema::hasColumn('customers', 'level')){
+                   // 添加等级制度
+                  Schema::table('customers', function ($table) {
+                      $table->enum('level',['A','B','C','D','E'])->default('E');
+                });
+            }else{
+                 }
+        }
     }
 
     /**
@@ -33,6 +45,6 @@ class BuildCustomersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('customers');
+        // Schema::drop('customers');
     }
 }
