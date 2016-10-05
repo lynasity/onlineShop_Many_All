@@ -1,2 +1,6 @@
 
-<a href="{{route('sendNotification')}}">推送最新优惠信息</a>
+<a href="{{route('messageCenter')}}">消息推送中心</a>
+<br>
+<a href="{{route('productsCenter')}}">商品管理中心</a>
+<br>
+<a href="{{url('admin/logout')}}">退出登录</a>

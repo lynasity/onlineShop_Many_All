@@ -68,7 +68,7 @@ class ProductPolicy
     {
         //
     }
-     // before会在所有方法执行前执行,经常用于管理员操作前的认证
+     // before会在所有方法执行前执行,经常授权应用管理员的操作
     public function before($user, $ability)
     {
         // 伪代码

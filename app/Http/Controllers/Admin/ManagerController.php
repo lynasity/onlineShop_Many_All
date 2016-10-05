@@ -7,14 +7,20 @@
  use App\Http\Requests;
  use App\Http\Controllers\Controller;
  use App\customer;
- use Illuminate\Support\Facades\Notification;
- use App\Notifications\salePromotion;
+ use App\product;
+
+
  class ManagerController extends Controller
  {
-       public function sendNotification(){
-       //发送给所有用户推送信息
-       $customers=customer::all();
-       //$customer->notify(new salePromotion());
-       Notification::send($customers, new salePromotion());
+
+   public function productManagerCenter(){
+        $products=product::all();
+   	    return view('product.productCenter',[
+            'products'=>$products,
+   	    	]);
+   }
+   public function messageManagerCenter(){
+   	 
+   	   return view('admin.messageCenter');
    }
  }

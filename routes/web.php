@@ -21,14 +21,17 @@ Route::get('/', function () {
 Route::group(['namespace'=>'Admin\Auth'],function (){
 	Route::get('admin/login','loginController@showLoginForm')->name('adminLoginForm');
 	Route::post('admin/login','loginController@login');
-    Route::post('admin/logout','loginController@logout');
+    Route::get('admin/logout','loginController@logout');
     Route::get('admin/register', 'RegisterController@showRegistrationForm');
-    Route::post('admin/register', 'RegisterController@register')->name('adminRegister');
-   // Route::post('admin/login','loginController@login')->middleware('auth_admin');
+Route::post('admin/register', 'RegisterController@register')->name('adminRegister');
 });
+
 Route::group(['namespace'=>'Admin'],function () {
-    Route::get('home/admin','AdminController@index');
-    Route::get('admin/sendNotification','ManagerController@sendNotification')->name('sendNotification');
+    Route::get('home/admin','AdminController@index')->name('adminHome');
+    Route::post('admin/sendNotification','messageController@sendNotification')->name('sendNotification');
+    Route::get('admin/productManagerCenter','ManagerController@productManagerCenter')->name('productsCenter');
+    Route::get('admin/messageManagerCenter','ManagerController@messageManagerCenter')->name('messageCenter');
+    Route::get('admin/messageForm','messageController@messageForm')->name('messageForm');   
 });
 
 
@@ -53,9 +56,11 @@ Route::group(['namespace'=>'Customer'],function (){
     Route::get('customer/shopCart','shopController@showShopCart');
     Route::get('customer/checkOut','shopController@checkOut');
     Route::get('customer/center','CustomerController@customerCenter')->name('customerCenter');
-    Route::get('customer/message','CustomerController@messageCenter')->name('messageCenter');
+      Route::get('customer/infoCenter','CustomerController@infoCenter')->name('infoCenter');
 Route::get('customer/HighLevel','CustomerController@forHighLevel')->name('HighLevel');
-   
+   Route::get('customer/allInfo/{customer?}','infoController@allInfo')->name('allInfo');
+    Route::get('customer/unreadInfo/{customer?}','infoController@unreadInfo')->name('unreadInfo');
+    Route::get('customer/deleteInfo/{customer?}','infoController@deleteInfo')->name('deleteInfo');
 });
 
  Route::get('getCaptcha',function(){
@@ -63,6 +68,8 @@ Route::get('customer/HighLevel','CustomerController@forHighLevel')->name('HighLe
     echo $captcha->GTServerIsNormal();
  });
 
+Route::resource('products', 'productController');
+Route::get('products/all','productController@showAll')->name('allProducts');
  // 设置只有认证过的用户才能进到的路由
 // Route::get('profile', ['middleware' => 'auth', function() {
     // 只有认证过的用户能进来这里...

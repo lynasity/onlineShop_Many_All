@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Auth;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -46,5 +46,18 @@ class LoginController extends Controller
    public function showLoginForm(){
      return view('admin.loginForm');
    }
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
 
+        $request->session()->flush();
+
+        $request->session()->regenerate();
+
+        return redirect('/home/admin');
+    }
+      public function username()
+    {
+        return 'username';
+    }
 }

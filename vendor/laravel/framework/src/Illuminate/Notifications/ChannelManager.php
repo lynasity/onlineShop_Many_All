@@ -35,7 +35,6 @@ class ChannelManager extends Manager implements DispatcherContract, FactoryContr
     public function send($notifiables, $notification)
     {
         $notifiables = $this->formatNotifiables($notifiables);
-
         if ($notification instanceof ShouldQueue) {
             return $this->queueNotification($notifiables, $notification);
         }
