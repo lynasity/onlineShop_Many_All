@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
-use App\User;
+use App\admin;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Facades\Auth;
 class RegisterController extends Controller
 {
     /*
@@ -48,18 +48,19 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-            'gender'=>'required|alpha|in:male,female,secret',
+            'username' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'password_confirmation'=>'required',
+            // 'gender'=>'required|alpha|in:male,female,secret',
             // 'face'='require',
         ]);
     }
     // 自定义返回注册页面
-    public function showRegisterForm(){
-         return view('admin.register');
+     public function showRegistrationForm()
+    {
+        return view('admin.register');
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -69,13 +70,14 @@ class RegisterController extends Controller
     // 自定义数据库存储规则
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return admin::create([
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            // face,gender暂时测试
-            'face'=> 'face',
-            'gender'=> 'male',
         ]);
+    }
+    protected function guard()
+    {
+        return Auth::guard('admin');
     }
 }
