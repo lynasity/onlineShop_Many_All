@@ -58,10 +58,13 @@ abstract class Authenticate
             return $this->auth->authenticate();
         }
         foreach ($guards as $guard) {
-            if ($this->auth->guard($guard)->check()) {          
-                return $this->auth->shouldUse($guard);
+            if ($this->auth->guard($guard)->check()) { 
+                // Set the default guard driver the factory should serve.
+                $this->auth->shouldUse($guard);
+                return true;
             }
         }     
+        // 未登录则返回false
           return false; 
          // return $this->redirect();
         // 下面语句会无故跳转到/login目录下，已经做了某些绑定？？
