@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use App\product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\cate;
+use App\Http\Requests\productValidator;
 class productController extends Controller
 {
     /**
@@ -16,7 +17,8 @@ class productController extends Controller
      */
     public function index()
     {
-        //
+        $products=product::all();
+        return view('product.productList',['products'=>$products]);
     }
 
     /**
@@ -26,7 +28,8 @@ class productController extends Controller
      */
     public function create()
     {
-        //
+         $cates=cate::all();
+         return view('product.productForm',['cates'=>$cates]);
     }
 
     /**
@@ -35,9 +38,20 @@ class productController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(productValidator $request)
     {
-        //
+        $product=new product();
+        $product->proName=$productValidator->input('proName');
+        $product->proSn=$productValidator->input('proSn');
+        $product->proNum=$productValidator->input('proNum');
+        $product->marketPrice=$productValidator->input('marketPrice');
+        $product->webPrice=$productValidator->input('webPrice');
+        $product->proDescription=$productValidator->input('proDescription');
+        $product->proImg=$productValidator->input('proImg');
+        $product->cateId=$productValidator->input('cateId');
+        $product->isShow=$productValidator->input('isShow');
+        $product->isHot=$productValidator->input('isHot');
+        $product->save();
     }
 
     /**
@@ -84,7 +98,5 @@ class productController extends Controller
     {
         //
     }
-    public function showAll(){
-         return view();
-    }
+  
 }

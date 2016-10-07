@@ -68,8 +68,8 @@ Route::get('customer/HighLevel','CustomerController@forHighLevel')->name('HighLe
     echo $captcha->GTServerIsNormal();
  });
 
-Route::resource('products', 'productController');
-Route::get('products/all','productController@showAll')->name('allProducts');
+Route::resource('products', 'Admin\productController');
+
  // 设置只有认证过的用户才能进到的路由
 // Route::get('profile', ['middleware' => 'auth', function() {
     // 只有认证过的用户能进来这里...

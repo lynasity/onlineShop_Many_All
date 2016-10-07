@@ -34,11 +34,7 @@ class ProductPolicy
     public function create(admin $user)
     {
         //这样假设只要是认证了的管理员就可以添加信息
-        if(Auth::check()){
-            return true;
-        }else{
-            return false;
-        }
+        return Auth::check()?true:false;
     }
 
     /**
@@ -50,11 +46,6 @@ class ProductPolicy
      */
     public function update(admin $user, product $product)
     {
-            if(strcmp($user->level, $product->updatePermission) >= 0){
-                return true;
-            }else{
-                return false;
-            }
     }
 
     /**
@@ -66,14 +57,11 @@ class ProductPolicy
      */
     public function delete(admin $user, product $product)
     {
-        //
+        return strcmp($user->level, $product->deletePermission)>=0?true:false;
     }
      // before会在所有方法执行前执行,经常授权应用管理员的操作
     public function before($user, $ability)
     {
-        // 伪代码
-         if ($user->isSuperAdmin()) {
-                return true;
-         }
+       return Auth::check()?true:false;
     }
 }

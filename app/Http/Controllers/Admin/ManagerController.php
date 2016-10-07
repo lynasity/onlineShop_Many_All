@@ -23,4 +23,7 @@
    	 
    	   return view('admin.messageCenter');
    }
+   public function ProductForm(){
+      return 'ok';
+   }
  }
