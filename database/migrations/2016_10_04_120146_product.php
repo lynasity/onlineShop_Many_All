@@ -31,10 +31,14 @@ class Product extends Migration
             $table->index('cateId');    
          });          
       }else{
-             Schema::table('products', function ($table) {       
-                $table->foreign('cateId')->references('id')->on('cates');
-             });          
-      }
+        Schema::table('products', function ($table) {
+            // 设置删除产品所需要的管理员级别
+            $table->string('deletePermission')->default('B');
+        });
+     }
+             // Schema::table('products', function ($table) {       
+             //    $table->foreign('cateId')->references('id')->on('cates');
+             // });          
     }
 
     /**

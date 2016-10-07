@@ -22,9 +22,9 @@ class ProductAlbum extends Migration
            $table->index('proId');      
          });
        }else{
-            Schema::table('proAlbums', function ($table){
-              $table->foreign('proId')->references('id')->on('products');
-           }); 
+           //  Schema::table('proAlbums', function ($table){
+           //    $table->foreign('proId')->references('id')->on('products');
+           // }); 
     }
    }
 
