@@ -18,19 +18,33 @@
      		<th>商品品类</th>
      		<th>是否上架</th>
      		<th>是否热款</th>
+        <th>操作</th>
      	</tr>
         @foreach($products as $product)
           <tr>
-          	 <td>$product->proName</td>  
-          	  <td>$product->proSn</td> 
-          	   <td>$product->proNum</td> 
-          	    <td>$product->maketPrice</td> 
-          	     <td>$product->webPrice</td> 
-          	      <td>$product->proDescripetion</td> 
-          	       <td>$product->proImg</td> 
-          	        <td>$product->cateId</td> 
-          	         <td>$product->isShow</td> 
-          	         <td>$product->isHost</td>          
+          	 <td>{{$product->proName}}</td>  
+          	  <td>{{$product->proSn}}</td> 
+          	   <td>{{$product->proNum}}</td> 
+          	    <td>{{$product->marketPrice}}</td> 
+          	     <td>{{$product->webPrice}}</td> 
+          	      <td>{{$product->proDescription}}</td> 
+          	       <td>{{$product->proImg}}</td> 
+          	        <td>{{App\cate::find($product->cateId)->cName}}</td> 
+          	         <td>
+                         @if($product->isShow==1)
+                             是
+                         @else
+                            否
+                         @endif
+                      </td> 
+          	         <td>
+                     @if($product->isHot==1)
+                             是
+                         @else
+                            否
+                         @endif
+                     </td>
+             <td><a href="{{route('products.edit',['product'=>$product->id])}}">修改</a>|<a href="{{route('product.delete',['product'=>$product->id])}}">删除</a></td>       
           </tr>   
         @endforeach
      </table>

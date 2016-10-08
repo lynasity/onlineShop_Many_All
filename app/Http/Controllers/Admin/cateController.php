@@ -35,7 +35,7 @@ class cateController extends Controller
     public function create()
     {
         if(Auth::user()->can('create',cate::class)){
-        return view('cate.cateForm');
+           return view('cate.cateForm');
        }else{
            return redirect()->route('cateCenter');
        } 

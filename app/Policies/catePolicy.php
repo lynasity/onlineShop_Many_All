@@ -30,7 +30,7 @@ class catePolicy
      */
     public function create(admin $user)
     {
-        return strcmp($user->level,'A')==0?true:false;
+        return strcmp($user->level,'C')==0?true:false;
     }
 
     /**

@@ -46,6 +46,7 @@ class ProductPolicy
      */
     public function update(admin $user, product $product)
     {
+        return strcmp($user->level,'C')==0?true:false;
     }
 
     /**

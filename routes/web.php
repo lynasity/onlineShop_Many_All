@@ -33,7 +33,8 @@ Route::group(['namespace'=>'Admin'],function () {
     Route::get('admin/messageManagerCenter','ManagerController@messageManagerCenter')->name('messageCenter');
     Route::get('admin/cateManagerCenter','ManagerController@cateCenter')->name('cateCenter');
     Route::get('admin/messageForm','messageController@messageForm')->name('messageForm');   
-    Route::resource('products', 'productController');
+      Route::get('products/{product}/delete','cateController@destroy')->name('product.delete');
+    Route::resource('products', 'productController',['except'=>['destroy']]);
     // 重定义destroy方法的路由
      Route::get('cate/{cate}/delete','cateController@destroy')->name('cate.delete');
     Route::resource('cates', 'cateController',['except'=>['destroy']]);

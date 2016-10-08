@@ -7,7 +7,7 @@ use App\product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\cate;
-use App\Http\Requests\productValidator;
+use App\Http\Requests\addProductRuequest;
 class productController extends Controller
 {
     /**
@@ -44,20 +44,21 @@ class productController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(productValidator $request)
+    public function store(addProductRuequest $request)
     {
         $product=new product();
-        $product->proName=$productValidator->input('proName');
-        $product->proSn=$productValidator->input('proSn');
-        $product->proNum=$productValidator->input('proNum');
-        $product->marketPrice=$productValidator->input('marketPrice');
-        $product->webPrice=$productValidator->input('webPrice');
-        $product->proDescription=$productValidator->input('proDescription');
-        $product->proImg=$productValidator->input('proImg');
-        $product->cateId=$productValidator->input('cateId');
-        $product->isShow=$productValidator->input('isShow');
-        $product->isHot=$productValidator->input('isHot');
+        $product->proName=$request->input('proName');
+        $product->proSn=$request->input('proSn');
+        $product->proNum=$request->input('proNum');
+        $product->marketPrice=$request->input('marketPrice');
+        $product->webPrice=$request->input('webPrice');
+        $product->proDescription=$request->input('proDescription');
+        $product->proImg=$request->input('proImg');
+        $product->cateId=$request->input('cateId');
+        $product->isShow=$request->input('isShow');
+        $product->isHot=$request->input('isHot');
         $product->save();
+        return redirect()->route('products.index');
     }
 
     /**
@@ -79,7 +80,9 @@ class productController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product=product::find($id);
+        $cates=cate::all();
+        return view('product.editForm',['product'=>$product,'cates'=>$cates]);
     }
 
     /**
@@ -91,7 +94,17 @@ class productController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        product::where('id',$id)->update(['proName'=>$request->input('proName'),
+        'proSn'=>$request->input('proSn'),
+        'proNum'=>$request->input('proNum'),
+        'marketPrice'=>$request->input('marketPrice'),
+        'webPrice'=>$request->input('webPrice'),
+        'proDescription'=>$request->input('proDescription'),
+        'proImg'=>$request->input('proImg'),
+        'cateId'=>$request->input('cateId'),
+        'isShow'=>$request->input('isShow'),
+        'isHot'=>$request->input('isHot')]);
+        return redirect()->route('products.index');
     }
 
     /**
@@ -102,7 +115,9 @@ class productController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product=product::find($id);
+        $product->delete();
+        return redirect()->route('products.index');
     }
   
 }
