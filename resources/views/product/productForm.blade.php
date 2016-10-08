@@ -4,7 +4,7 @@
  <title>添加商品</title>
 </head>
 <body>
-	<form method="post" action="{{url('products/store')}}" enctype="multipart/form-data">
+	<form method="post" action="{{url('products')}}" enctype="multipart/form-data">
 	  <ul>
 		{{csrf_field()}}
 		<li>

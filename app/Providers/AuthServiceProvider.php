@@ -3,10 +3,11 @@
 namespace App\Providers;
 
 use App\product;
+use App\cate;
+use App\Policies\catePolicy;
 use App\Policies\productPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -18,7 +19,7 @@ class AuthServiceProvider extends ServiceProvider
         'App\Model' => 'App\Policies\ModelPolicy',
         // 注册,模型和权限政策对应
         product::class=>productPolicy::class,
-
+        cate::class=>catePolicy::class,
     ];
 
     /**

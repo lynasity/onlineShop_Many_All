@@ -31,7 +31,12 @@ Route::group(['namespace'=>'Admin'],function () {
     Route::post('admin/sendNotification','messageController@sendNotification')->name('sendNotification');
     Route::get('admin/productManagerCenter','ManagerController@productManagerCenter')->name('productsCenter');
     Route::get('admin/messageManagerCenter','ManagerController@messageManagerCenter')->name('messageCenter');
+    Route::get('admin/cateManagerCenter','ManagerController@cateCenter')->name('cateCenter');
     Route::get('admin/messageForm','messageController@messageForm')->name('messageForm');   
+    Route::resource('products', 'productController');
+    // 重定义destroy方法的路由
+     Route::get('cate/{cate}/delete','cateController@destroy')->name('cate.delete');
+    Route::resource('cates', 'cateController',['except'=>['destroy']]);
 });
 
 
@@ -67,8 +72,6 @@ Route::get('customer/HighLevel','CustomerController@forHighLevel')->name('HighLe
     $captcha = new \Laravist\GeeCaptcha\GeeCaptcha(env('CAPTCHA_ID'),env('PRIVATE_KEY'));
     echo $captcha->GTServerIsNormal();
  });
-
-Route::resource('products', 'Admin\productController');
 
  // 设置只有认证过的用户才能进到的路由
 // Route::get('profile', ['middleware' => 'auth', function() {

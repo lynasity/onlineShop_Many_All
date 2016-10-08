@@ -14,8 +14,8 @@ class infoController extends Controller
     public function unreadInfo(request $request,selectCustomer $customer){
         return view('info.unreadInfo',['customer'=>$customer]);
     }
-    public function deleteInfor(request $request,selectCustomer $customer){
+    public function deleteInfo(request $request,selectCustomer $customer){
     	$customer->notifications()->delete();
-    	redirect()->route('infoCenter');
+    	return redirect()->route('infoCenter')->with('success','delete successfully');
     }
 }

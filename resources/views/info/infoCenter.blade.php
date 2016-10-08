@@ -10,7 +10,7 @@
        <a href="{{url('customer/unreadInfo',['customer'=>$customer])}}">未读消息({{count($customer->
        unreadNotifications)}})</a>
        <br>
-       <a href="{{route('deleteInfo')}}">删除消息</a>
+       <a href="{{url('customer/deleteInfo',['customer'=>$customer])}}">删除消息</a>
        @show
  </body>
  </html>

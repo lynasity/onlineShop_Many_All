@@ -9,7 +9,6 @@
  use App\customer;
  use App\product;
 
-
  class ManagerController extends Controller
  {
 
@@ -23,7 +22,7 @@
    	 
    	   return view('admin.messageCenter');
    }
-   public function ProductForm(){
-      return 'ok';
+   public function cateCenter(){
+      return view('cate.cateCenter');
    }
  }
