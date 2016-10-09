@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+// 数据库通知
 class salePromotion extends Notification implements ShouldQueue
 {
     use Queueable;
@@ -15,7 +16,7 @@ class salePromotion extends Notification implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($data='test')
+    public function __construct($data)
     {
         $this->data=$data;
     }
@@ -55,8 +56,6 @@ class salePromotion extends Notification implements ShouldQueue
     {
 
              return [
-//                 'notifiable_id' => $this->id,
-//                 'notifiable_type' =>$this->type,
                  'data' => $this->data,
              ];
     }

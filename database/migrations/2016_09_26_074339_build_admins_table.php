@@ -23,6 +23,8 @@ class BuildAdminsTable extends Migration
             $table->enum('level',['A','B','C'])->default('C');
             $table->timestamps();
         });
+      }else{
+        
       }
     }
 

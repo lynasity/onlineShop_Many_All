@@ -8,6 +8,6 @@ use Illuminate\Auth\Middleware\Authenticate;
 class adminAuthMiddleware  extends Authenticate
 {
     public  function redirectNow(){
-       return redirect()->route('adminLogin');
+       return redirect()->route('adminLoginForm');
      }
 }

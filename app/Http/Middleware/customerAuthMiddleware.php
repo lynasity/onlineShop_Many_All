@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate;
 class customerAuthMiddleware extends Authenticate
 {
-    public   function redirectNow(){
-         return  redirect()->route('customerLogin');
+    public  function redirectNow(){
+         return  redirect()->route('customerLoginForm');
     }
 }

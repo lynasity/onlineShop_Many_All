@@ -180,6 +180,8 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,
         // Laravel\Socialite\SocialiteServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
+        Toplan\PhpSms\PhpSmsServiceProvider::class,
+        Toplan\Sms\SmsManagerServiceProvider::class,
     ],
 
     /*
@@ -228,6 +230,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
          'Captcha' => Mews\Captcha\Facades\Captcha::class,
          'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+         'PhpSms' => Toplan\PhpSms\Facades\Sms::class,
+         'SmsManager' => Toplan\Sms\Facades\SmsManager::class,
     ],
 
 ];
