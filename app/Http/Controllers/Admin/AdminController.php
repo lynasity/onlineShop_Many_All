@@ -17,7 +17,6 @@ class AdminController extends Controller
        $this->middleware('auth.admin:admin');
     }
     public function index(){
-       // dd(Auth::user());
     	return view('admin.home');
     }
 }
