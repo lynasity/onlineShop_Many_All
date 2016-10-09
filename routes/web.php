@@ -17,7 +17,8 @@ Route::get('/', function () {
 // Route::any('testCaptcha',function(){
 // 	return view('testCaptcha');
 // });
-
+// -------------------------------------------------------------------------------
+//管理员认证模块 
 Route::group(['namespace'=>'Admin\Auth'],function (){
 	Route::get('admin/login','loginController@showLoginForm')->name('adminLoginForm');
 	Route::post('admin/login','loginController@login');
@@ -25,19 +26,26 @@ Route::group(['namespace'=>'Admin\Auth'],function (){
     Route::get('admin/register', 'RegisterController@showRegistrationForm');
 Route::post('admin/register', 'RegisterController@register')->name('adminRegister');
 });
-
+// -----------------------------------------------------------------------------
+// 管理后台模块
 Route::group(['namespace'=>'Admin'],function () {
+    // 后台首页
     Route::get('home/admin','AdminController@index')->name('adminHome');
-    Route::post('admin/sendNotification','messageController@sendNotification')->name('sendNotification');
+    //功能子模块分流 
     Route::get('admin/productManagerCenter','ManagerController@productManagerCenter')->name('productsCenter');
     Route::get('admin/messageManagerCenter','ManagerController@messageManagerCenter')->name('messageCenter');
     Route::get('admin/cateManagerCenter','ManagerController@cateCenter')->name('cateCenter');
-    Route::get('admin/messageForm','messageController@messageForm')->name('messageForm');   
-      Route::get('products/{product}/delete','cateController@destroy')->name('product.delete');
+     Route::get('admin/orderFormManagerCenter','ManagerController@orderFormCenter')->name('orderFormCenter');
+    //消息管理 
+    Route::get('admin/messageForm','messageController@messageForm')->name('messageForm');  
+    Route::post('admin/sendNotification','messageController@sendNotification')->name('sendNotification');
+    // 产品管理
+    Route::get('products/{product}/delete','productController@destroy')->name('product.delete');
     Route::resource('products', 'productController',['except'=>['destroy']]);
-    // 重定义destroy方法的路由
+    //品类管理
      Route::get('cate/{cate}/delete','cateController@destroy')->name('cate.delete');
     Route::resource('cates', 'cateController',['except'=>['destroy']]);
+
 });
 
 
