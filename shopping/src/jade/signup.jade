@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="en")
+	include includes/head.jade
+	body
+		.page-signup
+			.banner
+				.wrap
+					.banner-container
+						.logo
+							a(href="#") Many&All
+						.welcome 欢迎注册
+			.signup-form
+				.wrap
+					.signup-form-container
+						.left-img
+						.right-form
+							.form-header 账户注册
+							form(action="" id="signupForm")
+								ul
+									li
+										label(for="user") 账户名
+										input(required type="text" id="user" placeholder="邮箱/用户名")
+									li
+										label(for="pwd") 设置密码
+										input(required type="password" id="pwd" placeholder="*******")
+										span
+									li
+										label(for="pwd-repeat") 确认密码
+										input(required type="password" id="pwdRepeat" placeholder="*******")
+										span
+									li
+										label(for="email") 邮箱
+										input(required type="text" id="email" placeholder="example@example.com") 
+									li.btn-signup
+										input(type="submit" value="提交")
+									li.link-to-login
+										| 已有账户,去
+										a(href="") 登录
+		include includes/footer.jade                

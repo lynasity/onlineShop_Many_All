@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+html(lang="en")
+	include includes/head.jade
+	body
+		include includes/status.jade
+		include includes/logo-search.jade
+		include includes/nav.jade
+		.page-detail
+			.wrap
+				.detail-container
+					.location
+						span
+							a(href="") 
+								strong 首页
+							| >
+							a(href="") 电脑
+							| >
+							a(href="") 平板电脑
+							| >
+							a(href="") Apple
+							| >
+							a(href="") iMac
+					.product-info
+						.preview.fl
+							.big-img#bigImg
+							.img-slider
+								.left#left
+									span.fa.fa-angle-left.icon-left 
+								.right#right
+									span.fa.fa-angle-right.icon-right
+								.slider-view#sliderView
+									ul
+										li
+											//- img(src="http://www.fillmurray.com/80/80", alt="")
+										li
+											//- img(src="http://www.fillmurray.com/80/90", alt="")
+										li
+											//- img(src="http://www.fillmurray.com/80/80", alt="")
+										li
+											//- img(src="http://www.fillmurray.com/80/80", alt="")
+										li
+											//- img(src="http://www.fillmurray.com/80/70", alt="")
+											// 遍历所有这个商品下的小图片,url给src
+						.item-info
+							ul.info-list
+								li.info-title
+									p 全网低价 APPLE 苹果 Ipad mini 16G wifi 银白 土豪金 香槟金 钢琴黑全网低价 APPLE 苹果 Ipad mini 16G wifi 银白 土豪金 香槟金 钢琴黑
+								li.info-price
+									span.key 天价
+									span.price
+										span.currency $
+										| 999.00
+								li.promo
+									span.key 优惠
+									span 
+										span.fa.fa-money.icon-money
+										| 江浙沪包邮
+								li
+									form(action="").select
+										ul
+											li
+												span.key 送到
+												input(type="text")
+												span 有货,当日11:00 之前下单,下午送到
+											li.color
+												span.key 选择颜色
+												ul
+													li
+														input(type="radio" name="color" value="white" id="white")
+														label(for="white") 白色
+													li
+														input(type="radio" name="color" value="gray" id="gray")
+														label(for="gray") 灰色
+													li
+														input(type="radio" name="color" value="gold" id="gold")
+														label(for="gold") 金色
+											li.size
+												span.key 选择规格
+												ul
+													li 
+														input(id="wifi 16G" type="radio" name="size" value="wifi 16G" )
+														label(for="wifi 16G") wifi 16G
+													li 
+														input(id="wifi 32G" type="radio" name="size" value="wifi 32G")
+														label(for="wifi 32G") wifi 32G
+													li 
+														input(id="wifi 64G" type="radio" name="size" value="wifi 64G")
+														label(for="wifi 64G") wifi 64G
+													li 
+														input(id="wifi 128G" type="radio" name="size" value="wifi 128G")
+														label(for="wifi 128G") wifi 128G
+													li 
+														input(id="wifi 256G" type="radio" name="size" value="wifi 256G")
+														label(for="wifi 256G") wifi 256G
+													li 
+														input(id="4G 16G" type="radio" name="size" value="4G 16G")
+														label(for="4G 16G") 4G 16G
+													li 
+														input(id="3G 16G" type="radio" name="size" value="3G 16G")
+														label(for="3G 16G") 3G 16G
+													li 
+														input(id="wifi 4G 16G" type="radio" name="size" value="wifi 4G 16G")
+														label(for="wifi 4G 16G") wifi+4G 128G
+											li.num
+												span.key 数量
+												.choose-amount
+													input(type="text" value="1")
+											//- li
+								li.buy-add
+									a(href="" class="buy")
+										span.fa.fa-shopping-cart
+										| 立即购买
+									a(href="" class="add") 
+										span.fa.fa-cart-plus
+										| 加入购物车
+								li.notes
+									| 注意,邮费9999
+					.product-detail
+						.side
+							.same-price
+								.list-header 同价位
+								ul
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+							.others-buy 
+								.list-header 其他人买了
+								ul
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+									li
+										//- img(src="http://placehold.it/100x100", alt="")
+										p.side-intro iPad mini 
+										p.side-price
+
+						.item-detail
+							.product-switcher
+							.item-intro
+							.commet.hidden
+		include includes/footer.jade

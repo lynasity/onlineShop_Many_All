@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     @section('meta')
     @show
-    <link rel="stylesheet" href="{{asset('./customer/css/reset.css')}}"/>
-    <link rel="stylesheet" href="{{asset('./customer/css/main.css')}}"/>
-    <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}"/>
+    {{-- <link rel="stylesheet" href="{{asset('./customer/css/reset.css')}}"/> --}}
+    {{-- <link rel="stylesheet" href="{{asset('./customer/css/main.css')}}"/> --}}
+    {{-- <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}"/> --}}
     <title>@yield('title','index')</title>
     @section('style')
     @show
@@ -17,10 +17,10 @@
     @section('maincontent')
     @show
     <footer>
-      <ul> 
+      <ul>
         <li><span class="copyright">Copyright &copy; 2016-2016 </span><span class="powerd">Powerd By <a href="#">Larvel,</a>Host on <a href="#"><span class="fa fa-github"></span> Github</a></span></li>
         <li>
-          <div class="author">Authors:<a href="" title="BackEnd">Many Hong </a>& <a href="" title="FrontEnd">Quill Jou</a></div>
+          <div class="author">Authors:<a href="" title="BackEnd">Many Hong </a>& <a href="" title="FrontEnd">Q</a></div>
         </li>
       </ul>
     </footer>

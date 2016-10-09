@@ -20,6 +20,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CustomerController' => $baseDir . '/app/Http/Controllers/CustomerController.php',
     'App\\Http\\Controllers\\Customer\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Customer/ForgotPasswordController.php',
+    'App\\Http\\Controllers\\Customer\\LoginController' => $baseDir . '/app/Http/Controllers/Customer/LoginController.php',
     'App\\Http\\Controllers\\Customer\\RegisterController' => $baseDir . '/app/Http/Controllers/Customer/RegisterController.php',
     'App\\Http\\Controllers\\Customer\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Customer/ResetPasswordController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
