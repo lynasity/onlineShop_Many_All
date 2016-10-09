@@ -36,8 +36,11 @@ abstract class Authenticate
      */
     public function handle($request, Closure $next, ...$guards)
     {
-        return $this->authenticate($guards);
-        return $next($request);
+        if($this->authenticate($guards)){
+            return $next($request);
+        }else{
+           return $this->redirectNow();
+        }
     }
 
     /**
@@ -51,16 +54,17 @@ abstract class Authenticate
     protected function authenticate(array $guards)
     {
         // 如果为空调用默认的guard
-        if (empty($guards)) {
-            //$this->auth返回AuthManager对象,通过__call方法实际上也是调用guard的authenticate
-            return $this->auth->authenticate();
-        }
+        // if (empty($guards)) {
+        //     //$this->auth返回AuthManager对象,通过__call方法实际上也是调用guard的authenticate
+        //     return $this->auth->authenticate();
+        // }
         foreach ($guards as $guard) {
             if ($this->auth->guard($guard)->check()) {          
-                return $this->auth->shouldUse($guard);
+                $this->auth->shouldUse($guard);
+                return true;
             }
         }
-        $this->redirectNow();
+           return false;
         // throw new AuthenticationException('Unauthenticated.', $guards);
     }
      protected abstract function redirectNow();
