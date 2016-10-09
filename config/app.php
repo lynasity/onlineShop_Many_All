@@ -182,6 +182,7 @@ return [
         SocialiteProviders\Manager\ServiceProvider::class,
         Toplan\PhpSms\PhpSmsServiceProvider::class,
         Toplan\Sms\SmsManagerServiceProvider::class,
+        'Baum\Providers\BaumServiceProvider',
     ],
 
     /*

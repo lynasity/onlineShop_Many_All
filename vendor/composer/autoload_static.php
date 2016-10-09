@@ -394,6 +394,13 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
                 0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src',
             ),
         ),
+        'B' => 
+        array (
+            'Baum' => 
+            array (
+                0 => __DIR__ . '/..' . '/baum/baum/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -446,6 +453,21 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'App\\express' => __DIR__ . '/../..' . '/app/express.php',
         'App\\orderForm' => __DIR__ . '/../..' . '/app/orderForm.php',
         'App\\product' => __DIR__ . '/../..' . '/app/product.php',
+        'Baum\\Console\\BaumCommand' => __DIR__ . '/..' . '/baum/baum/src/Baum/Console/BaumCommand.php',
+        'Baum\\Console\\InstallCommand' => __DIR__ . '/..' . '/baum/baum/src/Baum/Console/InstallCommand.php',
+        'Baum\\Extensions\\Eloquent\\Collection' => __DIR__ . '/..' . '/baum/baum/src/Baum/Extensions/Eloquent/Collection.php',
+        'Baum\\Extensions\\Eloquent\\Model' => __DIR__ . '/..' . '/baum/baum/src/Baum/Extensions/Eloquent/Model.php',
+        'Baum\\Extensions\\Query\\Builder' => __DIR__ . '/..' . '/baum/baum/src/Baum/Extensions/Query/Builder.php',
+        'Baum\\Generators\\Generator' => __DIR__ . '/..' . '/baum/baum/src/Baum/Generators/Generator.php',
+        'Baum\\Generators\\MigrationGenerator' => __DIR__ . '/..' . '/baum/baum/src/Baum/Generators/MigrationGenerator.php',
+        'Baum\\Generators\\ModelGenerator' => __DIR__ . '/..' . '/baum/baum/src/Baum/Generators/ModelGenerator.php',
+        'Baum\\Move' => __DIR__ . '/..' . '/baum/baum/src/Baum/Move.php',
+        'Baum\\MoveNotPossibleException' => __DIR__ . '/..' . '/baum/baum/src/Baum/MoveNotPossibleException.php',
+        'Baum\\Node' => __DIR__ . '/..' . '/baum/baum/src/Baum/Node.php',
+        'Baum\\Providers\\BaumServiceProvider' => __DIR__ . '/..' . '/baum/baum/src/Baum/Providers/BaumServiceProvider.php',
+        'Baum\\SetBuilder' => __DIR__ . '/..' . '/baum/baum/src/Baum/SetBuilder.php',
+        'Baum\\SetMapper' => __DIR__ . '/..' . '/baum/baum/src/Baum/SetMapper.php',
+        'Baum\\SetValidator' => __DIR__ . '/..' . '/baum/baum/src/Baum/SetValidator.php',
         'BuildAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074339_build_admins_table.php',
         'BuildCustomersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074304_build_customers_table.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
