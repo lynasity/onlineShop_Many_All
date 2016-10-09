@@ -15,20 +15,18 @@ class Cate extends Migration
     {
          if(!Schema::hasTable('cates')){
           Schema::create('cates', function (Blueprint $table) {
-            $table->increments('id');
-           
-            
+            $table->increments('id');      
             $table->timestamps();
             $table->index('id');
           });
         }else{
             Schema::table('cates', function ($table){
-                 // 父品类id
-             $table->integer('pid')->default(0)->change();
-            // 当层级一样适合的排列优先顺序
-             $table->integer('cateorder')->default(0)->change();
+               $table->integer('parent_id')->nullable()->index();
+               $table->integer('lft')->nullable()->index();
+               $table->integer('rgt')->nullable()->index();
+               $table->integer('depth')->nullable();
            });
-       }
+        }
      }
 
     /**

@@ -75,6 +75,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
             'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
         ),
+        'O' => 
+        array (
+            'Overtrue\\Pinyin\\' => 16,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -101,6 +105,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'F' => 
         array (
             'Faker\\' => 6,
+        ),
+        'E' => 
+        array (
+            'EstGroupe\\Taggable\\' => 19,
         ),
         'D' => 
         array (
@@ -249,6 +257,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Overtrue\\Pinyin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/overtrue/pinyin/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -296,6 +308,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'EstGroupe\\Taggable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src',
         ),
         'Dotenv\\' => 
         array (
@@ -394,6 +410,13 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
                 0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src',
             ),
         ),
+        'B' => 
+        array (
+            'Baum' => 
+            array (
+                0 => __DIR__ . '/..' . '/baum/baum/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -446,6 +469,21 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'App\\express' => __DIR__ . '/../..' . '/app/express.php',
         'App\\orderForm' => __DIR__ . '/../..' . '/app/orderForm.php',
         'App\\product' => __DIR__ . '/../..' . '/app/product.php',
+        'Baum\\Console\\BaumCommand' => __DIR__ . '/..' . '/baum/baum/src/Baum/Console/BaumCommand.php',
+        'Baum\\Console\\InstallCommand' => __DIR__ . '/..' . '/baum/baum/src/Baum/Console/InstallCommand.php',
+        'Baum\\Extensions\\Eloquent\\Collection' => __DIR__ . '/..' . '/baum/baum/src/Baum/Extensions/Eloquent/Collection.php',
+        'Baum\\Extensions\\Eloquent\\Model' => __DIR__ . '/..' . '/baum/baum/src/Baum/Extensions/Eloquent/Model.php',
+        'Baum\\Extensions\\Query\\Builder' => __DIR__ . '/..' . '/baum/baum/src/Baum/Extensions/Query/Builder.php',
+        'Baum\\Generators\\Generator' => __DIR__ . '/..' . '/baum/baum/src/Baum/Generators/Generator.php',
+        'Baum\\Generators\\MigrationGenerator' => __DIR__ . '/..' . '/baum/baum/src/Baum/Generators/MigrationGenerator.php',
+        'Baum\\Generators\\ModelGenerator' => __DIR__ . '/..' . '/baum/baum/src/Baum/Generators/ModelGenerator.php',
+        'Baum\\Move' => __DIR__ . '/..' . '/baum/baum/src/Baum/Move.php',
+        'Baum\\MoveNotPossibleException' => __DIR__ . '/..' . '/baum/baum/src/Baum/MoveNotPossibleException.php',
+        'Baum\\Node' => __DIR__ . '/..' . '/baum/baum/src/Baum/Node.php',
+        'Baum\\Providers\\BaumServiceProvider' => __DIR__ . '/..' . '/baum/baum/src/Baum/Providers/BaumServiceProvider.php',
+        'Baum\\SetBuilder' => __DIR__ . '/..' . '/baum/baum/src/Baum/SetBuilder.php',
+        'Baum\\SetMapper' => __DIR__ . '/..' . '/baum/baum/src/Baum/SetMapper.php',
+        'Baum\\SetValidator' => __DIR__ . '/..' . '/baum/baum/src/Baum/SetValidator.php',
         'BuildAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074339_build_admins_table.php',
         'BuildCustomersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074304_build_customers_table.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -850,6 +888,16 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Dotenv\\Exception\\ValidationException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
         'Dotenv\\Loader' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Loader.php',
         'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
+        'EstGroupe\\Taggable\\Contracts\\TaggableContract' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Contracts/TaggableContract.php',
+        'EstGroupe\\Taggable\\Contracts\\TaggingUtility' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Contracts/TaggingUtility.php',
+        'EstGroupe\\Taggable\\Events\\TagAdded' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Events/TagAdded.php',
+        'EstGroupe\\Taggable\\Events\\TagRemoved' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Events/TagRemoved.php',
+        'EstGroupe\\Taggable\\Model\\Tag' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Model/Tag.php',
+        'EstGroupe\\Taggable\\Model\\Tagged' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Model/Tagged.php',
+        'EstGroupe\\Taggable\\Providers\\LumenTaggingServiceProvider' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Providers/LumenTaggingServiceProvider.php',
+        'EstGroupe\\Taggable\\Providers\\TaggingServiceProvider' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Providers/TaggingServiceProvider.php',
+        'EstGroupe\\Taggable\\Taggable' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Taggable.php',
+        'EstGroupe\\Taggable\\Util' => __DIR__ . '/..' . '/estgroupe/laravel-taggable/src/Util.php',
         'Expresses' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_032722_expresses.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Luhn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Luhn.php',
@@ -2369,6 +2417,9 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
         'OrderForm' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_030430_orderForm.php',
+        'Overtrue\\Pinyin\\DictLoaderInterface' => __DIR__ . '/..' . '/overtrue/pinyin/src/DictLoaderInterface.php',
+        'Overtrue\\Pinyin\\FileDictLoader' => __DIR__ . '/..' . '/overtrue/pinyin/src/FileDictLoader.php',
+        'Overtrue\\Pinyin\\Pinyin' => __DIR__ . '/..' . '/overtrue/pinyin/src/Pinyin.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',

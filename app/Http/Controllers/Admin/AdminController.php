@@ -10,13 +10,15 @@ use App\customer;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\salePromotion;
 use Illuminate\Support\Facades\Auth;
+use App\cate;
 class AdminController extends Controller
 {
      public function __construct()
     {
-       // $this->middleware('auth.admin:admin');
+       $this->middleware('auth.admin:admin');
     }
     public function index(){
-    	return view('admin.home');
+    	dd(cate::create(['name' => 'Root category']));
+    	// return view('admin.home');
     }
 }
