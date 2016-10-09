@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3bd06ec7392c506f51df6882ad146551",
-    "content-hash": "f0e8427dffb857ecd4fa593923cc437d",
+    "hash": "c475116b73f4f54432e72bbd6d422254",
+    "content-hash": "9674cd080170f75d5bd46040e526058c",
     "packages": [
         {
             "name": "baum/baum",
@@ -617,6 +617,63 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "estgroupe/laravel-taggable",
+            "version": "5.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/summerblue/laravel-taggable.git",
+                "reference": "16d9cc807e0555ff82064a4fadd7c6c096708385"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/summerblue/laravel-taggable/16d9cc807e0555ff82064a4fadd7c6c096708385.zip",
+                "reference": "16d9cc807e0555ff82064a4fadd7c6c096708385",
+                "shasum": ""
+            },
+            "require": {
+                "baum/baum": "~1.1",
+                "illuminate/database": ">= 5.0",
+                "illuminate/support": ">= 5.0",
+                "overtrue/pinyin": "~3.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "~4.0",
+                "vlucas/phpdotenv": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EstGroupe\\Taggable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Charlie Jade",
+                    "email": "cj@estgroupe.com"
+                }
+            ],
+            "description": "Taggable Trait for using tag inside Laravel Eloquent models, with Baum's Nested Set pattern support.",
+            "homepage": "https://github.com/summerblue/laravel-taggable",
+            "keywords": [
+                "Taggable",
+                "eloquent",
+                "laravel",
+                "laravel5",
+                "tag",
+                "tagged",
+                "tagging",
+                "tags"
+            ],
+            "time": "2016-05-13 03:43:24"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1633,6 +1690,51 @@
                 "php"
             ],
             "time": "2016-09-16 12:04:44"
+        },
+        {
+            "name": "overtrue/pinyin",
+            "version": "3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/pinyin.git",
+                "reference": "7af85b01b16f558ef58c3e9863f0fd44e4c064d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/overtrue/pinyin/7af85b01b16f558ef58c3e9863f0fd44e4c064d9.zip",
+                "reference": "7af85b01b16f558ef58c3e9863f0fd44e4c064d9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\Pinyin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos",
+                    "homepage": "http://github.com/overtrue"
+                }
+            ],
+            "description": "Chinese to pinyin translator.",
+            "homepage": "https://github.com/overtrue/pinyin",
+            "keywords": [
+                "Chinese",
+                "Pinyin",
+                "cn2pinyin"
+            ],
+            "time": "2016-08-17 12:05:07"
         },
         {
             "name": "paragonie/random_compat",
