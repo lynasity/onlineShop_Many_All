@@ -2587,70 +2587,6 @@
         ]
     },
     {
-        "name": "guzzlehttp/guzzle",
-        "version": "6.2.1",
-        "version_normalized": "6.2.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/guzzle/guzzle.git",
-            "reference": "3f808fba627f2c5b69e2501217bf31af349c1427"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/guzzle/guzzle/3f808fba627f2c5b69e2501217bf31af349c1427.zip",
-            "reference": "3f808fba627f2c5b69e2501217bf31af349c1427",
-            "shasum": ""
-        },
-        "require": {
-            "guzzlehttp/promises": "^1.0",
-            "guzzlehttp/psr7": "^1.3.1",
-            "php": ">=5.5"
-        },
-        "require-dev": {
-            "ext-curl": "*",
-            "phpunit/phpunit": "^4.0",
-            "psr/log": "^1.0"
-        },
-        "time": "2016-07-15 17:22:37",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "6.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/functions_include.php"
-            ],
-            "psr-4": {
-                "GuzzleHttp\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Michael Dowling",
-                "email": "mtdowling@gmail.com",
-                "homepage": "https://github.com/mtdowling"
-            }
-        ],
-        "description": "Guzzle is a PHP HTTP client library",
-        "homepage": "http://guzzlephp.org/",
-        "keywords": [
-            "client",
-            "curl",
-            "framework",
-            "http",
-            "http client",
-            "rest",
-            "web service"
-        ]
-    },
-    {
         "name": "league/oauth1-client",
         "version": "1.7.0",
         "version_normalized": "1.7.0.0",
@@ -2883,7 +2819,7 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.0-dev"
+                "dev-master": "3.1-dev"
             }
         },
         "installation-source": "dist",
@@ -2894,8 +2830,8 @@
             "psr-4": {
                 "Symfony\\Component\\VarDumper\\": ""
             },
-            "files": [
-                "src/functions_include.php"
+            "exclude-from-classmap": [
+                "/Tests/"
             ]
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -2935,9 +2871,8 @@
             "shasum": ""
         },
         "require": {
-            "guzzlehttp/promises": "^1.0",
-            "guzzlehttp/psr7": "^1.3.1",
-            "php": ">=5.5"
+            "php": ">=5.5.9",
+            "symfony/polyfill-mbstring": "~1.0"
         },
         "conflict": {
             "symfony/config": "<2.8"
@@ -2957,14 +2892,11 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "6.2-dev"
+                "dev-master": "3.1-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
-            "files": [
-                "src/functions_include.php"
-            ],
             "psr-4": {
                 "Symfony\\Component\\Translation\\": ""
             },
@@ -2978,9 +2910,12 @@
         ],
         "authors": [
             {
-                "name": "Michael Dowling",
-                "email": "mtdowling@gmail.com",
-                "homepage": "https://github.com/mtdowling"
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
             }
         ],
         "description": "Symfony Translation Component",
@@ -3079,18 +3014,13 @@
             "shasum": ""
         },
         "require": {
-            "illuminate/contracts": "5.3.*",
-            "illuminate/support": "5.3.*",
-            "nesbot/carbon": "~1.20",
-            "php": ">=5.6.4",
-            "symfony/finder": "3.1.*",
-            "symfony/http-foundation": "3.1.*"
+            "php": ">=5.5.9"
         },
         "time": "2016-09-29 14:13:09",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.3-dev"
+                "dev-master": "3.1-dev"
             }
         },
         "installation-source": "dist",
@@ -3108,8 +3038,12 @@
         ],
         "authors": [
             {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
             }
         ],
         "description": "Symfony Process Component",
@@ -3273,44 +3207,6 @@
             "exclude-from-classmap": [
                 "/Tests/"
             ]
-=======
-                "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
-            }
-        ],
-        "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
-        "keywords": [
-            "laravel",
-            "oauth"
-        ]
-    },
-    {
-        "name": "socialiteproviders/manager",
-        "version": "v2.1.8",
-        "version_normalized": "2.1.8.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/SocialiteProviders/Manager.git",
-            "reference": "a8c01c35e40e1ffe5d12ad8da128b792b2b30a30"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Manager/a8c01c35e40e1ffe5d12ad8da128b792b2b30a30.zip",
-            "reference": "a8c01c35e40e1ffe5d12ad8da128b792b2b30a30",
-            "shasum": ""
-        },
-        "require": {
-            "laravel/socialite": "~2.0",
-            "php": "^5.6 || ^7.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "^0.9.4",
-            "phpunit/phpunit": "^5.0"
-        },
-        "time": "2016-08-04 18:16:57",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
@@ -3382,6 +3278,11 @@
         },
         "time": "2016-10-03 19:01:06",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
@@ -3435,9 +3336,6 @@
         },
         "installation-source": "dist",
         "autoload": {
-            "files": [
-                "Resources/functions/dump.php"
-            ],
             "psr-4": {
                 "Symfony\\Component\\Finder\\": ""
             },
@@ -3451,8 +3349,8 @@
         ],
         "authors": [
             {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com"
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
             },
             {
                 "name": "Symfony Community",
@@ -3659,67 +3557,6 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "phpunit/phpunit-mock-objects",
-        "version": "3.3.1",
-        "version_normalized": "3.3.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-            "reference": "03500345483e1e17b52e2e4d34a89c9408ab2902"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/sebastianbergmann/phpunit-mock-objects/03500345483e1e17b52e2e4d34a89c9408ab2902.zip",
-            "reference": "03500345483e1e17b52e2e4d34a89c9408ab2902",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/instantiator": "^1.0.2",
-            "php": "^5.6 || ^7.0",
-            "phpunit/php-text-template": "^1.2",
-            "sebastian/exporter": "^1.2"
-        },
-        "conflict": {
-            "phpunit/phpunit": "<5.4.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^5.4"
-        },
-        "suggest": {
-            "ext-soap": "*"
-        },
-        "time": "2016-10-04 11:03:26",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.2.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "role": "lead"
-            }
-        ],
-        "description": "Mock Object library for PHPUnit",
-        "homepage": "https://github.com/sebastianbergmann/phpunit-mock-objects/",
-        "keywords": [
-            "mock",
-            "xunit"
-        ]
-    },
-    {
         "name": "phpdocumentor/reflection-docblock",
         "version": "3.1.1",
         "version_normalized": "3.1.1.0",
@@ -3864,7 +3701,7 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD-3-Clause"
+            "MIT"
         ],
         "authors": [
             {
@@ -4463,378 +4300,6 @@
         ]
     },
     {
-        "name": "illuminate/contracts",
-        "version": "v5.3.16",
-        "version_normalized": "5.3.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/contracts.git",
-            "reference": "ce5d73c6015b2054d32f3f8530767847b358ae4e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/contracts/ce5d73c6015b2054d32f3f8530767847b358ae4e.zip",
-            "reference": "ce5d73c6015b2054d32f3f8530767847b358ae4e",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.6.4"
-        },
-        "time": "2016-09-26 20:36:27",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Contracts\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
-            }
-        ],
-        "description": "The Illuminate Contracts package.",
-        "homepage": "https://laravel.com"
-    },
-    {
-        "name": "illuminate/support",
-        "version": "v5.3.16",
-        "version_normalized": "5.3.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/support.git",
-            "reference": "aa685c61c88a69b2e0e86310e65ef5ad2ebf2448"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/support/aa685c61c88a69b2e0e86310e65ef5ad2ebf2448.zip",
-            "reference": "aa685c61c88a69b2e0e86310e65ef5ad2ebf2448",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/inflector": "~1.0",
-            "ext-mbstring": "*",
-            "illuminate/contracts": "5.3.*",
-            "paragonie/random_compat": "~1.4|~2.0",
-            "php": ">=5.6.4"
-        },
-        "replace": {
-            "tightenco/collect": "self.version"
-        },
-        "suggest": {
-            "illuminate/filesystem": "Required to use the composer class (5.2.*).",
-            "symfony/process": "Required to use the composer class (3.1.*).",
-            "symfony/var-dumper": "Required to use the dd function (3.1.*)."
-        },
-        "time": "2016-10-02 01:14:47",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Support\\": ""
-            },
-            "files": [
-                "helpers.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
-            }
-        ],
-        "description": "The Illuminate Support package.",
-        "homepage": "https://laravel.com"
-    },
-    {
-        "name": "illuminate/filesystem",
-        "version": "v5.3.16",
-        "version_normalized": "5.3.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/filesystem.git",
-            "reference": "4e51db2fd32c9dc66d759180889d820df38f7ee0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/filesystem/4e51db2fd32c9dc66d759180889d820df38f7ee0.zip",
-            "reference": "4e51db2fd32c9dc66d759180889d820df38f7ee0",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/contracts": "5.3.*",
-            "illuminate/support": "5.3.*",
-            "php": ">=5.6.4",
-            "symfony/finder": "3.1.*"
-        },
-        "suggest": {
-            "league/flysystem": "Required to use the Flysystem local and FTP drivers (~1.0).",
-            "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
-            "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0)."
-        },
-        "time": "2016-09-07 02:03:25",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Filesystem\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com"
-            },
-            {
-                "name": "Johannes Schmitt",
-                "email": "schmittjoh@gmail.com"
-            }
-        ],
-        "description": "The Illuminate Filesystem package.",
-        "homepage": "https://laravel.com"
-    },
-    {
-        "name": "illuminate/config",
-        "version": "v5.3.16",
-        "version_normalized": "5.3.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/config.git",
-            "reference": "26df89fa2999754e882890e642b67c6521432057"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/config/26df89fa2999754e882890e642b67c6521432057.zip",
-            "reference": "26df89fa2999754e882890e642b67c6521432057",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/contracts": "5.3.*",
-            "illuminate/filesystem": "5.3.*",
-            "illuminate/support": "5.3.*",
-            "php": ">=5.6.4"
-        },
-        "time": "2016-08-05 14:48:10",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Config\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
-                "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de"
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com"
-            },
-            {
-                "name": "Jonathan Wage",
-                "email": "jonwage@gmail.com"
-            },
-            {
-                "name": "Johannes Schmitt",
-                "email": "schmittjoh@gmail.com"
-            }
-        ],
-        "description": "The Illuminate Config package.",
-        "homepage": "https://laravel.com"
-    },
-    {
-        "name": "illuminate/hashing",
-        "version": "v5.3.16",
-        "version_normalized": "5.3.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/hashing.git",
-            "reference": "65afb491fe4de8617b0896edbcf35fd863c42c9d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/hashing/65afb491fe4de8617b0896edbcf35fd863c42c9d.zip",
-            "reference": "65afb491fe4de8617b0896edbcf35fd863c42c9d",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/contracts": "5.3.*",
-            "illuminate/support": "5.3.*",
-            "php": ">=5.6.4"
-        },
-        "time": "2016-08-05 14:48:10",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Hashing\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
-            }
-        ],
-        "description": "The Illuminate Hashing package.",
-        "homepage": "https://laravel.com"
-    },
-    {
-        "name": "illuminate/session",
-        "version": "v5.3.16",
-        "version_normalized": "5.3.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/session.git",
-            "reference": "bd3272b0cb2f7e674a173ffe72c0596ebf8daad2"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/session/bd3272b0cb2f7e674a173ffe72c0596ebf8daad2.zip",
-            "reference": "bd3272b0cb2f7e674a173ffe72c0596ebf8daad2",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/contracts": "5.3.*",
-            "illuminate/support": "5.3.*",
-            "nesbot/carbon": "~1.20",
-            "php": ">=5.6.4",
-            "symfony/finder": "3.1.*",
-            "symfony/http-foundation": "3.1.*"
-        },
-        "suggest": {
-            "illuminate/console": "Required to use the session:table command (5.3.*)."
-        },
-        "time": "2016-09-29 12:50:13",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Session\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
-            }
-        ],
-        "description": "The Illuminate Session package.",
-        "homepage": "https://laravel.com"
-    },
-    {
-        "name": "illuminate/http",
-        "version": "v5.3.16",
-        "version_normalized": "5.3.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/http.git",
-            "reference": "e51d9585898bdb51e9674ce9667f6930f9882c9b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/http/e51d9585898bdb51e9674ce9667f6930f9882c9b.zip",
-            "reference": "e51d9585898bdb51e9674ce9667f6930f9882c9b",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/session": "5.3.*",
-            "illuminate/support": "5.3.*",
-            "php": ">=5.6.4",
-            "symfony/http-foundation": "3.1.*",
-            "symfony/http-kernel": "3.1.*"
-        },
-        "time": "2016-09-22 13:54:12",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Http\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
-            }
-        ],
-        "description": "The Illuminate Http package.",
-        "homepage": "https://laravel.com"
-    },
-    {
         "name": "laravel/framework",
         "version": "v5.3.18",
         "version_normalized": "5.3.18.0",
@@ -4850,27 +4315,101 @@
             "shasum": ""
         },
         "require": {
-            "doctrine/common": ">=2.4,<2.7-dev",
-            "php": ">=5.3.2"
+            "classpreloader/classpreloader": "~3.0",
+            "doctrine/inflector": "~1.0",
+            "ext-mbstring": "*",
+            "ext-openssl": "*",
+            "jeremeamia/superclosure": "~2.2",
+            "league/flysystem": "~1.0",
+            "monolog/monolog": "~1.11",
+            "mtdowling/cron-expression": "~1.0",
+            "nesbot/carbon": "~1.20",
+            "paragonie/random_compat": "~1.4|~2.0",
+            "php": ">=5.6.4",
+            "psy/psysh": "0.7.*",
+            "ramsey/uuid": "~3.0",
+            "swiftmailer/swiftmailer": "~5.1",
+            "symfony/console": "3.1.*",
+            "symfony/debug": "3.1.*",
+            "symfony/finder": "3.1.*",
+            "symfony/http-foundation": "3.1.*",
+            "symfony/http-kernel": "3.1.*",
+            "symfony/process": "3.1.*",
+            "symfony/routing": "3.1.*",
+            "symfony/translation": "3.1.*",
+            "symfony/var-dumper": "3.1.*",
+            "vlucas/phpdotenv": "~2.2"
+        },
+        "replace": {
+            "illuminate/auth": "self.version",
+            "illuminate/broadcasting": "self.version",
+            "illuminate/bus": "self.version",
+            "illuminate/cache": "self.version",
+            "illuminate/config": "self.version",
+            "illuminate/console": "self.version",
+            "illuminate/container": "self.version",
+            "illuminate/contracts": "self.version",
+            "illuminate/cookie": "self.version",
+            "illuminate/database": "self.version",
+            "illuminate/encryption": "self.version",
+            "illuminate/events": "self.version",
+            "illuminate/exception": "self.version",
+            "illuminate/filesystem": "self.version",
+            "illuminate/hashing": "self.version",
+            "illuminate/http": "self.version",
+            "illuminate/log": "self.version",
+            "illuminate/mail": "self.version",
+            "illuminate/notifications": "self.version",
+            "illuminate/pagination": "self.version",
+            "illuminate/pipeline": "self.version",
+            "illuminate/queue": "self.version",
+            "illuminate/redis": "self.version",
+            "illuminate/routing": "self.version",
+            "illuminate/session": "self.version",
+            "illuminate/support": "self.version",
+            "illuminate/translation": "self.version",
+            "illuminate/validation": "self.version",
+            "illuminate/view": "self.version",
+            "tightenco/collect": "self.version"
         },
         "require-dev": {
-            "phpunit/phpunit": "4.*",
-            "symfony/console": "2.*||^3.0"
+            "aws/aws-sdk-php": "~3.0",
+            "mockery/mockery": "~0.9.4",
+            "pda/pheanstalk": "~3.0",
+            "phpunit/phpunit": "~5.4",
+            "predis/predis": "~1.0",
+            "symfony/css-selector": "3.1.*",
+            "symfony/dom-crawler": "3.1.*"
         },
         "suggest": {
-            "symfony/console": "For helpful console commands such as SQL execution and import of files."
+            "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
+            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
+            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+            "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~5.3|~6.0).",
+            "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
+            "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
+            "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
+            "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
+            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
+            "symfony/css-selector": "Required to use some of the crawler integration testing tools (3.1.*).",
+            "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (3.1.*).",
+            "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
         },
         "time": "2016-10-08 01:51:20",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.5.x-dev"
+                "dev-master": "5.3-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
-            "psr-0": {
-                "Doctrine\\DBAL\\": "lib/"
+            "files": [
+                "src/Illuminate/Foundation/helpers.php",
+                "src/Illuminate/Support/helpers.php"
+            ],
+            "psr-4": {
+                "Illuminate\\": "src/Illuminate/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -4879,29 +4418,15 @@
         ],
         "authors": [
             {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
-                "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de"
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com"
-            },
-            {
-                "name": "Jonathan Wage",
-                "email": "jonwage@gmail.com"
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
             }
         ],
-        "description": "Database Abstraction Layer",
-        "homepage": "http://www.doctrine-project.org",
+        "description": "The Laravel Framework.",
+        "homepage": "https://laravel.com",
         "keywords": [
-            "database",
-            "dbal",
-            "persistence",
-            "queryobject"
+            "framework",
+            "laravel"
         ]
     },
     {
@@ -5051,6 +4576,131 @@
             "laravel sms",
             "laravel-sms",
             "sms"
+        ]
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "6.2.2",
+        "version_normalized": "6.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/guzzle/guzzle/ebf29dee597f02f09f4d5bbecc68230ea9b08f60.zip",
+            "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.3.1",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "^4.0",
+            "psr/log": "^1.0"
+        },
+        "time": "2016-10-08 15:01:37",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/functions_include.php"
+            ],
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "phpunit/phpunit-mock-objects",
+        "version": "3.4.0",
+        "version_normalized": "3.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
+            "reference": "238d7a2723bce689c79eeac9c7d5e1d623bb9dc2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/sebastianbergmann/phpunit-mock-objects/238d7a2723bce689c79eeac9c7d5e1d623bb9dc2.zip",
+            "reference": "238d7a2723bce689c79eeac9c7d5e1d623bb9dc2",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/instantiator": "^1.0.2",
+            "php": "^5.6 || ^7.0",
+            "phpunit/php-text-template": "^1.2",
+            "sebastian/exporter": "^1.2"
+        },
+        "conflict": {
+            "phpunit/phpunit": "<5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.4"
+        },
+        "suggest": {
+            "ext-soap": "*"
+        },
+        "time": "2016-10-09 07:01:45",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Mock Object library for PHPUnit",
+        "homepage": "https://github.com/sebastianbergmann/phpunit-mock-objects/",
+        "keywords": [
+            "mock",
+            "xunit"
         ]
     }
 ]

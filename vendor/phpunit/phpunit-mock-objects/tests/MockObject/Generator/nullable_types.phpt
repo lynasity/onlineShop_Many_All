@@ -2,13 +2,15 @@
 PHPUnit_Framework_MockObject_Generator::generate('Foo', array(), 'MockFoo', true, true)
 --SKIPIF--
 <?php
-if (!version_compare(PHP_VERSION, '7.0', '>=')) print 'skip: PHP >= 7.0 required';
+if (!version_compare(PHP_VERSION, '7.1', '>=')) print 'skip: PHP >= 7.1 required';
 ?>
 --FILE--
 <?php
-interface Foo
+class Foo
 {
-    public function bar(string $baz): self;
+    public function bar(?int $x)
+    {
+    }
 }
 
 require __DIR__ . '/../../../vendor/autoload.php';
@@ -26,7 +28,7 @@ $mock = $generator->generate(
 print $mock['code'];
 ?>
 --EXPECTF--
-class MockFoo implements PHPUnit_Framework_MockObject_MockObject, Foo
+class MockFoo extends Foo implements PHPUnit_Framework_MockObject_MockObject
 {
     private $__phpunit_invocationMocker;
     private $__phpunit_originalObject;
@@ -37,9 +39,9 @@ class MockFoo implements PHPUnit_Framework_MockObject_MockObject, Foo
         $this->__phpunit_invocationMocker = clone $this->__phpunit_getInvocationMocker();
     }
 
-    public function bar(string $baz): Foo
+    public function bar(?int $x)
     {
-        $arguments = array($baz);
+        $arguments = array($x);
         $count     = func_num_args();
 
         if ($count > 1) {
@@ -52,7 +54,7 @@ class MockFoo implements PHPUnit_Framework_MockObject_MockObject, Foo
 
         $result = $this->__phpunit_getInvocationMocker()->invoke(
             new PHPUnit_Framework_MockObject_Invocation_Object(
-                'Foo', 'bar', $arguments, 'Foo', $this, true
+                'Foo', 'bar', $arguments, '', $this, true
             )
         );
 
