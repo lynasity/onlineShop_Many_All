@@ -15,8 +15,8 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '5e8fe2a5ffaded85af682684fe3bbf5a' => __DIR__ . '/..' . '/mews/captcha/src/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -35,6 +35,12 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+        ),
+        'T' => 
+        array (
+            'Toplan\\TaskBalance\\' => 19,
+            'Toplan\\PhpSms\\Facades\\' => 22,
+            'Toplan\\PhpSms\\' => 14,
         ),
         'S' => 
         array (
@@ -137,6 +143,19 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Toplan\\TaskBalance\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/toplan/task-balancer/src/TaskBalancer',
+        ),
+        'Toplan\\PhpSms\\Facades\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/facades',
+        ),
+        'Toplan\\PhpSms\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms',
+            1 => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -349,6 +368,13 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
     );
 
     public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Toplan\\Sms' => 
+            array (
+                0 => __DIR__ . '/..' . '/toplan/laravel-sms/src',
+            ),
+        ),
         'P' => 
         array (
             'Prophecy\\' => 
@@ -435,6 +461,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'App\\Http\\Middleware\\checkStateMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/checkStateMiddleware.php',
         'App\\Http\\Middleware\\customerAuthMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/customerAuthMiddleware.php',
         'App\\Http\\Middleware\\geetestMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/geetestMiddleware.php',
+        'App\\Http\\Requests\\addProductRuequest' => __DIR__ . '/../..' . '/app/Http/Requests/addProductRuequest.php',
         'App\\Http\\Requests\\loginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/loginRequest.php',
         'App\\Http\\Requests\\productValidator' => __DIR__ . '/../..' . '/app/Http/Requests/productValidator.php',
         'App\\Http\\Requests\\registerRequest' => __DIR__ . '/../..' . '/app/Http/Requests/registerRequest.php',
@@ -3153,6 +3180,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Psy\\VarDumper\\Dumper' => __DIR__ . '/..' . '/psy/psysh/src/Psy/VarDumper/Dumper.php',
         'Psy\\VarDumper\\Presenter' => __DIR__ . '/..' . '/psy/psysh/src/Psy/VarDumper/Presenter.php',
         'Psy\\VarDumper\\PresenterAware' => __DIR__ . '/..' . '/psy/psysh/src/Psy/VarDumper/PresenterAware.php',
+        'REST' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/lib/CCPRestSmsSDK.php',
         'Ramsey\\Uuid\\BinaryUtils' => __DIR__ . '/..' . '/ramsey/uuid/src/BinaryUtils.php',
         'Ramsey\\Uuid\\Builder\\DefaultUuidBuilder' => __DIR__ . '/..' . '/ramsey/uuid/src/Builder/DefaultUuidBuilder.php',
         'Ramsey\\Uuid\\Builder\\DegradedUuidBuilder' => __DIR__ . '/..' . '/ramsey/uuid/src/Builder/DegradedUuidBuilder.php',
@@ -3827,6 +3855,36 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Symfony\\Polyfill\\Util\\TestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListener.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'Toplan\\PhpSms\\Agent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/Agent.php',
+        'Toplan\\PhpSms\\AlidayuAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/AlidayuAgent.php',
+        'Toplan\\PhpSms\\Facades\\Sms' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/facades/Sms.php',
+        'Toplan\\PhpSms\\JuHeAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/JuHeAgent.php',
+        'Toplan\\PhpSms\\LogAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/LogAgent.php',
+        'Toplan\\PhpSms\\LuosimaoAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/LuosimaoAgent.php',
+        'Toplan\\PhpSms\\ParasiticAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/ParasiticAgent.php',
+        'Toplan\\PhpSms\\PhpSmsException' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/PhpSmsException.php',
+        'Toplan\\PhpSms\\PhpSmsServiceProvider' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/PhpSmsServiceProvider.php',
+        'Toplan\\PhpSms\\SendCloudAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/SendCloudAgent.php',
+        'Toplan\\PhpSms\\Sms' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/Sms.php',
+        'Toplan\\PhpSms\\SubMailAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/SubMailAgent.php',
+        'Toplan\\PhpSms\\UcpaasAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/UcpaasAgent.php',
+        'Toplan\\PhpSms\\Util' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/Util.php',
+        'Toplan\\PhpSms\\YunPianAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/YunPianAgent.php',
+        'Toplan\\PhpSms\\YunTongXunAgent' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents/YunTongXunAgent.php',
+        'Toplan\\Sms\\CacheStorage' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/Storage/CacheStorage.php',
+        'Toplan\\Sms\\Facades\\SmsManager' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/Facades/SmsManager.php',
+        'Toplan\\Sms\\LaravelSmsException' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/Exception/LaravelSmsException.php',
+        'Toplan\\Sms\\SendReminderSms' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/SendReminderSms.php',
+        'Toplan\\Sms\\SessionStorage' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/Storage/SessionStorage.php',
+        'Toplan\\Sms\\SmsController' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/SmsController.php',
+        'Toplan\\Sms\\SmsManager' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/SmsManager.php',
+        'Toplan\\Sms\\SmsManagerServiceProvider' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/SmsManagerServiceProvider.php',
+        'Toplan\\Sms\\Storage' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/Storage/Storage.php',
+        'Toplan\\TaskBalance\\Balancer' => __DIR__ . '/..' . '/toplan/task-balancer/src/TaskBalancer/Balancer.php',
+        'Toplan\\TaskBalance\\Driver' => __DIR__ . '/..' . '/toplan/task-balancer/src/TaskBalancer/Driver.php',
+        'Toplan\\TaskBalance\\Task' => __DIR__ . '/..' . '/toplan/task-balancer/src/TaskBalancer/Task.php',
+        'Toplan\\TaskBalance\\TaskBalancerException' => __DIR__ . '/..' . '/toplan/task-balancer/src/TaskBalancer/TaskBalancerException.php',
+        'Ucpaas' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/lib/Ucpaas.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
         'app\\libraries\\weibo\\OAuthException' => __DIR__ . '/../..' . '/app/libraries/weibo/SaeTOAuthV2.php',

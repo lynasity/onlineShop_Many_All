@@ -15,4 +15,9 @@ class product extends Model
     //  protected $hidden = [
       
     // ];
+    // 定义关联关系
+    public function cate(){
+    	//order:foreignKey,localKey
+       return $this->hasOne('App\cate', 'id', 'cateId');
+    }
 }
