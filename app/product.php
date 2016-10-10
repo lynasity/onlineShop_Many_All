@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+// use App\product;
 class product extends Model
 {
 	// 管理员要修改产品信息所需要的最低权限,后期可根据不同的修改
@@ -15,9 +15,8 @@ class product extends Model
     //  protected $hidden = [
       
     // ];
-    // 定义关联关系
-    public function cate(){
-    	//order:foreignKey,localKey
-       return $this->hasOne('App\cate', 'id', 'cateId');
+    // 一个产品对应一个品类
+    public function cates(){
+      return $this->belongsTo('App\cate','cateId');
     }
 }

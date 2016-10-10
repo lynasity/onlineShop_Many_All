@@ -34,7 +34,8 @@ class productController extends Controller
      */
     public function create()
     {
-         $cates=cate::all();
+         // 输出除根节点外的cate实例
+         $this->cates=cate::where('lft','>',1)->get();
          return view('product.productForm',['cates'=>$cates]);
     }
 
