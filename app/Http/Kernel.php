@@ -54,7 +54,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'checkState'=>\App\Http\Middleware\checkStateMiddleware::class,
         'geetest'=>\App\Http\Middleware\geetestMiddleware::class,
-        // 'auth.customer'=>\App\Http\Middleware\customerAuthMiddleware::class,
-        // 'auth.admin'=>\App\Http\Middleware\adminAuthMiddleware::class,
+        'auth.customer'=>\App\Http\Middleware\customerAuthMiddleware::class,
+        'auth.admin'=>\App\Http\Middleware\adminAuthMiddleware::class,
     ];
 }

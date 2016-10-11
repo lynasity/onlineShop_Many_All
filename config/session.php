@@ -28,10 +28,10 @@ return [
     | to immediately expire on the browser closing, set that option.
     |
     */
-
+//一般的登录后两小时内不用重新登录，如果要免登录久点就勾选remember me
     'lifetime' => 120,
 
-    'expire_on_close' => true,
+    'expire_on_close' => false,
 
     /*
     |--------------------------------------------------------------------------

@@ -8,7 +8,13 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
         "mews/captcha": "^2.1",
-        "laravist/geecaptcha": "^1.1"
+        "laravist/geecaptcha": "^1.1",
+        "socialiteproviders/weibo": "^2.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "doctrine/dbal": "^2.5",
+        "toplan/laravel-sms": "2.5.*",
+        "baum/baum": "~1.1",
+        "estgroupe/laravel-taggable": "5.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

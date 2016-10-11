@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'My Application',
+    'name' => 'Many&All',
 
     /*
     |--------------------------------------------------------------------------
@@ -178,6 +178,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        // Laravel\Socialite\SocialiteServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class,
+        Toplan\PhpSms\PhpSmsServiceProvider::class,
+        Toplan\Sms\SmsManagerServiceProvider::class,
+        'Baum\Providers\BaumServiceProvider',
+         \EstGroupe\Taggable\Providers\TaggingServiceProvider::class,
     ],
 
     /*
@@ -225,6 +231,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
          'Captcha' => Mews\Captcha\Facades\Captcha::class,
+         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+         'PhpSms' => Toplan\PhpSms\Facades\Sms::class,
+         'SmsManager' => Toplan\Sms\Facades\SmsManager::class,
     ],
 
 ];

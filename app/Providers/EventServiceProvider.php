@@ -13,16 +13,16 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
-        ],
-    //      'Illuminate\Auth\Events\Attempting' => [
-    //     'App\Listeners\LogAuthenticationAttempt',
-    // ],
+    //     'App\Events\SomeEvent' => [
+    //         'App\Listeners\EventListener',
+    //     ],
+    // //      'Illuminate\Auth\Events\Attempting' => [
+    // //     'App\Listeners\LogAuthenticationAttempt',
+    // // ],
 
-    // 'Illuminate\Auth\Events\Authenticated' => [
-    //     'App\Listeners\LogAuthenticated',
-    // ],
+    // // 'Illuminate\Auth\Events\Authenticated' => [
+    // //     'App\Listeners\LogAuthenticated',
+    // // ],
 
     // 'Illuminate\Auth\Events\Login' => [
     //     'App\Listeners\LogSuccessfulLogin',
@@ -35,6 +35,9 @@ class EventServiceProvider extends ServiceProvider
     // 'Illuminate\Auth\Events\Lockout' => [
     //     'App\Listeners\LogLockout',
     // ],
+    'SocialiteProviders\Manager\SocialiteWasCalled' => [
+        'SocialiteProviders\Weibo\WeiboExtendSocialite@handle',
+    ],
     ];
 
     /**

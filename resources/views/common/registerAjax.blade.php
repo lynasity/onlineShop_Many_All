@@ -54,7 +54,7 @@
                  headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                  },
-                url:"http://www.test.manyhong.cn:8081/laravel-shop/public/customer/register", // 进行二次验证
+                url:"{{url('customer/register')}}", // 进行二次验证
                 type: "post",
                 dataType: "json",
                 data: {
