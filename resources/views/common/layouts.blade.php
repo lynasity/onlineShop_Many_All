@@ -6,9 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     @section('meta')
     @show
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{asset('./customer/css/reset.css')}}"/>
     {{-- <link rel="stylesheet" href="{{asset('./customer/css/main.css')}}"/> --}}
     <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}"/>
+=======
+    {{-- <link rel="stylesheet" href="{{asset('./customer/css/reset.css')}}"/> --}}
+    {{-- <link rel="stylesheet" href="{{asset('./customer/css/main.css')}}"/> --}}
+    {{-- <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}"/> --}}
+>>>>>>> 5ede1ddede6f7765407614042b13bbe80558b315
     <title>@yield('title','index')</title>
     @section('style')
     @show
@@ -20,7 +26,11 @@
       <ul>
         <li><span class="copyright">Copyright &copy; 2016-2016 </span><span class="powerd">Powerd By <a href="#">Larvel,</a>Host on <a href="#"><span class="fa fa-github"></span> Github</a></span></li>
         <li>
+<<<<<<< HEAD
           {{-- <div class="author">Authors:<a href="" title="BackEnd">Many Hong </a>& <a href="" title="FrontEnd">Quill</a></div> --}}
+=======
+          <div class="author">Authors:<a href="" title="BackEnd">Many Hong </a>& <a href="" title="FrontEnd">Q</a></div>
+>>>>>>> 5ede1ddede6f7765407614042b13bbe80558b315
         </li>
       </ul>
     </footer>

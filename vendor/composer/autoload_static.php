@@ -433,6 +433,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'App\\Http\\Controllers\\Admin\\orderFormController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/orderFormController.php',
         'App\\Http\\Controllers\\Admin\\productController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/productController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\Customer\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Customer\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/Auth/LoginController.php',
         'App\\Http\\Controllers\\Customer\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/Auth/RegisterController.php',
@@ -441,6 +442,13 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'App\\Http\\Controllers\\Customer\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/CustomerController.php',
         'App\\Http\\Controllers\\Customer\\infoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/infoController.php',
         'App\\Http\\Controllers\\Customer\\shopController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/shopController.php',
+=======
+        'App\\Http\\Controllers\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerController.php',
+        'App\\Http\\Controllers\\Customer\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/ForgotPasswordController.php',
+        'App\\Http\\Controllers\\Customer\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/LoginController.php',
+        'App\\Http\\Controllers\\Customer\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/RegisterController.php',
+        'App\\Http\\Controllers\\Customer\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/ResetPasswordController.php',
+>>>>>>> 5ede1ddede6f7765407614042b13bbe80558b315
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',

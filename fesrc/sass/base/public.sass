@@ -1,0 +1,37 @@
+.wrap
+    width: 1200px
+    @include center
+    position: relative
+    height: 100%
+a
+    text-decoration: none
+    color: inherit
+    cursor: pointer
+
+*,
+*:before,
+*:after
+    box-sizing: border-box
+ul
+    margin: 0
+    padding: 0
+li
+    list-style: none
+
+body
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif
+
+.fl
+    float: left
+.fr
+    float: right
+.hidden
+    display: none
+
+.clearfix:after
+   content: ""
+   // Older browser do not support empty content
+   visibility: hidden
+   display: block
+   height: 0
+   clear: both

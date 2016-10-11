@@ -19,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\Admin\\orderFormController' => $baseDir . '/app/Http/Controllers/Admin/orderFormController.php',
     'App\\Http\\Controllers\\Admin\\productController' => $baseDir . '/app/Http/Controllers/Admin/productController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\Customer\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Customer/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Customer\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Customer/Auth/LoginController.php',
     'App\\Http\\Controllers\\Customer\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Customer/Auth/RegisterController.php',
@@ -27,6 +28,13 @@ return array(
     'App\\Http\\Controllers\\Customer\\CustomerController' => $baseDir . '/app/Http/Controllers/Customer/CustomerController.php',
     'App\\Http\\Controllers\\Customer\\infoController' => $baseDir . '/app/Http/Controllers/Customer/infoController.php',
     'App\\Http\\Controllers\\Customer\\shopController' => $baseDir . '/app/Http/Controllers/Customer/shopController.php',
+=======
+    'App\\Http\\Controllers\\CustomerController' => $baseDir . '/app/Http/Controllers/CustomerController.php',
+    'App\\Http\\Controllers\\Customer\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Customer/ForgotPasswordController.php',
+    'App\\Http\\Controllers\\Customer\\LoginController' => $baseDir . '/app/Http/Controllers/Customer/LoginController.php',
+    'App\\Http\\Controllers\\Customer\\RegisterController' => $baseDir . '/app/Http/Controllers/Customer/RegisterController.php',
+    'App\\Http\\Controllers\\Customer\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Customer/ResetPasswordController.php',
+>>>>>>> 5ede1ddede6f7765407614042b13bbe80558b315
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
