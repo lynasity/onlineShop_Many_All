@@ -18,7 +18,6 @@ class AdminController extends Controller
        $this->middleware('auth.admin:admin');
     }
     public function index(){
-    	dd(cate::create(['name' => 'Root category']));
-    	// return view('admin.home');
+    	return view('admin.home');
     }
 }

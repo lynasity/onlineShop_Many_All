@@ -15,6 +15,10 @@ class cateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     // 因为品类是相对稳定的数据，所以这里考虑进行缓存
+     private $cates;
+     // 根节点
+     private static $root;
      public function __construct()
     {
         //如果控制器里的所有方法都需要登录才能执行，需要添加中间件
@@ -23,8 +27,9 @@ class cateController extends Controller
     }
     public function index()
     {
-        $cates=cate::all();
-        return view('cate.cateList',['cates'=>$cates]);
+        // 输出除根节点外的cate实例
+        $this->cates=cate::where('lft','>',1)->get();
+        return view('cate.cateList',['cates'=>$this->cates]);
     }
 
     /**
@@ -35,7 +40,10 @@ class cateController extends Controller
     public function create()
     {
         if(Auth::user()->can('create',cate::class)){
-           return view('cate.cateForm');
+              $root=cate::root();
+            $this->cates=$root->descendantsAndSelf()->get();
+             // $this->cates=cate::where('lft','>',1)->get();
+           return view('cate.cateForm',['cates'=>$this->cates]);
        }else{
            return redirect()->route('cateCenter');
        } 
@@ -49,9 +57,18 @@ class cateController extends Controller
      */
     public function store(Request $request)
     {
-        $cate=new cate();
-        $cate->cName=$request->input('cName');
-        $cate->save();
+      if($request->input('isNew')==1){
+          //注意:where->get返回的是结果集,不可以直接调用children方法
+            // $root=cate::where('cName','root')->first();
+            $root=cate::root();
+            $root->children()->create(['cName' =>$request->input('cName')]);
+        }else{
+            // 如果有选择父类
+            if($request->input('parentCate')){
+               $parent=cate::find($request->input('parentCate'));
+               $parent->children()->create(['cName' =>$request->input('cName')]);
+            }
+        } 
         return redirect()->route('cateCenter')->with('success','add successfully');
     }
 
@@ -115,4 +132,8 @@ class cateController extends Controller
          return redirect()->back();
     }
    }
+   // 查询某个子类下的全部子类
+   // public function querySubCate(){
+
+   // }
 }
