@@ -76,6 +76,46 @@
 
 
 
+        var showing = false;
+
+        //　首页全部商品列表
+        $('.dd').on('mouseenter','.item' ,function(event) {
+            var index = $(this).data('index');
+            $(this).addClass('hover')
+            $('.sub-items div').each(function(index, el) {
+                $(el).addClass('hidden');
+            });
+            $('.sub-items div').eq(index - 1).removeClass('hidden');
+        });
+
+        $('.sub-items').on('mouseleave', '.sub', function(event) {
+            $(this).addClass('hidden');
+            $('.dd .item').each(function(index, el) {
+                $(el).removeClass('hover');
+            });
+        });
+
+        $('.dd').on('mouseleave','.item',function(){
+            var t = null;
+            clearTimeout(t)
+            var self = this;
+            t = setTimeout(function(){
+                if(showing == false) {
+                    $(self).removeClass('hover');
+                    var index = $(self).data('index');
+                    $('.sub-items .sub').eq(index - 1).addClass('hidden')
+                }
+                showing = false;
+            },50)
+        })
+        $('.sub-items').on('mouseenter',function(event) {
+                showing = true;
+        });
+
+        // $('.dd .item').on('mouseleave',function(event) {
+        //     if($('.sub-items').showing !== true) {
+        // });
+
         // 初始化 detail/imgslider
         function initial(){
             var per = parseInt($("#sliderView li").eq(0).css('width'));
@@ -84,7 +124,6 @@
         }
 
         initial();
-
 
 
 
