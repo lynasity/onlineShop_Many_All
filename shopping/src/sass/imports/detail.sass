@@ -1,0 +1,183 @@
+.page-detail
+    background: #F0F0F0
+    .location
+        height: 50px
+        line-height: 50px
+        a
+            margin: 0 2px
+    .detail-container
+        overflow: hidden
+    .product-info
+        background: #fff
+        height: 470px
+        overflow: hidden
+        border: 1px solid #ccc
+    .preview
+        width: 380px
+        background: #fff
+        height: 100%
+        padding: 10px
+    .big-img
+        width: 100%
+        height: 340px
+        background:
+            image: url(http://placehold.it/300x300)
+            position: center center
+            repeat: no-repeat
+            size: cover
+    .img-slider
+        height: 110px
+        overflow: hidden
+        position: relative
+        .left,.right
+            @include pointer
+            height: 80px
+            width: 20px
+            top: 15px
+            font-size: 40px
+            line-height: 80px
+            position: absolute
+            color: #ccc
+            text-align: center
+        .left
+            left: 0
+        .right
+            right: 0
+            left: initial
+        .slider-view
+            overflow: hidden
+            height: 80px
+            position: absolute
+            width: 320px
+            top: 15px
+            left: 20px
+        ul
+            overflow: hidden
+            position: absolute
+            top: 0
+            left: 0
+            transition: all 200ms linear
+        li
+            width: 80px
+            height: 80px
+            padding: 4px 2px 4px 2px
+            background: #fff
+            float: left
+        img
+            width: 100%
+            height: 100%
+
+    .item-info
+        margin-left: 370px
+        padding: 20px
+    .info-list>li
+        margin-bottom: 10px
+        overflow: hidden
+
+    .key
+        width: 80px
+        // display: inline-block
+        font-size: 15px
+        padding-left: 5px
+        height: 100%
+        float: left
+    .select
+        background: #F0F0F0
+        padding: 15px 10px
+        &>ul>li
+            margin-bottom: 8px
+    .color,.size
+        overflow: hidden
+        position: relative
+        input
+            display: none
+        ul
+            // float: left
+            display: block
+            margin-left: 80px
+        li
+            display: inline-block
+            background: #fff
+            overflow: hidden
+            margin-right: 10px
+            margin-bottom: 5px
+        label
+            border: 2px solid #ccc
+            padding: 10px 25px
+            display: block
+            height: 100%
+            width: 100%
+            @include pointer
+        input:checked + label
+            border: 2px solid $dark-blue
+    .unaviable
+        opacity: 0.5
+    .info-title
+        font-weight: 700
+        font-size: 20px
+        min-height: 40px
+        line-height: 110%
+    .info-price .price
+        color: red
+        font-size: 25px
+        letter-spacing: 1px
+    .currency
+        font-size: 0.7em
+    .promo span:nth-child(2)
+        font-size: 15px
+        vertical-align: bottom
+    .icon-money
+        color: orange
+        margin-right: 5px
+
+    .buy-add
+        text-align: center
+        margin-top: 20px
+    .buy,.add
+        display: inline-block
+        width: 150px
+        color: #fff
+        border-radius: 2px
+        font-size: 20px
+        height: 35px
+        line-height: 35px
+        background: orange
+        margin: 0 30px
+        text-align: center
+        span
+            margin-right: 10px
+
+    .product-detail
+        margin-top: 20px
+        width: 100%
+        overflow: hidden
+    .side
+        width: 250px
+        margin-right: 10px
+        height: 100%
+        float: left
+    .same-price,.others-buy
+        background: #fff
+        border: 1px solid #ccc
+        .list-header
+            height: 35px
+            background: #ccc
+            line-height: 35px
+            padding-left: 10px
+        ul
+            margin: 10px
+            background: tan
+        img
+            width: 100px
+            height: 100px
+        li
+            margin-bottom: 5px
+            text-align: center
+
+
+    .item-detail
+        border: 1px solid #ccc
+        width: 1200px - 250px - 10px
+        background: #fff
+        margin-left: 260px
+        height: 100%
