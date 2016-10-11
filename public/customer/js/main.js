@@ -97,9 +97,11 @@
 
         $('.dd').on('mouseleave','.item',function(){
             var t = null;
+            console.log(showing);
             clearTimeout(t)
             var self = this;
             t = setTimeout(function(){
+                console.log(showing);
                 if(showing == false) {
                     $(self).removeClass('hover');
                     var index = $(self).data('index');
@@ -110,6 +112,7 @@
         })
         $('.sub-items').on('mouseenter',function(event) {
                 showing = true;
+                console.log(showing);
         });
 
         // $('.dd .item').on('mouseleave',function(event) {
