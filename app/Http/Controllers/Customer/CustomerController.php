@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Gate;
 class CustomerController extends Controller
 {
 	private $range = array('A','B','C');
-	   public function __construct(){
+	   public function __construct(){		 
         //  $this->middlewagre('auth.customer:customer');
      }
      // 用户主页
