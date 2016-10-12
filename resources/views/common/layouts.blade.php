@@ -8,7 +8,7 @@
     @show
    <link rel="stylesheet" href="{{asset('./customer/css/reset.css')}}"/>
    <link rel="stylesheet" href="{{asset('./customer/css/main.css')}}"/>
-   <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}"/> 
+   <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}"/>
     <title>@yield('title','index')</title>
     @section('style')
     @show
