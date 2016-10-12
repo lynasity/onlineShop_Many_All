@@ -18,11 +18,11 @@ Route::get('/', function () {
 // 	return view('testCaptcha');
 // });
 // -------------------------------------------------------------------------------
-//管理员认证模块 
+//管理员认证模块
 Route::group(['namespace'=>'Admin\Auth'],function (){
-	Route::get('admin/login','loginController@showLoginForm')->name('adminLoginForm');
-	Route::post('admin/login','loginController@login');
-    Route::get('admin/logout','loginController@logout');
+	Route::get('admin/login','LoginController@showLoginForm')->name('adminLoginForm');
+	Route::post('admin/login','LoginController@login');
+    Route::get('admin/logout','LoginController@logout');
     Route::get('admin/register', 'RegisterController@showRegistrationForm');
 Route::post('admin/register', 'RegisterController@register')->name('adminRegister');
 });
@@ -31,13 +31,13 @@ Route::post('admin/register', 'RegisterController@register')->name('adminRegiste
 Route::group(['namespace'=>'Admin'],function () {
     // 后台首页
     Route::get('home/admin','AdminController@index')->name('adminHome');
-    //功能子模块分流 
+    //功能子模块分流
     Route::get('admin/productManagerCenter','ManagerController@productManagerCenter')->name('productsCenter');
     Route::get('admin/messageManagerCenter','ManagerController@messageManagerCenter')->name('messageCenter');
     Route::get('admin/cateManagerCenter','ManagerController@cateCenter')->name('cateCenter');
      Route::get('admin/orderFormManagerCenter','ManagerController@orderFormCenter')->name('orderFormCenter');
-    //消息管理 
-    Route::get('admin/messageForm','messageController@messageForm')->name('messageForm');  
+    //消息管理
+    Route::get('admin/messageForm','messageController@messageForm')->name('messageForm');
     Route::post('admin/sendNotification','messageController@sendNotification')->name('sendNotification');
     // 产品管理
     Route::get('products/{product}/delete','productController@destroy')->name('product.delete');
