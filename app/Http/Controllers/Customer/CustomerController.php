@@ -11,7 +11,7 @@ class CustomerController extends Controller
 {
 	private $range = array('A','B','C');
 	   public function __construct(){
-        //  $this->middleware('auth.customer:customer');
+        //  $this->middlewagre('auth.customer:customer');
      }
      // 用户主页
      public function index(Request $request){
