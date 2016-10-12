@@ -52,6 +52,7 @@
         float: left
         margin-top: 38px
         .sub
+            z-index: 1
             padding: 15px 0 0 20px
             width: 1200px - 210px
             border: 1px solid $dark-blue
@@ -83,7 +84,6 @@
         //     display: inline-block
     .navitems
         overflow: hidden
-        height: 38px
         position: absolute
         width: 100%
         margin-left: 210px
@@ -92,4 +92,70 @@
             width: 100px
             a
                 display: block
-                line-height: 38px
+                @include inline(38px)
+            &:hover
+                background: $dark-blue
+    .slider
+        height: 495px
+        width: 1200px - 210px
+        background: tan
+        float: left
+        margin-top: 38px
+        position: relative
+        .view
+            top: 0
+            left: 0
+            position: absolute
+            overflow: hidden
+            @include square(100%,transparent)
+        .btn-control
+            position: absolute
+            width: 100%
+            bottom: 8px
+            text-align: center
+            span
+                display: inline-block
+                @include square(25px)
+                background: $dark-blue
+                color: #fff
+                margin: 0 3px
+                text-align: center
+                line-height: 21px
+                border: 2px solid transparent
+            .active
+                background: #fff
+                color: $dark-blue
+                border: 2px solid currentColor
+        .dir-control .left,.right
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 0
+            color: $dark-blue
+            font-size: 60px
+            width: 40px
+            text-align: center
+            @include inline(90px)
+            background: rgba(0,0,0,0.3)
+            opacity: 0.8
+            &:hover
+                opacity: 1
+        .right
+            right: 0
+            left: initial
+
+        a
+            display: block
+            @include square(100%,transparent)
+            img
+                width: 1200px - 210px
+                height: 495px
+        ul
+            overflow: hidden
+            position: absolute
+            top: 0
+            left: 0
+            transition: all 400ms linear
+        li
+            float: left
+            height: 100%
