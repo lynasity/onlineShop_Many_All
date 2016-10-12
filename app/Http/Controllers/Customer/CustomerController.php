@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 class CustomerController extends Controller
 {
-	private $range = array('A','B','C'); 
+	private $range = array('A','B','C');
 	   public function __construct(){
-         $this->middleware('auth.customer:customer');
+        //  $this->middleware('auth.customer:customer');
      }
      // 用户主页
      public function index(Request $request){
      	$customer = Auth::guard('customer')->user();
-     	
+
      	  return view('customer.index',['customer'=>$customer]);
-       
+
     }
     // 用户中心
      public function customerCenter(request $request){
@@ -26,8 +26,8 @@ class CustomerController extends Controller
         return view('customer.center',['customer'=>$customer]);
     }
     // 消息中心
-    public function infoCenter(){    
-        $customer = Auth::guard('customer')->user(); 
+    public function infoCenter(){
+        $customer = Auth::guard('customer')->user();
            return view('info.infoCenter',[
                'customer'=>$customer,
             ]);
