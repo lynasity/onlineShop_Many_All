@@ -142,6 +142,22 @@
               <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
             </div>
           </div>
+          <div id="indexBigSlider" class="slider">
+            <div class="view">
+              <ul>
+                <li><a href=""><img src="http://www.fillmurray.com/800/400" alt=""/></a></li>
+                <li><a href=""><img src="http://www.fillmurray.com/800/500" alt=""/></a></li>
+                <li><a href=""><img src="http://www.fillmurray.com/800/600" alt=""/></a></li>
+                <li><a href=""><img src="http://www.fillmurray.com/800/550" alt=""/></a></li>
+                <li><a href=""><img src="http://www.fillmurray.com/800/650" alt=""/></a></li>
+              </ul>
+            </div>
+            <div class="dir-control">
+              <div class="left"><i class="fa fa-angle-left"></i></div>
+              <div class="right"><i class="fa fa-angle-right"></i></div>
+            </div>
+            <div class="btn-control"></div>
+        </div><!--end index slider-->
           <ul class="navitems">
             <li><a href="">数码城</a></li>
             <li><a href="">天黑黑</a></li>
