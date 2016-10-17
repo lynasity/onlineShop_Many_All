@@ -23,18 +23,11 @@ class BuildCustomersTable extends Migration
              $table->string('email',50)->unique();
             $table->enum('gender',['male','female','secret'])->default('secret');
             $table->string('face',255)->nullable();
-        $table->enum('level',['A','B','C','D','E'])->default('E');
+            $table->enum('level',['A','B','C','D','E'])->default('E');
             $table->timestamps();
-
         });
        }else{
-            if(!Schema::hasColumn('customers', 'level')){
-                   // 添加等级制度
-                  Schema::table('customers', function ($table) {
-                      $table->enum('level',['A','B','C','D','E'])->default('E');
-                });
-            }else{
-                 }
+
         }
     }
 

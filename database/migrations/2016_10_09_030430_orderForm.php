@@ -24,8 +24,8 @@ class OrderForm extends Migration
             $table->smallInteger('isCOD')->default(0);
             // 默认不挂起订单，当订单有特殊状况时挂起
             $table->smallInteger('isHang-up')->default(0);
-             //是否锁定状态，当已经有人来处理该订单的时候别人就不可以处理了 
-            $table->smallInteger('isLocked')->default(0); 
+             //是否锁定状态，当已经有人来处理该订单的时候别人就不可以处理了
+            $table->smallInteger('isLocked')->default(0);
             // 是否已经发货
             $table->smallInteger('hasDeliver')->default(0);
             //是否已经打印
@@ -38,12 +38,11 @@ class OrderForm extends Migration
             $table->timestamps();
             $table->index('expressId');
             $table->index('customerId');
+
           });
         }else{
-             // Schema::table('orderForms', function ($table) {       
-             //    $table->foreign('expressId')->references('id')->on('expresses');
-             //    $table->foreign('customerId')->references('id')->on('customers');
-             // });  
+          $table->foreign('expressId')->references('id')->on('expresses');
+          $table->foreign('customerId')->references('id')->on('customers');
         }
     }
 

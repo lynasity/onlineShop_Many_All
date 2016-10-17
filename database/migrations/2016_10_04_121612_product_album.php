@@ -19,13 +19,12 @@ class ProductAlbum extends Migration
            $table->integer('proId')->unsigned();
            $table->string('album',50);
            $table->timestamps();
-           $table->index('proId');      
+           $table->index('proId');
+
          });
        }else{
-           //  Schema::table('proAlbums', function ($table){
-           //    $table->foreign('proId')->references('id')->on('products');
-           // }); 
-    }
+         $table->foreign('proId')->references('id')->on('products');
+       }
    }
 
     /**

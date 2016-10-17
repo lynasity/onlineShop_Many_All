@@ -16,13 +16,11 @@ class CateProduct extends Migration
         if(!Schema::hasTable('cate_product')){
          Schema::create('cate_product', function (Blueprint $table) {
               $table->integer('product_id');
-              $table->integer('category_id');
-               $table->primary(['product_id', 'category_id']);
+              $table->integer('cate_id');
+               $table->primary(['product_id', 'cate_id']);
           });
         }else{
-            Schema::table('cate_product',function($table){
-                 $table->integer('cate_id')->change; 
-            });
+
         }
     }
 

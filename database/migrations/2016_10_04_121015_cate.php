@@ -15,17 +15,16 @@ class Cate extends Migration
     {
          if(!Schema::hasTable('cates')){
           Schema::create('cates', function (Blueprint $table) {
-            $table->increments('id');      
+            $table->increments('id');
+            $table->string('cName');
             $table->timestamps();
             $table->index('id');
+            $table->integer('parent_id')->nullable()->index();
+            $table->integer('lft')->nullable()->index();
+            $table->integer('rgt')->nullable()->index();
+            $table->integer('depth')->nullable();
           });
         }else{
-            Schema::table('cates', function ($table){
-               $table->integer('parent_id')->nullable()->index();
-               $table->integer('lft')->nullable()->index();
-               $table->integer('rgt')->nullable()->index();
-               $table->integer('depth')->nullable();
-           });
         }
      }
 
