@@ -1,0 +1,162 @@
+// compileCompressed: ../../../public/admin/css/admin.css
+//public style
+*,
+*:before,
+*:after
+    box-sizing: border-box
+h1,h2,h3,h4,h5,h6,p,body,html,ul
+    margin: 0
+    padding: 0
+a
+    text-decoration: none
+    color: inherit
+    &:hover,
+    &:visited,
+    &:focus
+        text-decoration: none
+    &:focus
+        color: inherit
+
+ul
+    list-style: none
+body
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif
+
+
+// variable
+$profile-bg : #A48AD4
+$nav-bg: #323544
+$nav-color: #97999F
+$nav-active-bg : #1E202C
+$nav-active-color : #fff
+$content-bg: #F6F6F6
+$nav-icon: #53ACBE
+$left-width: 250px
+$up-height: 90px
+
+
+// table grid
+.col-left
+    float: left
+    width: $left-width
+.col-right
+    float: left
+    width: calc(100% - #{$left-width})
+
+
+
+
+body,html
+    background: $content-bg
+    height: 100%
+.user
+    background: $profile-bg
+    height: $up-height
+    text-align: center
+    line-height: $up-height
+.user .face
+    width: 80px
+    height: 80px
+    border-radius: 50%
+    background: #ccc
+    overflow: hidden
+    display: inline-block
+    vertical-align: middle
+    margin-right: 10px
+.face img
+    width: 100%
+    height: 100%
+    vertical-align: top
+    // prevent it drop down
+.name
+    height: 100%
+    display: inline-block
+    color: #fff
+    font-weight: 700
+    font-size: 23px
+    vertical-align: top
+
+
+.full-height
+    height: 100%
+
+.fix-height
+    height: calc(100% - #{$up-height})
+.nav-wrap
+    background: $nav-bg
+    height: 100%
+    &>ul
+        height: 100%
+
+.nav-v
+    .acitve-class a
+        background: $nav-active-bg
+        color: $nav-active-color
+        border-left: 3px solid $profile-bg
+        box-shadow: inset 0 0 5px rgba(#000,0.4)
+        &:i
+            color: $nav-icon
+    li a:hover
+        background: $nav-active-bg
+        color: $nav-active-color
+    li a:hover i
+        color: $nav-icon
+    li a
+        transition: all 100ms linear
+        color: $nav-color
+        height: 50px
+        display: block
+        height: 100%
+        width: 100%
+        font-size: 18px
+        text-decoration: none
+        line-height: 50px
+        padding-left: 40px
+        cursor: pointer
+        border-left: 3px solid transparent
+    li a i
+        transition: inherit
+        margin-right: 15px
+        font-size: 20px
+    // .sub-nav
+    //     height: 100%
+    //     width: 100%
+    //     color: #64676F
+    //     background: #333645
+    //     a
+    //         height: 40px
+    //         padding-left: 85px
+    //         line-height: 40px
+    //         font-size: 15px
+.view
+    width: 100%
+    height: 100%
+
+.title-bar
+    font-size: 18px
+    height: $up-height
+    width: 100%
+    line-height: $up-height
+    padding-left: 30px
+    // margin: 0 -30px
+    background: #fff
+    overflow: hidden
+    .divider
+        width: 2px
+        height: 1em
+        background: #000
+        display: inline-block
+        vertical-align: baseline
+        margin: 0 5px
+    .logo
+        font-size: 40px
+        margin-right: 10px
+    .item-name
+        color: $profile-bg
+    .sign-out
+        float: right
+        margin-right: 40px
+        color: gray
+        cursor: pointer
+        font-size: 16px
+        padding-top: 10px
