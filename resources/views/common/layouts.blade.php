@@ -24,5 +24,9 @@
         </li>
       </ul>
     </footer>
+    {{-- @section('js') --}}
+    <script scr="{{asset('customer/js/jquery-3.1.0.js')}}"></script>
+    <script scr="{{asset('customer/js/customer.js')}}"></script>
+    {{-- @endsection --}}
   </body>
 </html>
