@@ -7,7 +7,7 @@
 	<input type="password" name="password">
     <br>
     <label>记住我</label>
-    <input type="radio" name="remember">
+    <input type="checkbox" name="remember">
 	<input type="submit" value="login">
 	<a href="{{url('admin/register')}}">注册</a>
 </form>
