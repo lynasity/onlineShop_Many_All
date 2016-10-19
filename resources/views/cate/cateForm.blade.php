@@ -14,10 +14,10 @@
       </select>
       <br>
       <label>如果不是，请选择父品类</label>
-       <select name="parentCate">
-       @foreach($cates as $cate)
-      	<option value="{{$cate->id}}">{{$cate->cName}}</option>
-       @endforeach
+       <select name="parentCate">		
+          @foreach($cates as $cate)
+      	    <option value="{{$cate->id}}">{{$cate->cName}}</option>
+          @endforeach
       </select>
       <br>
    	  <input type="text" name="cName">

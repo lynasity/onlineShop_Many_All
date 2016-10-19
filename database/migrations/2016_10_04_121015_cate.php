@@ -35,6 +35,6 @@ class Cate extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('cates');
+        Schema::dropIfExists('cates');
     }
 }

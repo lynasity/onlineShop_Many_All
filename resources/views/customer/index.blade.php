@@ -2,6 +2,7 @@
 @section('title')
 首页
 @stop
+@inject('cateModel', 'App\cate')
 @section('header')
  <div class="logo-search">
         <div class="wrap">
@@ -20,127 +21,29 @@
         <div class="nav-container">
           <div class="allgoods"><a href="" class="dt">全部商品分类</a>
             <div class="dd">
-              <div data-index="1" class="item"><a href="">家用电器<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="2" class="item"><a href="">手机,运营商,数码<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="3" class="item"><a href="">电脑,办公<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="4" class="item"><a href="">家居，家具，家装，厨具<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="5" class="item"><a href="">男装，女装，童装，内衣<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="6" class="item"><a href="">个护化妆，清洁用品，宠物<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="7" class="item"><a href="">鞋靴，箱包，珠宝，奢侈品<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="8" class="item"><a href="">运动，户外，钟表<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="9" class="item"><a href="">汽车，汽车用品<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="10" class="item"><a href="">母婴，玩具<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="11" class="item"><a href="">食品，酒类，生鲜，特产<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="12" class="item"><a href="">医药保健<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="13" class="item"><a href="">图书音响<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="14" class="item"><a href="">彩票，旅行，充值，票务<i class="fa fa-angle-right"></i></a></div>
-              <div data-index="15" class="item"><a href="">理财，众筹，白条，保险<i class="fa fa-angle-right"></i></a></div>
+              @foreach($cateModel::where('parent_id',1)->get() as $cate)
+              <div data-index="{{isset($i)?$i+1:1}}" class="item"><a href="">{{$cate->cName}}<i class="fa fa-angle-right"></i></a></div>
+              @endforeach
             </div>
           </div>
           <div class="sub-items">
-            <div class="sub hidden">
-              <dl class="sub-catagory">
-                <dt><a href="">电视</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">电视</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">电视</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">电视</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">电视</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">电视</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">电视</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">电视</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a><a href="">国产品牌</a></dd>
-              </dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">
-                <dt><a href="">手机</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">手机</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">手机</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">手机</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">手机</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">手机</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a></dd>
-              </dl>
-              <dl class="sub-catagory">
-                <dt><a href="">手机</a><i class="fa fa-angle-right"></i></dt>
-                <dd><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a><a href="">小米１２３４５</a></dd>
-              </dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
-            <div class="sub hidden">
-              <dl class="sub-catagory">*8>(dt>a{电视}+i.fa.fa-angle-right)+dd>a{国产品牌}*5						</dl>
-            </div>
+          @foreach($cateModel::where('parent_id',1)->get() as $cate)
+               <div class="sub hidden">
+                @foreach($cate->descendants()->limitDepth(1)->get() as $sub1)
+                 <dl class="sub-catagory">
+                     <dt><a href="">{{$sub1->cName}}</a><i class="fa fa-angle-right"></i></dt>
+                     <dd>
+                       @if($sub1->children()->get())
+                         @foreach($sub1->descendants()->limitDepth(1)->get() as $sub2)
+                            <a href="">{{$sub2->cName}}</a>
+                         @endforeach
+                       @endif
+
+                     </dd>
+                </dl>
+              @endforeach
+              </div>
+          @endforeach
           </div>
           <div id="indexBigSlider" class="slider">
             <div class="view">

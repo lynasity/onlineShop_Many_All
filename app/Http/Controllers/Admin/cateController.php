@@ -43,10 +43,11 @@ class cateController extends Controller
     public function create()
     {
         if(Auth::user()->can('create',cate::class)){
-              $root=cate::root();
-            $this->cates=$root->descendantsAndSelf()->get();
-             // $this->cates=cate::where('lft','>',1)->get();
-           return view('cate.cateForm',['cates'=>$this->cates]);
+           $root=cate::root();
+            if($root){
+                $cates=($root->children()->get());
+            }
+              return view('cate.cateForm',['cates'=>$cates]);
        }else{
            return redirect()->route('cateCenter');
        }
@@ -64,6 +65,10 @@ class cateController extends Controller
           //注意:where->get返回的是结果集,不可以直接调用children方法
             // $root=cate::where('cName','root')->first();
             $root=cate::root();
+            if(is_null($root)){
+                $root=cate::create(['cName'=>'root']);
+            }
+
             $root->children()->create(['cName' =>$request->input('cName')]);
         }else{
             // 如果有选择父类
@@ -112,7 +117,7 @@ class cateController extends Controller
     //也可以通过Auth::user()->can('update',new cate())进行判断，自己对判断结果进行处理
 
     if(Auth::user()->can('update',new cate())){
-        cate::where('id',$id)->update(['id'=>$request->input('id'),'cName'=>$request->input('cName')]);
+        cate::where('id',$id)->update(['cName'=>$request->input('cName')]);
         return redirect()->route('cates.index');
       }else{
           return redirect()->route('cates.index');
