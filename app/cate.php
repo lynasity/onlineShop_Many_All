@@ -4,8 +4,10 @@ namespace App;
 // use App\product;
 use Illuminate\Database\Eloquent\Model;
 use Baum\Node as nodeModel;
+// use Laravel\Scout\Searchable as searchEngine;
 class cate extends nodeModel
 {
+  //  use searchEngine;
    protected $table='cates';
    protected $fillable=['id','cName'];
 

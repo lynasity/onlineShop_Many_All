@@ -162,7 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        
+
         /*
          * Package Service Providers...
          */
@@ -184,6 +184,7 @@ return [
         Toplan\Sms\SmsManagerServiceProvider::class,
         'Baum\Providers\BaumServiceProvider',
          \EstGroupe\Taggable\Providers\TaggingServiceProvider::class,
+         Laravel\Scout\ScoutServiceProvider::class,
     ],
 
     /*

@@ -57,6 +57,7 @@
      		<option value="0" selected>否</option>
      	</select>
      	</li>
+      <!-- <botton type='button'>添加</botton> -->
        <input type="submit" value ="添加">
        </ul>
 	</form>

@@ -27,6 +27,10 @@ window.onload = function(){
         showName('品类管理')
     }
 
+    // var updateProduct = function(){
+    //     getView(baseURL + 'admin/messageManagerCenter');
+    //     showName('产品更新');
+    // }
     var message = function(){
         getView(baseURL + 'admin/messageManagerCenter');
         showName('信息推送');

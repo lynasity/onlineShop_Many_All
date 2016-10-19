@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
 class addProductRuequest extends FormRequest
 {
     /**
@@ -23,18 +22,18 @@ class addProductRuequest extends FormRequest
      */
     public function rules()
     {
-        
+
        return [
-          'proName'=>'required',  
-          'proSn'=>'required', 
-          'proNum'=>'required', 
-          'maketPrice'=>'required',
-           'webPrice'=>'required', 
-            'proDescripetion'=>'required',
-            'proImg'=>'required', 
-             'cateId'=>'required', 
-             'isShow'=>'required', 
-              'isHost'=>'required',
+          // 'proName'=>'required',
+          // 'proSn'=>'required',
+          // 'proNum'=>'required',
+          // 'maketPrice'=>'required',
+          //  'webPrice'=>'required',
+          //   'proDescripetion'=>'required',
+          //   'proImg'=>'required',
+          //    'cateId'=>'required',
+          //    'isShow'=>'required',
+          //     'isHost'=>'required',
         ];
     }
 }

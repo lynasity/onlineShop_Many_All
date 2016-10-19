@@ -7,7 +7,7 @@ use App\product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\cate;
-use App\Http\Requests\addProductRuequest;
+use App\Http\Requests\addProductRequest;
 class productController extends Controller
 {
     /**
@@ -23,8 +23,8 @@ class productController extends Controller
     }
     public function index()
     {
-        $products=product::all();
-        return view('product.productList',['products'=>$products]);
+        // $products=product::paginate(10);
+        // return view('product.productList',['products'=>$products]);
     }
 
     /**
@@ -36,7 +36,7 @@ class productController extends Controller
     {
          // 输出除根节点外的cate实例
          $this->cates=cate::where('lft','>',1)->get();
-         return view('product.productForm',['cates'=>$cates]);
+         return view('product.productForm',['cates'=>$this->cates]);
     }
 
     /**
@@ -45,7 +45,7 @@ class productController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(addProductRuequest $request)
+    public function store(Request $request)
     {
         $product=new product();
         $product->proName=$request->input('proName');
@@ -59,7 +59,7 @@ class productController extends Controller
         $product->isShow=$request->input('isShow');
         $product->isHot=$request->input('isHot');
         $product->save();
-        return redirect()->route('products.index');
+        return redirect()->route('productsCenter');
     }
 
     /**
@@ -105,7 +105,7 @@ class productController extends Controller
         'cateId'=>$request->input('cateId'),
         'isShow'=>$request->input('isShow'),
         'isHot'=>$request->input('isHot')]);
-        return redirect()->route('products.index');
+          return redirect()->route('productsCenter');
     }
 
     /**
@@ -116,9 +116,9 @@ class productController extends Controller
      */
     public function destroy($id)
     {
-        $product=product::find($id);
-        $product->delete();
-        return redirect()->route('products.index');
+          $product=product::find($id);
+          $product->delete();
+          return redirect()->route('productsCenter');
     }
-  
+
 }

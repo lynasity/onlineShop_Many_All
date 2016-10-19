@@ -13,14 +13,12 @@
  {
 // 商品管理
    public function productManagerCenter(){
-        $products=product::all();
-   	    return view('product.productCenter',[
-            'products'=>$products,
-   	    	]);
+     $products=product::paginate(10);
+     return view('product.productCenter',['products'=>$products]);
    }
    // 信息管理
    public function messageManagerCenter(){
-   	 
+
    	   return view('admin.messageCenter');
    }
    // 品类管理

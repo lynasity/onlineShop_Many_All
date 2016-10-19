@@ -22,21 +22,21 @@
      	</tr>
         @foreach($products as $product)
           <tr>
-          	 <td>{{$product->proName}}</td>  
-          	  <td>{{$product->proSn}}</td> 
-          	   <td>{{$product->proNum}}</td> 
-          	    <td>{{$product->marketPrice}}</td> 
-          	     <td>{{$product->webPrice}}</td> 
-          	      <td>{{$product->proDescription}}</td> 
-          	       <td>{{$product->proImg}}</td> 
-          	        <td>{{App\cate::find($product->cateId)->cName}}</td> 
+          	 <td>{{$product->proName}}</td>
+          	  <td>{{$product->proSn}}</td>
+          	   <td>{{$product->proNum}}</td>
+          	    <td>{{$product->marketPrice}}</td>
+          	     <td>{{$product->webPrice}}</td>
+          	      <td>{{$product->proDescription}}</td>
+          	       <td>{{$product->proImg}}</td>
+          	        <td>{{App\cate::find($product->cateId)->cName}}</td>
           	         <td>
                          @if($product->isShow==1)
                              是
                          @else
                             否
                          @endif
-                      </td> 
+                      </td>
           	         <td>
                      @if($product->isHot==1)
                              是
@@ -44,8 +44,8 @@
                             否
                          @endif
                      </td>
-             <td><a href="{{route('products.edit',['product'=>$product->id])}}">修改</a>|<a href="{{route('product.delete',['product'=>$product->id])}}">删除</a></td>       
-          </tr>   
+             <td><a href="{{route('products.edit',['product'=>$product->id])}}">修改</a>|<a href="{{route('product.delete',['product'=>$product->id])}}">删除</a></td>
+          </tr>
         @endforeach
      </table>
 

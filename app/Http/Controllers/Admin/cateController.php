@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\cate;
 use Illuminate\Support\Facades\Auth;
+
 class cateController extends Controller
 {
     /**
@@ -28,8 +29,10 @@ class cateController extends Controller
     public function index()
     {
         // 输出除根节点外的cate实例
-        $this->cates=cate::where('lft','>',1)->get();
-        return view('cate.cateList',['cates'=>$this->cates]);
+        dd(cate::where('id',1)->first()->toArray());
+        exit;
+        // $this->cates=cate::where('lft','>',1)->get();
+        // return view('cate.cateList',['cates'=>$this->cates]);
     }
 
     /**
@@ -46,7 +49,7 @@ class cateController extends Controller
            return view('cate.cateForm',['cates'=>$this->cates]);
        }else{
            return redirect()->route('cateCenter');
-       } 
+       }
     }
 
     /**
@@ -68,7 +71,7 @@ class cateController extends Controller
                $parent=cate::find($request->input('parentCate'));
                $parent->children()->create(['cName' =>$request->input('cName')]);
             }
-        } 
+        }
         return redirect()->route('cateCenter')->with('success','add successfully');
     }
 
@@ -106,13 +109,13 @@ class cateController extends Controller
     {
     //调用控制器中的authorize方法进行权限判断，如果判断错误判处错误和提示
         // $this->authorize('update', new cate());
-    //也可以通过Auth::user()->can('update',new cate())进行判断，自己对判断结果进行处理 
-    
+    //也可以通过Auth::user()->can('update',new cate())进行判断，自己对判断结果进行处理
+
     if(Auth::user()->can('update',new cate())){
         cate::where('id',$id)->update(['id'=>$request->input('id'),'cName'=>$request->input('cName')]);
-        return redirect()->route('cates.index');      
+        return redirect()->route('cates.index');
       }else{
-          return redirect()->route('cates.index');      
+          return redirect()->route('cates.index');
       }
     }
 

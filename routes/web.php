@@ -40,8 +40,9 @@ Route::group(['namespace'=>'Admin'],function () {
     Route::get('admin/messageForm','messageController@messageForm')->name('messageForm');
     Route::post('admin/sendNotification','messageController@sendNotification')->name('sendNotification');
     // 产品管理
+    Route::post('products','productController@store')->name('product.store');
     Route::get('products/{product}/delete','productController@destroy')->name('product.delete');
-    Route::resource('products', 'productController',['except'=>['destroy']]);
+    Route::resource('products', 'productController',['except'=>['destroy','store']]);
     //品类管理
      Route::get('cate/{cate}/delete','cateController@destroy')->name('cate.delete');
     Route::resource('cates', 'cateController',['except'=>['destroy']]);
