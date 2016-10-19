@@ -59,7 +59,8 @@ class productController extends Controller
         $product->isShow=$request->input('isShow');
         $product->isHot=$request->input('isHot');
         $product->save();
-        return redirect()->route('productsCenter');
+        // return redirect()->route('productsCenter');
+        return redirect()->route('adminHome');
     }
 
     /**
@@ -105,7 +106,8 @@ class productController extends Controller
         'cateId'=>$request->input('cateId'),
         'isShow'=>$request->input('isShow'),
         'isHot'=>$request->input('isHot')]);
-          return redirect()->route('productsCenter');
+          // return redirect()->route('productsCenter');
+            return redirect()->route('adminHome');
     }
 
     /**
@@ -118,7 +120,8 @@ class productController extends Controller
     {
           $product=product::find($id);
           $product->delete();
-          return redirect()->route('productsCenter');
+          // return redirect()->route('productsCenter');
+            return redirect()->route('adminHome');
     }
 
 }

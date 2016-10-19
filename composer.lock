@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "06642478232a3633fd53e0da7c67e916",
-    "content-hash": "66b23fdc909c231760debcb1fd642d7a",
+    "hash": "daff79244cdeb04058f0d700de146df4",
+    "content-hash": "c7175efa03e399fa9b196b0d4972be02",
     "packages": [
         {
             "name": "baum/baum",
@@ -1055,16 +1055,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.18",
+            "version": "v5.3.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9bee167d173857c25966c19afdaa66f127ca6784"
+                "reference": "f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laravel/framework/9bee167d173857c25966c19afdaa66f127ca6784.zip",
-                "reference": "9bee167d173857c25966c19afdaa66f127ca6784",
+                "url": "https://packagist.phpcomposer.com/files/laravel/framework/f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1.zip",
+                "reference": "f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1",
                 "shasum": ""
             },
             "require": {
@@ -1146,7 +1146,7 @@
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
                 "symfony/css-selector": "Required to use some of the crawler integration testing tools (3.1.*).",
                 "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (3.1.*).",
-                "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
+                "symfony/psr-http-message-bridge": "Required to use psr7 bridging features (0.2.*)."
             },
             "type": "library",
             "extra": {
@@ -1179,7 +1179,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-10-08 01:51:20"
+            "time": "2016-10-17 19:35:14"
         },
         {
             "name": "laravel/scout",
@@ -1333,20 +1333,20 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.28",
+            "version": "1.0.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044"
+                "reference": "75138bb14160f3ba963750aa95e08d1d394fb198"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/thephpleague/flysystem/a9663643ff2d16d7f66ed1e0d3212c5491bc9044.zip",
-                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
+                "url": "https://packagist.phpcomposer.com/files/thephpleague/flysystem/75138bb14160f3ba963750aa95e08d1d394fb198.zip",
+                "reference": "75138bb14160f3ba963750aa95e08d1d394fb198",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
@@ -1412,7 +1412,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-07 12:20:37"
+            "time": "2016-10-18 16:20:02"
         },
         {
             "name": "league/oauth1-client",
@@ -1801,16 +1801,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf"
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
+                "url": "https://packagist.phpcomposer.com/files/paragonie/random_compat/c0125896dbb151380ab47e96c621741e79623beb.zip",
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
                 "shasum": ""
             },
             "require": {
@@ -1845,7 +1845,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-04-03 06:00:07"
+            "time": "2016-10-17 15:23:22"
         },
         {
             "name": "psr/http-message",
@@ -3007,6 +3007,53 @@
                 "dump"
             ],
             "time": "2016-09-29 14:13:09"
+        },
+        {
+            "name": "tom-lingham/searchy",
+            "version": "2.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TomLingham/Laravel-Searchy.git",
+                "reference": "d67b2d665ca857b707900c6c0c79c629cc70fe65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/TomLingham/Laravel-Searchy/d67b2d665ca857b707900c6c0c79c629cc70fe65.zip",
+                "reference": "d67b2d665ca857b707900c6c0c79c629cc70fe65",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.* || 5.2.* || 5.3.*",
+                "php": "^5.5.9 || ^7.0"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TomLingham\\Searchy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Lingham",
+                    "email": "tjlingham@gmail.com"
+                }
+            ],
+            "description": "Laravel Searchy makes user driven searching easy with fuzzy search, basic string matching, Levenshtein Distance and more.",
+            "keywords": [
+                "fuzzy",
+                "laravel",
+                "search"
+            ],
+            "time": "2016-08-29 12:58:58"
         },
         {
             "name": "toplan/laravel-sms",

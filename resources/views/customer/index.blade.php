@@ -8,8 +8,11 @@
         <div class="wrap">
           <div class="logo"><a href="">Many&All</a></div>
          <div class="search">
-            <input type="text"/>
-            <input type="button" value="搜索"/>
+            <form action="{{route('customer.search')}}" method="post">
+               {{csrf_field()}}
+              <input type="text" name='content'/>
+              <button type="submit">搜索</button>
+            </form>
           </div>
         </div>
       </div>

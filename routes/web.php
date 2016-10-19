@@ -65,7 +65,7 @@ Route::post('customer/sendEmail','ForgotPasswordController@sendResetLinkEmail');
     Route::any('auth/{service}', 'authController@redirectToProvider');
     Route::any('auth/{service}/callback', 'authController@handleProviderCallback');
 });
-// shop是购物相关模块，customer是用户功能模块
+// shop是购物相关模块，customer是用户功能模块,info是消息中心,search是搜索服务
 Route::group(['namespace'=>'Customer'],function (){
     Route::get('home/customer','CustomerController@index')->name('customerHome');
     Route::get('customer/shopCart','shopController@showShopCart');
@@ -76,6 +76,7 @@ Route::get('customer/HighLevel','CustomerController@forHighLevel')->name('HighLe
    Route::get('customer/allInfo/{customer?}','infoController@allInfo')->name('allInfo');
     Route::get('customer/unreadInfo/{customer?}','infoController@unreadInfo')->name('unreadInfo');
     Route::get('customer/deleteInfo/{customer?}','infoController@deleteInfo')->name('deleteInfo');
+     Route::post('customer/search/{args?}','searchController@search')->name('customer.search');
 });
 
  Route::get('getCaptcha',function(){

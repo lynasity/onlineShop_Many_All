@@ -132,6 +132,7 @@ class VerifyCsrfToken
     protected function addCookieToResponse($request, $response)
     {
         $config = config('session');
+
         $response->headers->setCookie(
             new Cookie(
                 'XSRF-TOKEN', $request->session()->token(), Carbon::now()->getTimestamp() + 60 * $config['lifetime'],

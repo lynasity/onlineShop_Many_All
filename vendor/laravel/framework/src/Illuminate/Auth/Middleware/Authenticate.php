@@ -5,7 +5,8 @@ namespace Illuminate\Auth\Middleware;
 use Closure;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Contracts\Auth\Factory as Auth;
-abstract class Authenticate
+
+class Authenticate
 {
     /**
      * The authentication factory instance.
@@ -13,6 +14,7 @@ abstract class Authenticate
      * @var \Illuminate\Contracts\Auth\Factory
      */
     protected $auth;
+
     /**
      * Create a new middleware instance.
      *
@@ -36,11 +38,9 @@ abstract class Authenticate
      */
     public function handle($request, Closure $next, ...$guards)
     {
-        if($this->authenticate($guards)){
-            return $next($request);
-        }else{
-           return $this->redirectNow();
-        }
+        $this->authenticate($guards);
+
+        return $next($request);
     }
 
     /**
@@ -53,19 +53,16 @@ abstract class Authenticate
      */
     protected function authenticate(array $guards)
     {
-        // 如果为空调用默认的guard
-        // if (empty($guards)) {
-        //     //$this->auth返回AuthManager对象,通过__call方法实际上也是调用guard的authenticate
-        //     return $this->auth->authenticate();
-        // }
+        if (empty($guards)) {
+            return $this->auth->authenticate();
+        }
+
         foreach ($guards as $guard) {
-            if ($this->auth->guard($guard)->check()) {          
-                $this->auth->shouldUse($guard);
-                return true;
+            if ($this->auth->guard($guard)->check()) {
+                return $this->auth->shouldUse($guard);
             }
         }
-           return false;
-        // throw new AuthenticationException('Unauthenticated.', $guards);
+
+        throw new AuthenticationException('Unauthenticated.', $guards);
     }
-     protected abstract function redirectNow();
 }

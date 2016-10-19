@@ -185,6 +185,7 @@ return [
         'Baum\Providers\BaumServiceProvider',
          \EstGroupe\Taggable\Providers\TaggingServiceProvider::class,
          Laravel\Scout\ScoutServiceProvider::class,
+         TomLingham\Searchy\SearchyServiceProvider::class,
     ],
 
     /*
@@ -235,6 +236,7 @@ return [
          'Socialite' => Laravel\Socialite\Facades\Socialite::class,
          'PhpSms' => Toplan\PhpSms\Facades\Sms::class,
          'SmsManager' => Toplan\Sms\Facades\SmsManager::class,
+         'Searchy' => TomLingham\Searchy\Facades\Searchy::class,
     ],
 
 ];

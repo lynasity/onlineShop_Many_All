@@ -124,6 +124,7 @@ class Worker
 
             return false;
         }
+
         return true;
     }
 
