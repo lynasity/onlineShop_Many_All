@@ -7,7 +7,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use App\cate;
 class CustomerController extends Controller
 {
 	private $range = array('A','B','C');
@@ -17,9 +16,7 @@ class CustomerController extends Controller
      // 用户主页
      public function index(Request $request){
      	$customer = Auth::guard('customer')->user();
-       $cates=cate::where('parent_id',1)->get();
-     	  return view('customer.index',['customer'=>$customer,'cates'=>$cates]);
-
+     	  return view('customer.index',['customer'=>$customer]);
     }
     // 用户中心
      public function customerCenter(request $request){

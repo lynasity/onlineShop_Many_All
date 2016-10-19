@@ -29,10 +29,8 @@ class cateController extends Controller
     public function index()
     {
         // 输出除根节点外的cate实例
-        dd(cate::where('id',1)->first()->toArray());
-        exit;
-        // $this->cates=cate::where('lft','>',1)->get();
-        // return view('cate.cateList',['cates'=>$this->cates]);
+        $this->cates=cate::where('lft','>',1)->get();
+        return view('cate.cateList',['cates'=>$this->cates]);
     }
 
     /**
@@ -135,10 +133,8 @@ class cateController extends Controller
         if(Auth::user()->can('delete',new cate())){
         $cate=cate::find($id);
         $cate->delete();
+      }
         return redirect()->back();
-    }else{
-         return redirect()->back();
-    }
    }
    // 查询某个子类下的全部子类
    // public function querySubCate(){

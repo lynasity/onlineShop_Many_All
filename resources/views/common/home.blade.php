@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{asset('./customer/css/reset.css')}}"/>
     <link rel="stylesheet" href="{{asset('./customer/css/main.css')}}"/>
     <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}"/>
+    <script src="{{asset('./customer/js/jquery-3.1.0.js')}}"></script>
+    <script src="{{asset('./customer/js/main.js')}}"></script>
     <title>@yield('title','title')</title>
   </head>
   <body>
@@ -23,11 +25,11 @@
       </nav>
         @section('header')
         @show
-        
+
         @section('mainContent')
         @show
       <footer>
-        <ul> 
+        <ul>
           <li><span class="copyright">Copyright &copy; 2016-2016 </span><span class="powerd">Powerd By <a href="#">Larvel,</a>Host on <a href="#"><span class="fa fa-github"></span> Github</a></span></li>
           <li>
             <div class="author">Authors:<a href="" title="BackEnd">Many Hong </a>& <a href="" title="FrontEnd">Quill Jou</a></div>

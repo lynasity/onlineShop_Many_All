@@ -22,13 +22,13 @@
           <div class="allgoods"><a href="" class="dt">全部商品分类</a>
             <div class="dd">
               @foreach($cateModel::where('parent_id',1)->get() as $cate)
-              <div data-index="{{isset($i)?$i+1:1}}" class="item"><a href="">{{$cate->cName}}<i class="fa fa-angle-right"></i></a></div>
+              <div data-index="{{$loop->iteration}}" class="item"><a href="">{{$cate->cName}}<i class="fa fa-angle-right"></i></a></div>
               @endforeach
             </div>
           </div>
           <div class="sub-items">
           @foreach($cateModel::where('parent_id',1)->get() as $cate)
-               <div class="sub hidden">
+                <div class="sub hidden">
                 @foreach($cate->descendants()->limitDepth(1)->get() as $sub1)
                  <dl class="sub-catagory">
                      <dt><a href="">{{$sub1->cName}}</a><i class="fa fa-angle-right"></i></dt>
@@ -38,7 +38,6 @@
                             <a href="">{{$sub2->cName}}</a>
                          @endforeach
                        @endif
-
                      </dd>
                 </dl>
               @endforeach
