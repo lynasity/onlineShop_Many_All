@@ -15,6 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \App\Http\Middleware\crosMiddleware::class,
     ];
 
     /**
@@ -28,8 +29,9 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
+            // \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\crosMiddleware::class,
         ],
 
         'api' => [
@@ -56,5 +58,6 @@ class Kernel extends HttpKernel
         'geetest'=>\App\Http\Middleware\geetestMiddleware::class,
         'auth.customer'=>\App\Http\Middleware\customerAuthMiddleware::class,
         'auth.admin'=>\App\Http\Middleware\adminAuthMiddleware::class,
+        // 'cros'=>\App\Http\Middleware\crosMiddleware::class,
     ];
 }

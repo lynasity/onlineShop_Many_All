@@ -1,54 +1,50 @@
-
-<button type="button" class="btn btn-danger">
-  <a href="{{url('products/create')}}">添加商品信息</a> <i class="fa fa-crosshairs"></i>
-</button>
-<table class="table table-bordered table-hover table-condensed">
-    <thead>
+<table class="table table-bordered  table-striped product-table table-hover table-responsive table-condensed">
+    <thead class="product-head">
         <tr>
-            <td>
-                id
-            </td>
-            <td>
+            <th>
+                Id
+            </th>
+            <th>
                 产品名
-            </td>
-            <td>
+            </th>
+            <th>
                 序列号
-            </td>
-            <td>
+            </th>
+            <th>
                 库存
-            </td>
-            <td>
+            </th>
+            <th>
                 删除权限级别
-            </td>
-            <td>
+            </th>
+            <th>
               市场价
-            </td>
-            <td>
+          </th>
+            <th>
               独家价
-            </td>
-            <td>
+          </th>
+            <th>
               产品描述
-            </td>
-            <td>
+          </th>
+            <th>
               产品相册
-            </td>
-            <td>
+          </th>
+            <th>
               产品类型
-            </td>
-            <td>
+          </th>
+            <th>
               是否上架
-            </td>
-            <td>
+          </th>
+            <th>
               是否爆款
-            </td>
-            <td>
+          </th>
+            <th>
                 操作
-            </td>
+            </th>
         </tr>
     </thead>
     <tbody >
       @foreach($products as $product)
-        <tr class="table-striped">
+        <tr>
       <td>{{$product->id}}</td>
       <td>{{$product->proName}}</td>
        <td>{{$product->proSn}}</td>
@@ -75,10 +71,10 @@
               </td>
               <td>
                   <button type="button" class="btn btn-danger">
-                  <a href="{{route('product.delete',['product'=>$product->id])}}">删除</a> <i class="fa fa-crosshairs"></i>
+                      删除<i class="fa fa-close"></i>
                   </button>
                   <button type="button" class="btn btn-primary">
-                  <a href="{{route('products.edit',['product'=>$product->id])}}">修改</a> <i class="fa fa-pencil"></i>
+                      修改<i class="fa fa-pencil"></i>
                   </button>
               </td>
         </tr>
@@ -87,6 +83,10 @@
 </table>
 <div align='right'>{{ $products->links() }}</div>
 
+<button type="button" class="btn btn-danger goto-edit">
+    {{-- <a href="{{url('products/create')}}">添加商品信息</a> <i class="fa fa-crosshairs"></i> --}}
+  <a href="{{url('products/create')}}">去添加商品信息</a> <i class="fa fa-signout"></i>
+</button>
 
 
 <!-- <ul>

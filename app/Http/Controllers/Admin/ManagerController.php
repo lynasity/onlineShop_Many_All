@@ -23,6 +23,7 @@
    }
    // 品类管理
    public function cateCenter(){
+    //    return 'ok';
       return view('cate.cateCenter');
    }
    // 订单管理

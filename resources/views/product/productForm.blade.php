@@ -1,65 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
- <title>添加商品</title>
-</head>
-<body>
-	<form method="post" action="{{url('products')}}" enctype="multipart/form-data">
-	  <ul>
+<div class="edit">
+	<form id="editForm" class="form-horizontal">
 		{{csrf_field()}}
-		<li>
-		商品名称
-		<input type="text" name="proName" required>
-		</li>
-		<li>
-      	商品序列号
-        <input type="text" name="proSn" required>
-        </li>
-        <li>
-     	商品数量
-     	<input type="text" name="proNum" required>
-     	</li>
-     	<li>
-     	市场价
-     	<input type="text" name="marketPrice" required>
-     	</li>
-     	独家价格
-     	<input type="text" name="webPrice" required>
-     	<li>
-     	商品描述
-     	<textarea name="proDescription" placeholder="添加商品描述"></textarea>
-     	</li>
-     	<li>
-     	商品图片
-     	<!-- 暂时模拟 -->
-     	<input type="text" name="proImg">
-     	<!-- <input type="file" name="proImg"> -->
-     	</li>
-     	<li>
-     	商品品类
-     	<select name='cateId' >
-     	@foreach($cates as $cate)
-     	    <option value="{{$cate->id}}" >{{$cate->cName}}</option>
-     	@endforeach
-     	</select>
-     	</li>
-     	<li>
-     	是否上架:
-     	<select name='isShow' >
-     		<option value="1" selected>是</option>
-     		<option value="0">否</option>
-     	</select>
-     	</li>
-     	<li>
-     	是否热款
-     	<select name="isHot">
-     		<option value="1">是</option>
-     		<option value="0" selected>否</option>
-     	</select>
-     	</li>
-      <!-- <botton type='button'>添加</botton> -->
-       <input type="submit" value ="添加">
-       </ul>
+
+		<div class="form-group">
+		  <label class="col-md-2 control-label" for="">商品名称</label>
+		    <div class="col-md-10">
+		      <input type="text" name="proName" required autofocus>
+		    </div>
+	  	</div>
+
+		<div class="form-group">
+		    <label class="col-md-2 control-label" for="">商品序列号</label>
+			  <div class="col-md-10">
+			    <input type="text" name="proSn" required>
+			  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="col-md-2 control-label" for="">商品数量</label>
+		    <div class="col-md-10">
+		      <input type="text" name="proNum" required>
+		    </div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="">市场价</label>
+			  <div class="col-md-10">
+			    <input type="text" name="marketPrice" required>
+			  </div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="">独家价格</label>
+			  <div class="col-md-10">
+			    <input type="text" name="webPrice" required>
+			  </div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="">商品描述</label>
+			<div class="col-md-10">
+				<textarea name="proDescription" placeholder="添加商品描述"></textarea>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="">商品图片</label>
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-2">
+						<input type="text" name="proImg" value="">
+						{{-- <img src="http://placehold.it/100x100/240923" alt="" /> --}}
+					</div>
+					<div class="col-md-10">
+						{{-- <input type="file" name="proImg"> --}}
+					</div>
+				</div>
+			 </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="col-md-2 control-label" for="">商品品类</label>
+		  <div class="col-md-10">
+			  <select name='cateId' >
+				  @foreach($cates as $cate)
+					  <option value="{{$cate->id}}" >{{$cate->cName}}</option>
+				  @endforeach
+			  </select>
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="col-md-2 control-label" for="">是否上架:</label>
+		  <div class="col-md-10">
+			  <select name='isShow'>
+				  <option value="1" selected>是</option>
+				  <option value="0">否</option>
+			  </select>
+		  </div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="">是否热款</label>
+			<div class="col-md-10">
+				<select name="isHot">
+					<option value="0" selected>否</option>
+					<option value="1">是</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="edit-submit">
+			  <input type="submit" class="btn btn-success btn-lg btn"  value ="添加">
+		</div>
+
 	</form>
-</body>
-</html>
+	<div class="alert alert-position alert-success col-md-2" id="alertSuccess" role="alert">商品信息录入成功</div>
+	<div class="alert alert-danger col-md-2 alert-position" id="alertDanger" role="alert">商品信息录入失败</div>
+</div>
