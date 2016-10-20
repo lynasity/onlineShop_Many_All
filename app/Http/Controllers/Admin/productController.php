@@ -19,7 +19,7 @@ class productController extends Controller
     {
         //如果控制器里的所有方法都需要登录才能执行，需要添加中间件
         //中间件完成的任务是：验证是否登录，然后返回该用户,Auth::user()才有返回值
-       $this->middleware('auth.admin:admin');
+    //    $this->middleware('auth.admin:admin');
     }
     public function index()
     {
@@ -37,6 +37,7 @@ class productController extends Controller
          // 输出除根节点外的cate实例
          $this->cates=cate::where('lft','>',1)->get();
          return view('product.productForm',['cates'=>$this->cates]);
+        // return 'ok';
     }
 
     /**

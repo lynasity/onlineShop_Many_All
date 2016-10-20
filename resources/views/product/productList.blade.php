@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>商品列表</title>
-</head>
-<body>
-   <ul>
-   <h4>商品详情表</h4>
      <table  border="1">
      	<tr>
      		<th>商品名称</th>
@@ -50,5 +42,3 @@
      </table>
 
    </ul>
-</body>
-</html>

@@ -24,7 +24,7 @@ class cateController extends Controller
     {
         //如果控制器里的所有方法都需要登录才能执行，需要添加中间件
         //中间件完成的任务是：验证是否登录，然后返回该用户,Auth::user()才有返回值
-       $this->middleware('auth.admin:admin');
+    //    $this->middleware('auth.admin:admin');
     }
     public function index()
     {
@@ -40,15 +40,16 @@ class cateController extends Controller
      */
     public function create()
     {
-        if(Auth::user()->can('create',cate::class)){
+        // if(Auth::user()->can('create',cate::class)){
            $root=cate::root();
-            if($root){
-                $cates=($root->children()->get());
+            if(!$root){
+                $root=cate::create(['cName'=>'root']);
             }
+             $cates=($root->children()->get());
               return view('cate.cateForm',['cates'=>$cates]);
-       }else{
-           return redirect()->route('cateCenter');
-       }
+    //    }else{
+        //    return redirect()->route('cateCenter');
+    //    }
     }
 
     /**

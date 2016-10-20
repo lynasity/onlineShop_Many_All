@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> --}}
-    <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}" media="screen" title="no title">
+    <link rel="stylesheet" href="{{asset('./customer/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('./customer/css/bootstrap.min.css')}}" media="screen" title="no title">
     <link rel="stylesheet" href="{{asset('./admin/css/admin.css')}}">
     <title>Admin</title>
@@ -52,15 +52,15 @@
                                 仪表盘
                             </a>
                         </li>
-                        {{-- <li>
-                            <a href="#/profile">
-                                <i class="fa fa-home"></i>
-                                个人中心
+                        <li>
+                            <a href="#/edit">
+                                <i class="fa fa-pencil"></i>
+                                商品录入
                             </a>
-                        </li> --}}
+                        </li>
                         <li>
                             <a href="#/product">
-                                <i class="fa fa-pencil"></i>
+                                <i class="fa fa-server"></i>
                                 商品管理
                             </a>
                         </li>
@@ -72,7 +72,7 @@
                         </li>
                         <li>
                             <a href="#/message">
-                                <i class="fa fa-mail-forward"></i>
+                                <i class="fa fa-bell"></i>
                                 消息推送
                             </a>
                         </li>

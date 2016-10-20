@@ -1,5 +1,6 @@
 window.onload = function(){
     var view = document.getElementById('view');
+    // var baseURL = 'http://www.test.manyhong.cn/';
     var baseURL = 'http://www.test.manyhong.cn/';
     var admin = "admin"
 
@@ -20,10 +21,7 @@ window.onload = function(){
     }
 
     var cate = function(){
-        fetch(baseURL + 'admin/cateManagerCenter')
-        .then(function(response){
-            console.log(response);
-        })
+        getView(baseURL + 'admin/cateManagerCenter')
         showName('品类管理')
     }
 
@@ -38,31 +36,38 @@ window.onload = function(){
 
     function getView(url){
         return fetch(url).then(function(response){
+            view.innerHTML = '';
+            view.innerHTML = "Loading..."
             return response.text();
-        }).then(function(body){
+        }).then(function(err,body){
+            if(err) return view.innerHTML = err;;
             view.innerHTML = body;
         })
     }
 
+    var edit = function(){
+        getView('http://www.test.manyhong.cn/products/create');
+        showName('商品录入')
+    }
 
     function showName(item){
         var itemName = document.getElementById('itemName');
-        console.log(item);
         itemName.innerHTML = item;
     }
 
 
     var routes = {
         '/message': message,
+        '/edit': edit,
         '/cate': cate,
         '/product': product,
         // '/profile': profile,
         '/orders': orders,
         '/dashboard': dashboard,
-        '/': dashboard
+        // '/': dashboard
     }
 
-    var router = Router(routes).configure({});
+    var router = Router(routes);
     router.init();
 }
 // {{--

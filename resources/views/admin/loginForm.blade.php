@@ -33,7 +33,7 @@
                   <label for="remember" class="text-left">
                       记住我
                   </label>
-                  <input type="checkbox" name="remember" id="remember" class="remember-box" checked>
+                  <input type="checkbox" name="remember" id="remember" value="true" class="remember-box" checked>
                   <label for="remember" class="remember-toggle"></label>
               </li>
               <li>
