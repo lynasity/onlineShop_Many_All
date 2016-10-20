@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Contracts\Auth\Factory as Auth;
 
-class Authenticate
+abstract class Authenticate
 {
     /**
      * The authentication factory instance.
@@ -38,8 +38,9 @@ class Authenticate
      */
     public function handle($request, Closure $next, ...$guards)
     {
-        $this->authenticate($guards);
-
+        if(!$this->authenticate($guards)){
+            return $this->redirectNow();
+        }
         return $next($request);
     }
 
@@ -59,10 +60,12 @@ class Authenticate
 
         foreach ($guards as $guard) {
             if ($this->auth->guard($guard)->check()) {
-                return $this->auth->shouldUse($guard);
+                $this->auth->shouldUse($guard);
+                return true;
             }
         }
-
-        throw new AuthenticationException('Unauthenticated.', $guards);
+          return false;
+        // throw new AuthenticationException('Unauthenticated.', $guards);
     }
+    abstract public  function redirectNow();
 }

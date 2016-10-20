@@ -69,9 +69,10 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($content)
     {
-        //
+      $products = \Searchy::products('proName','proDescription')->query($content)->having('relevance', '>', 20)->get();
+      return view('product.showProducts',['products'=>$products]);
     }
 
     /**
@@ -122,6 +123,10 @@ class productController extends Controller
           $product->delete();
           // return redirect()->route('productsCenter');
             return redirect()->route('adminHome');
+    }
+    public function detail($id){
+      $product = product::find($id);
+      return view('product.productDetail',['product'=>$product]);
     }
 
 }

@@ -186,6 +186,7 @@ return [
          \EstGroupe\Taggable\Providers\TaggingServiceProvider::class,
          Laravel\Scout\ScoutServiceProvider::class,
          TomLingham\Searchy\SearchyServiceProvider::class,
+         Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -237,6 +238,7 @@ return [
          'PhpSms' => Toplan\PhpSms\Facades\Sms::class,
          'SmsManager' => Toplan\Sms\Facades\SmsManager::class,
          'Searchy' => TomLingham\Searchy\Facades\Searchy::class,
+         'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

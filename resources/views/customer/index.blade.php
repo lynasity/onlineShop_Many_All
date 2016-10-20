@@ -25,7 +25,7 @@
           <div class="allgoods"><a href="" class="dt">全部商品分类</a>
             <div class="dd">
               @foreach($cateModel::where('parent_id',1)->get() as $cate)
-              <div data-index="{{$loop->iteration}}" class="item"><a href="">{{$cate->cName}}<i class="fa fa-angle-right"></i></a></div>
+              <div data-index="{{$loop->iteration}}" class="item"><a href="{{url('products/content',['content'=>$cate->cName])}}">{{$cate->cName}}<i class="fa fa-angle-right"></i></a></div>
               @endforeach
             </div>
           </div>
@@ -34,11 +34,11 @@
                 <div class="sub hidden">
                 @foreach($cate->descendants()->limitDepth(1)->get() as $sub1)
                  <dl class="sub-catagory">
-                     <dt><a href="">{{$sub1->cName}}</a><i class="fa fa-angle-right"></i></dt>
+                     <dt><a href="{{url('products/content',['content'=>$sub1->cName])}}">{{$sub1->cName}}</a><i class="fa fa-angle-right"></i></dt>
                      <dd>
                        @if($sub1->children()->get())
                          @foreach($sub1->descendants()->limitDepth(1)->get() as $sub2)
-                            <a href="">{{$sub2->cName}}</a>
+                            <a href="{{url('products/content',['content'=>$sub2->cName])}}">{{$sub2->cName}}</a>
                          @endforeach
                        @endif
                      </dd>

@@ -16,7 +16,8 @@
         "baum/baum": "~1.1",
         "estgroupe/laravel-taggable": "5.1.*",
         "laravel/scout": "^1.1",
-        "tom-lingham/searchy" : "2.*"
+        "tom-lingham/searchy" : "2.*",
+        "barryvdh/laravel-debugbar": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

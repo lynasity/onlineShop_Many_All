@@ -41,8 +41,10 @@ Route::group(['namespace'=>'Admin'],function () {
     Route::post('admin/sendNotification','messageController@sendNotification')->name('sendNotification');
     // 产品管理
     Route::post('products','productController@store')->name('product.store');
+    Route::get('products/content/{content}','productController@show')->name('product.show');
+    Route::get('products/detail/{id}','productController@detail')->name('product.detail');
     Route::get('products/{product}/delete','productController@destroy')->name('product.delete');
-    Route::resource('products', 'productController',['except'=>['destroy','store']]);
+    Route::resource('products', 'productController',['except'=>['destroy','store','show']]);
     //品类管理
      Route::get('cate/{cate}/delete','cateController@destroy')->name('cate.delete');
     Route::resource('cates', 'cateController',['except'=>['destroy']]);
