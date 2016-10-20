@@ -15,7 +15,7 @@ class AdminController extends Controller
 {
      public function __construct()
     {
-    //    $this->middleware('auth.admin:admin');
+       $this->middleware('auth.admin:admin');
     }
     public function index(){
     	return view('admin.home');
