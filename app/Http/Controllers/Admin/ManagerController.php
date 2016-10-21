@@ -8,7 +8,7 @@
  use App\Http\Controllers\Controller;
  use App\customer;
  use App\product;
-
+ use App\cate;
  class ManagerController extends Controller
  {
 // 商品管理
@@ -24,7 +24,8 @@
    // 品类管理
    public function cateCenter(){
     //    return 'ok';
-      return view('cate.cateCenter');
+      $cates=cate::where('lft','>',1)->get();
+      return view('cate.cateCenter',['cates'=>$cates]);
    }
    // 订单管理
    public function orderFormCenter(){

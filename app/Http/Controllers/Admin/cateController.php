@@ -115,12 +115,12 @@ class cateController extends Controller
         // $this->authorize('update', new cate());
     //也可以通过Auth::user()->can('update',new cate())进行判断，自己对判断结果进行处理
 
-    if(Auth::user()->can('update',new cate())){
+    // if(Auth::user()->can('update',new cate())){
         cate::where('id',$id)->update(['cName'=>$request->input('cName')]);
         return redirect()->route('cates.index');
-      }else{
-          return redirect()->route('cates.index');
-      }
+    //   }else{
+        //   return redirect()->route('cates.index');
+    //   }
     }
 
     /**
@@ -131,10 +131,10 @@ class cateController extends Controller
      */
     public function destroy($id)
     {
-        if(Auth::user()->can('delete',new cate())){
+        // if(Auth::user()->can('delete',new cate())){
         $cate=cate::find($id);
         $cate->delete();
-      }
+    //   }
         return redirect()->back();
    }
    // 查询某个子类下的全部子类

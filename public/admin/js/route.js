@@ -67,9 +67,12 @@ window.onload = function(){
         // '/': dashboard
     }
 
+    // routes.on('/')
+
     var router = Router(routes);
     router.init();
 }
+// subnav
 // {{--
 // <a href="{{route('messageCenter')}}">消息推送中心</a>
 // <br>
@@ -81,3 +84,7 @@ window.onload = function(){
 // <a href="{{route('orderFormCenter')}}">订单管理中心</a>
 // <br>
 // <a href="">退出登录</a> --}}
+
+// product
+// <a href="{{route('product.delete',['product'=>$product->id])}}">
+// <a href="{{route('products.edit',['product'=>$product->id])}}

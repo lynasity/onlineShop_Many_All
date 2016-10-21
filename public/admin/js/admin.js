@@ -39,7 +39,8 @@
                         success.classList.add('alert-in');
                         var t = setTimeout(function(){
                             success.classList.remove('alert-in');
-                            editForm.reset()
+                            editForm.reset();
+                            clearTiemout(t);
                         },1500)
                     }else {
                         var fail = document.getElementById('alertDanger');
@@ -47,6 +48,7 @@
                         var t = setTimeout(function(){
                             fail.classList.remove('alert-in');
                             editForm.reset()
+                            clearTiemout(t);
                         },1500)
                     }
                 })
