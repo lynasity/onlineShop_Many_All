@@ -19,7 +19,6 @@
            <th>
              商品图片
            </th>
-
          </tr>
            @foreach($products as $product)
            <tr>

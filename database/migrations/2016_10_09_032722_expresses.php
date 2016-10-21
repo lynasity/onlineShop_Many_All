@@ -17,6 +17,7 @@ class Expresses extends Migration
          Schema::create('expresses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('price');
             $table->timestamps();
          });
         }

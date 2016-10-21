@@ -21,6 +21,10 @@ class customer extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+		// public function shoppingCart(){
+		// 	 return $this->hasOne('App\shoppingCart', 'customer_Id', 'shoppingCart');
+		// }
     /**
     * Send the password reset notification.
     * 重写通知方法

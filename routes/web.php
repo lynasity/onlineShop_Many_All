@@ -70,8 +70,16 @@ Route::post('customer/sendEmail','ForgotPasswordController@sendResetLinkEmail');
 // shop是购物相关模块，customer是用户功能模块,info是消息中心,search是搜索服务
 Route::group(['namespace'=>'Customer'],function (){
     Route::get('home/customer','CustomerController@index')->name('customerHome');
+// 购物模块
+Route::get('customer/indexShopCart','shopController@indexShopCart');
+    Route::get('customer/addToShopCart/{id}','shopController@addToShopCart');
     Route::get('customer/shopCart','shopController@showShopCart');
     Route::get('customer/checkOut','shopController@checkOut');
+      Route::get('customer/cutFromShopCart/{id}','shopController@cutFromShopCart');
+      Route::get('customer/removeFromShopCart/{id}','shopController@removeFromShopCart');
+
+
+
     Route::get('customer/center','CustomerController@customerCenter')->name('customerCenter');
       Route::get('customer/infoCenter','CustomerController@infoCenter')->name('infoCenter');
 Route::get('customer/HighLevel','CustomerController@forHighLevel')->name('HighLevel');

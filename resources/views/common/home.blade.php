@@ -20,7 +20,7 @@
           <div class="profile"> <a href="{{route('customerCenter')}}"> <span class="fa fa-user icon-user"></span>个人中心</a></div>
           <div class="signup"><a href="{{url('login')}}">登录</a></div>
           <div class="login"><a href="{{url('customer/registerForm')}}">注册</a></div>
-          <div class="shoppingcart"> <a href="{{url('customer/shopCart')}}"> <span class="fa fa-shopping-cart icon-shopping-cart"></span>购物车</a></div>
+          <div class="shoppingcart"> <a href="{{url('customer/indexShopCart')}}"> <span class="fa fa-shopping-cart icon-shopping-cart"></span>购物车</a></div>
         </div>
       </nav>
         @section('header')

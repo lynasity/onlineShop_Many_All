@@ -187,6 +187,8 @@ return [
          Laravel\Scout\ScoutServiceProvider::class,
          TomLingham\Searchy\SearchyServiceProvider::class,
          Barryvdh\Debugbar\ServiceProvider::class,
+         App\MyExtensions\shoppingCart\providers\cartServiceProvider::class,
+        //  Syscover\Shoppingcart\ShoppingcartServiceProvider::class,
     ],
 
     /*
@@ -239,6 +241,8 @@ return [
          'SmsManager' => Toplan\Sms\Facades\SmsManager::class,
          'Searchy' => TomLingham\Searchy\Facades\Searchy::class,
          'Debugbar' => Barryvdh\Debugbar\Facade::class,
+         'shoppingCart'=>App\MyExtensions\shoppingCart\facades\shoppingCart::class,
+        //  'CartProvider' => Syscover\Shoppingcart\Facades\CartProvider::class,
     ],
 
 ];

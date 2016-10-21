@@ -33,7 +33,9 @@ class Product extends Migration
 
          });
       }else{
+        Schema::table('products', function (Blueprint $table) {
             $table->foreign('cateId')->references('id')->on('cates');
+        });
       }
     }
 

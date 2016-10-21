@@ -28,6 +28,9 @@
               <th>
                 商品图片
               </th>
+              <th>
+                操作
+              </th>
             </tr>
               <tr>
                 <td>
@@ -42,13 +45,16 @@
                 <td>
                     <input type="text" name="proName" value="{{$product->proImg}}">
                 </td>
+                <td>
+                  <a href="{{url('customer/addToShopCart',[$product->id])}}">加入购物车</a>
+                </td>
               </tr>
               </table>
-              <input type="submit" name="addToCart" value="加入购物车">
+              <!-- <input type="submit" name="addToCart" value="加入购物车"> -->
        </form>
 
       </table>
-      <script type="text/javascript">
+      <!-- <script type="text/javascript">
         var form = document.getElementsByTagName('form')[0];
         // var field = form.elements[0];
         // console.log(field);
@@ -57,6 +63,6 @@
             form.elements[i].disabled = true;
           }
         }
-      </script>
+      </script> -->
      </body>
 </html>

@@ -41,8 +41,10 @@ class OrderForm extends Migration
 
           });
         }else{
-          $table->foreign('expressId')->references('id')->on('expresses');
-          $table->foreign('customerId')->references('id')->on('customers');
+          Schema::table('orderForms',function(Blueprint $table){
+            $table->foreign('expressId')->references('id')->on('expresses');
+            $table->foreign('customerId')->references('id')->on('customers');
+          });
         }
     }
 

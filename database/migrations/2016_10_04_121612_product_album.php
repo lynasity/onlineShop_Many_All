@@ -23,8 +23,10 @@ class ProductAlbum extends Migration
 
          });
        }else{
+           Schema::table('proAlbums',function(Blueprint $table){
          $table->foreign('proId')->references('id')->on('products');
-       }
+       });
+     }
    }
 
     /**
