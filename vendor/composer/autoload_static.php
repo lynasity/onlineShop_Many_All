@@ -20,6 +20,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         '5e8fe2a5ffaded85af682684fe3bbf5a' => __DIR__ . '/..' . '/mews/captcha/src/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -40,6 +41,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
             'Toplan\\TaskBalance\\' => 19,
             'Toplan\\PhpSms\\Facades\\' => 22,
             'Toplan\\PhpSms\\' => 14,
+            'TomLingham\\Searchy\\' => 19,
         ),
         'S' => 
         array (
@@ -90,6 +92,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
             'League\\Flysystem\\' => 17,
             'Laravist\\GeeCaptcha\\' => 20,
             'Laravel\\Socialite\\' => 18,
+            'Laravel\\Scout\\' => 14,
         ),
         'I' => 
         array (
@@ -117,11 +120,16 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
             'DeepCopy\\' => 9,
+            'DebugBar\\' => 9,
         ),
         'C' => 
         array (
             'ClassPreloader\\' => 15,
             'Carbon\\' => 7,
+        ),
+        'B' => 
+        array (
+            'Barryvdh\\Debugbar\\' => 18,
         ),
         'A' => 
         array (
@@ -156,6 +164,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         array (
             0 => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms',
             1 => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/agents',
+        ),
+        'TomLingham\\Searchy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tom-lingham/searchy/src',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -285,6 +297,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         array (
             0 => __DIR__ . '/..' . '/laravel/socialite/src',
         ),
+        'Laravel\\Scout\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/scout/src',
+        ),
         'Intervention\\Image\\' => 
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
@@ -333,6 +349,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
+        'DebugBar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar',
+        ),
         'ClassPreloader\\' => 
         array (
             0 => __DIR__ . '/..' . '/classpreloader/classpreloader/src',
@@ -340,6 +360,10 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Barryvdh\\Debugbar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src',
         ),
         'App\\' => 
         array (
@@ -420,6 +444,13 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
     );
 
     public static $classMap = array (
+        'App\\MyExtensions\\shoppingCart\\Executors\\baseCart' => __DIR__ . '/../..' . '/app/MyExtensions/shoppingCart/Executors/baseCart.php',
+        'App\\MyExtensions\\shoppingCart\\Executors\\shoppingCartExecutor' => __DIR__ . '/../..' . '/app/MyExtensions/shoppingCart/Executors/shoppingCartExecutor.php',
+        'App\\MyExtensions\\shoppingCart\\contracts\\shoppingCart' => __DIR__ . '/../..' . '/app/MyExtensions/shoppingCart/contracts/shoppingCart.php',
+        'App\\MyExtensions\\shoppingCart\\events\\addToCart' => __DIR__ . '/../..' . '/app/MyExtensions/shoppingCart/events/addToCart.php',
+        'App\\MyExtensions\\shoppingCart\\facades\\shoppingCart' => __DIR__ . '/../..' . '/app/MyExtensions/shoppingCart/facades/shoppingCart.php',
+        'App\\MyExtensions\\shoppingCart\\models\\shoppingCart' => __DIR__ . '/../..' . '/app/MyExtensions/shoppingCart/models/shoppingCart.php',
+        'App\\MyExtensions\\shoppingCart\\providers\\cartServiceProvider' => __DIR__ . '/../..' . '/app/MyExtensions/shoppingCart/providers/cartServiceProvider.php',
         'BuildAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074339_build_admins_table.php',
         'BuildCustomersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_074304_build_customers_table.php',
         'Cate' => __DIR__ . '/../..' . '/database/migrations/2016_10_04_121015_cate.php',
@@ -427,6 +458,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'CreateAdminPasswordResetTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_084135_create_admin_password_reset_table.php',
         'CreateCustomerPasswordResetTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_084104_create_customer_password_reset_table.php',
         'CreateNotificationsTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_03_091500_create_notifications_table.php',
+        'CreateShoppingCartTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_21_165750_create_shoppingCart_table.php',
         'CreateSmsTable' => __DIR__ . '/../..' . '/database/migrations/2015_12_21_111514_create_sms_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'Expresses' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_032722_expresses.php',
@@ -502,6 +534,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'OrderForm' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_030430_orderForm.php',
+        'Orders' => __DIR__ . '/../..' . '/database/migrations/2016_10_24_154254_orders.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
@@ -969,6 +1002,7 @@ class ComposerStaticInitf552daa799ac2a29694936bdf07fc081
         'Toplan\\Sms\\SmsManagerServiceProvider' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/SmsManagerServiceProvider.php',
         'Toplan\\Sms\\Storage' => __DIR__ . '/..' . '/toplan/laravel-sms/src/Toplan/LaravelSms/Storage/Storage.php',
         'Ucpaas' => __DIR__ . '/..' . '/toplan/phpsms/src/phpsms/lib/Ucpaas.php',
+        'app\\libraries\\searchEngine\\mySearchEngine' => __DIR__ . '/../..' . '/app/libraries/searchEngine/mySearchEngine.php',
         'app\\libraries\\weibo\\OAuthException' => __DIR__ . '/../..' . '/app/libraries/weibo/SaeTOAuthV2.php',
         'app\\libraries\\weibo\\SaeTClientV2' => __DIR__ . '/../..' . '/app/libraries/weibo/SaeTClientV2.php',
         'app\\libraries\\weibo\\SaeTOAuthV2' => __DIR__ . '/../..' . '/app/libraries/weibo/SaeTOAuthV2.php',

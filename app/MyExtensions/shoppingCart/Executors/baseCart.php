@@ -3,6 +3,7 @@ namespace App\MyExtensions\shoppingCart\Executors;
 use App\MyExtensions\shoppingCart\contracts\shoppingCart as cartInterface;
 use Illuminate\Support\Facades\Auth;
 use App\product;
+use App\MyExtensions\shoppingCart\events\addToCart;
 // 方便日后更改购物车
 abstract class baseCart implements cartInterface{
      private $model;
@@ -11,13 +12,6 @@ abstract class baseCart implements cartInterface{
     public function __construct(){
       $this->model=$this->getModel();
     }
-    //  public function instance(){
-    //   //  得到模型名
-    //    $$this->model=$this->getModel();
-    //   //  $this->model=new ($this->facade)();
-    //      //将当前创造购物车的用户与购物车关联
-    //    return $this;
-    //  }
      /**
       * [add description]
       * @param [App\product] $product [description]
@@ -34,10 +28,13 @@ abstract class baseCart implements cartInterface{
                 $newRecord->pro_Id=$id;
                 $newRecord->itemNum=1;
                 $newRecord->itemPrice=($product->webPrice)*($newRecord->itemNum);
+                // 触发一个添加购物车事件
+                // event(new addToCart($newRecord));
                 return $newRecord->save();
        }else{
            ++$record->itemNum;
            $record->itemPrice=($product->webPrice)*($record->itemNum);
+          //  event(new addToCart($newRecord));
            return $record->save();
        }
      }
@@ -59,6 +56,7 @@ abstract class baseCart implements cartInterface{
       * @return [colletion] [description]
       */
      function all(){
+
            $customerId=Auth::user()->id;
            $records=($this->model)::where(['customer_Id'=>($customerId)])->get();
            return $records;
