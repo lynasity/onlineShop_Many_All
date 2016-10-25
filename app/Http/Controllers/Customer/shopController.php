@@ -25,25 +25,25 @@ class shopController extends Controller
     // 后期再更新为用观察者模式
     public function addToShopCart($id){
           \shoppingCart::add($id);
-          $product=product::find($id);
-          $product->proNum--;
-          $product->save();
+          // $product=product::find($id);
+          // $product->proNum--;
+          // $product->save();
           $allItem=\shoppingCart::all();
           return view('shoppingCart.shoppingCartList',['allItem'=>$allItem]);
     }
     public function removeFromShopCart($id){
           $number=\shoppingCart::delete($id);
-          $product=product::find($id);
-          $product->proNum+=$number;
-          $product->save();
+          // $product=product::find($id);
+          // $product->proNum+=$number;
+          // $product->save();
           $allItem=\shoppingCart::all();
           return view('shoppingCart.shoppingCartList',['allItem'=>$allItem]);
     }
     public function cutFromShopCart($id){
              \shoppingCart::cut($id);
-             $product=product::find($id);
-             $product->proNum++;
-             $product->save();
+            //  $product=product::find($id);
+            //  $product->proNum++;
+            //  $product->save();
              $allItem=\shoppingCart::all();
              return view('shoppingCart.shoppingCartList',['allItem'=>$allItem]);
     }

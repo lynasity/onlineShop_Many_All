@@ -12,6 +12,9 @@
  class ManagerController extends Controller
  {
 // 商品管理
+   public function __construct(){
+     $this->middleware('auth.admin:admin');
+   }
    public function productManagerCenter(){
      $products=product::paginate(10);
      return view('product.productCenter',['products'=>$products]);
