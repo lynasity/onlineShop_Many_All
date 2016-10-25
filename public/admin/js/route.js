@@ -3,6 +3,7 @@ window.onload = function(){
     // var baseURL = 'http://www.test.manyhong.cn/';
     var baseURL = 'http://www.test.manyhong.cn/';
     var admin = "admin"
+    var loading = document.getElementById('loading')
 
     var product = function(){
         showName('商品管理')
@@ -30,14 +31,13 @@ window.onload = function(){
     //     showName('产品更新');
     // }
     var message = function(){
-        getView(baseURL + 'admin/messageManagerCenter');
+        getView(baseURL + 'admin/messageForm');
         showName('信息推送');
     }
 
     function getView(url){
         return fetch(url).then(function(response){
-            view.innerHTML = '';
-            view.innerHTML = "Loading..."
+            view.innerHTML = loading.innerHTML;
             return response.text();
         }).then(function(err,body){
             if(err) return view.innerHTML = err;;

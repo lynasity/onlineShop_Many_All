@@ -47,6 +47,14 @@ $up-height: 90px
 @mixin inline($d)
     height: $d
     line-height: $d
+@mixin square($d)
+    height: $d
+    width: $d
+@mixin circle($d)
+    height: $d
+    width: $d
+    border-radius: 50%
+
 
 
 body,html
@@ -173,7 +181,7 @@ body,html
         vertical-align: middle !important
 .product-head
     background: #53B4C4
-    @include inline(100px)
+    @include inline(40px)
     color: #fff
     text-align: center
     th
@@ -211,6 +219,64 @@ body,html
     text-align: center
     border-radius: 10px 0 0 10px
     transform: translate3d(100%,0,0)
-    transition: transform 200ms linear 
+    transition: transform 200ms linear
 .alert-in
     transform: translate3d(0,0,0)
+
+
+.loading
+    @include square(100%)
+    position: relative
+    // background: rgba(#000,0.3)
+    .content
+        margin-top: -100px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        // @include square(50px)
+        width: 100px
+        text-align: center
+    p
+        font-size: 25px
+        margin-bottom: 20px
+        color: #4285F4
+        animation: loading-color 10s linear infinite
+    span
+        display: inline-block
+        margin: 0 3px
+        @include  circle(16px)
+        background: #555
+    @for $i  from 1 through  4
+        span:nth-of-type( #{$i} )
+            animation: loading 600ms linear infinite
+            animation-delay: $i * 200ms - 200ms
+    @keyframes loading
+        50%
+            transform: translate3d(0,10px,0)
+    @keyframes loading-color
+        0%
+            color: #4285F4
+        25%
+            color: #34A853
+        50%
+            color: #FBBC05
+        75%
+            color: #EA4335
+
+
+    span:nth-of-type(1)
+        background: #4285F4
+    span:nth-of-type(2)
+        background: #34A853
+    span:nth-of-type(3)
+        background: #FBBC05
+    span:nth-of-type(4)
+        background: #EA4335
+
+.table-input
+    height: 100%
+    width: 60px
+    background: inherit
+    border: none
+    outline: none

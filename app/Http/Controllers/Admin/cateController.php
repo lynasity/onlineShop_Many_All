@@ -28,6 +28,7 @@ class cateController extends Controller
     }
     public function index()
     {
+        // return 'ok';
         // 输出除根节点外的cate实例
         $this->cates=cate::where('lft','>',1)->get();
         return view('cate.cateList',['cates'=>$this->cates]);
@@ -76,7 +77,8 @@ class cateController extends Controller
                $parent->children()->create(['cName' =>$request->input('cName')]);
             }
         }
-        return redirect()->route('cateCenter')->with('success','add successfully');
+         $this->cates=cate::where('lft','>',1)->paginate(7);
+        return view('cate.cateList',['cates'=>$this->cates]);
     }
 
     /**

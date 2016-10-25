@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>品类管理</title>
-</head>
-<body>
-   <label>品类管理表</label>
-   <table border="1">
+ <table>
    	<tr>
    		<!-- <th>品类id</th> -->
         <th>品类名称</th>
@@ -18,6 +11,6 @@
      <td><a href="{{route('cates.edit',['cate'=>$cate->id])}}">修改</a>|<a href="{{route('cate.delete',['cate'=>$cate->id])}}">删除</a></td>
      </tr>
     @endforeach
+
    </table>
-</body>
-</html>
+{{$cates->links()}}

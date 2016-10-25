@@ -46,8 +46,9 @@ Route::group(['namespace'=>'Admin'],function () {
     Route::get('products/{product}/delete','productController@destroy')->name('product.delete');
     Route::resource('products', 'productController',['except'=>['destroy','store','show']]);
     //品类管理
+    // Route::get('cate/index','cateController@index')->name('cate.index');
      Route::get('cate/{cate}/delete','cateController@destroy')->name('cate.delete');
-    Route::resource('cates', 'cateController',['except'=>['destroy']]);
+    Route::resource('cates', 'cateController',['except'=>['destroy','index']]);
 
 });
 

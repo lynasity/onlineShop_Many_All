@@ -86,13 +86,37 @@
             </div>
             <div class="col-right full-height">
                 <div class="view" id="view">
-                    <form action=""></form>
+                    {{-- <form action=""></form> --}}
                 </div>
             </div>
 
         </div>
         <!--end container-->
     </div>
+
+    <div id="loading" style="display: none">
+        {{-- <div  id="loading"> --}}
+            <div class="loading">
+                <div class="overlay">
+
+                </div>
+
+                <div class="content">
+                    <p>
+                        Loading...
+                    </p>
+                    <div class="">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        {{-- </div> --}}
+
+    </div>
+
     <script src="{{asset('./admin/js/fetch.js')}}"></script>
     <script src="{{asset('./admin/js/director.js')}}"></script>
     <script src="{{asset('./admin/js/route.js')}}"></script>

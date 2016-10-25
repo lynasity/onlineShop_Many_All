@@ -1,5 +1,5 @@
 <div class="edit">
-	<form id="editForm" class="form-horizontal">
+	<form id="editProduct" class="form-horizontal">
 		{{csrf_field()}}
 
 		<div class="form-group">
