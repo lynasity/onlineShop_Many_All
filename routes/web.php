@@ -41,10 +41,12 @@ Route::post('admin/register', 'RegisterController@register')->name('adminRegiste
 Route::group(['namespace'=>'Admin'],function () {
     // 返回后台首页
     Route::get('home/admin','AdminController@index')->name('adminHome');
+
     // -----------------------------------------------------------------
     //功能子模块分流
     //返回产品管理中心首页
     Route::get('admin/productManagerCenter','ManagerController@productManagerCenter')->name('productsCenter');
+    Route::get('admin/dashboard','ManagerController@dashboard')->name('dashboard');
     // 返回消息管理中心首页
     Route::get('admin/messageManagerCenter','ManagerController@messageManagerCenter')->name('messageCenter');
     // 返回品类管理中心首页

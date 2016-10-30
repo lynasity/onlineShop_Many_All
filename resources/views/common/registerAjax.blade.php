@@ -1,4 +1,3 @@
- <script src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
 <!-- 引入封装了failback的接口initGeetest -->
 <script src="http://static.geetest.com/static/tools/gt.js"></script>
 <nav class="page-signup">
@@ -37,7 +36,7 @@
                     </li>
                     <li class="btn-signup">
                       <input id="popup-submit" type="submit" value="提交">
-                    </li>          
+                    </li>
                      <div id="popup-captcha"></div>
                     <li class="link-to-login">已有账户,去<a href="{{url('login')}}">登录</a></li>
                   </ul>
@@ -47,51 +46,4 @@
       </div>
     </nav>
 <script>
-    var handlerPopup = function (captchaObj) {
-        captchaObj.onSuccess(function () {
-            var validate = captchaObj.getValidate();
-            $.ajax({
-                 headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                 },
-                url:"{{url('customer/register')}}", // 进行二次验证
-                type: "post",
-                dataType: "json",
-                data: {
-                    type: "pc",
-                    username: $('#username').val(),
-                    password: $('#password').val(),
-                    password_confirmation: $('#pwd-repeat').val(),
-                    email: $('#email').val(),
-                    geetest_challenge: validate.geetest_challenge,
-                    geetest_validate: validate.geetest_validate,
-                    geetest_seccode: validate.geetest_seccode
-                },
-                success: function (data) {
-                    if (data && (data.status === "success")) {
-                        $(document.body).html('<a href="{{url("login")}}">恭喜!您已注册成功,点击登录</a>');
-                    } else {
-                          // location.href="http://www.test.manyhong:8081/laravel-shop/customer/";
-                    }
-                }
-            });
-        });
-        $("#popup-submit").click(function () {
-            captchaObj.show();
-        });
-        captchaObj.appendTo("#popup-captcha");
-    }; 
-    $.ajax({
-        url: "{{url('getCaptcha')}}?type=pc&t=" + (new Date()).getTime(),
-        type: "get",
-        dataType: "json",
-        success: function (data) {
-            initGeetest({
-                gt: data.gt,
-                challenge: data.challenge,
-                product: "popup", 
-                offline: !data.success
-            }, handlerPopup);
-        }
-    });
 </script>

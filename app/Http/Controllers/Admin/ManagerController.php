@@ -13,7 +13,7 @@ use App\cate;
  {
 // 商品管理
    public function __construct(){
-     $this->middleware('auth.admin:admin');
+    //  $this->middleware('auth.admin:admin');
    }
    public function productManagerCenter(){
      $products=product::paginate(10);
@@ -32,5 +32,9 @@ use App\cate;
    // 订单管理
    public function orderFormCenter(){
       return view('orderForm.orderFormCenter');
+   }
+   // dashboard
+   public function dashboard(){
+        return view('admin.dashBoard');
    }
  }

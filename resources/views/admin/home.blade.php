@@ -18,7 +18,7 @@
             <div class="col-left">
                 <div class="user">
                     <div class="face">
-                        <img src="http://www.fillmurray.com/100/100" />
+                        {{-- <img src="http://www.fillmurray.com/100/100" /> --}}
                     </div>
                     <div class="name">
                         Many Hong
@@ -87,6 +87,7 @@
             <div class="col-right full-height">
                 <div class="view" id="view">
                     {{-- <form action=""></form> --}}
+                    @include('admin.dashBoard')
                 </div>
             </div>
 

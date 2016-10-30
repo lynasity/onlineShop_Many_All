@@ -1,12 +1,11 @@
 
+// VERSION= 0.0.1
 
 
 
 // **************************************
 //* About Global Variables
 // **************************************
-$default-bg: #000
-
 
 
 
@@ -16,31 +15,27 @@ $default-bg: #000
 // **************************************
 
 // square
-@mixin square($d, $bg: $default-bg)
+@mixin square($d)
     width: $d
     height: $d
-    background-color: $default-bg
 
 
-@mixin rect($long, $width, $bg: $default-bg)
+@mixin rect($long, $width)
     width: $long
     height: $width
-    background-color: $bg
 
 
 // circle
-@mixin circle($d,$bg: $default-bg)
+@mixin circle($d)
     width: $d
     height: $d
     border-radius: 50%
-    background-color: $default-bg
 
 
 // gold rect
-@mixin goldrect($d,$bg: $default-bg)
+@mixin goldrect($d)
     width: $d
     height: 1.618033 * $d
-    background: $bg
 
 
 
@@ -81,10 +76,9 @@ $default-bg: #000
 @mixin center
     margin: 0 auto
 
-@mixin square($d, $bg: #000)
+@mixin square($d)
     width: $d
     height: $d
-    background-color: $bg
 
 
 //***********************************

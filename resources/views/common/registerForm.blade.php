@@ -10,7 +10,11 @@
       <div class="signup-form">
         <div class="wrap">
           <div class="signup-form-container">
-            <div class="left-img"></div>
+            <div class="left-img">
+                <span>Many</span>
+                <span>&</span>
+                <span>All</span>
+            </div>
             <div class="right-form">
               <div class="form-header">账户注册</div>
               <form action="{{url('customer/register')}}" method="post" id="signup-form">

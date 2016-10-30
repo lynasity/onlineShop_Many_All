@@ -74,4 +74,223 @@
         </div>
       </div>
     </nav>
+
+
+
+    <section class="floor-wrap">
+        <div class="wrap">
+
+            <div class="floor">
+                <div class="header">
+
+                    <div class="cate-name">
+                        <i class="fa fa-barcode"></i>服装鞋包
+                    </div>
+
+                    <div class="tab">
+                        <ul>
+                            <li class="tab-active">男装</li>
+                            <li>女装</li>
+                            <li>谢靴</li>
+                            <li>箱包</li>
+                            <li>内衣配饰</li>
+                        </ul>
+                    </div>
+                    <!--end tab cate-->
+                </div>
+                <!--end floor head-->
+
+                <div class="main">
+
+                    <div class="left-cate">
+                        <img src="http://www.fillmurray.com/300/630" class="bg" alt="" />
+                        <div class="link-to-cate">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-book"></i>
+                                        男装
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-book"></i>
+                                        女装
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-book"></i>
+                                        男装
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-book"></i>
+                                        谢靴
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-book"></i>
+                                        箱包
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-book"></i>
+                                        内衣配饰
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--end left cate-->
+
+                    <div class="showcase">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="//img13.360buyimg.com/N3/jfs/t3556/303/453929247/161837/e43eb7ab/580d7252Nf2009d8e.jpg" alt="" />
+                                </a>
+                                <a href="#">
+                                    班尼路休闲立领棉衣男 简约外套棉服短款修身
+                                </a>
+                                <div class="price">
+                                    <span>￥</span>199.00
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end right showcase-->
+                </div>
+                <!--end floor main-->
+
+            </div>
+
+        </div>
+        <!--end wrap-->
+    </section>
+
 @stop

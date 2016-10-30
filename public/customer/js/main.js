@@ -212,9 +212,6 @@
             });
         });
 
-        function manual() {
-
-        }
 
         function initial(){
             // 初始化 detail/imgslider
@@ -234,10 +231,59 @@
 
 
 
+        var handlerPopup = function (captchaObj) {
+            captchaObj.onSuccess(function () {
+                var validate = captchaObj.getValidate();
+                $.ajax({
+                     headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                     },
+                    url:"{{url('customer/register')}}", // 进行二次验证
+                    type: "post",
+                    dataType: "json",
+                    data: {
+                        type: "pc",
+                        username: $('#username').val(),
+                        password: $('#password').val(),
+                        password_confirmation: $('#pwd-repeat').val(),
+                        email: $('#email').val(),
+                        geetest_challenge: validate.geetest_challenge,
+                        geetest_validate: validate.geetest_validate,
+                        geetest_seccode: validate.geetest_seccode
+                    },
+                    success: function (data) {
+                        if (data && (data.status === "success")) {
+                            $(document.body).html('<a href="{{url("login")}}">恭喜!您已注册成功,点击登录</a>');
+                        } else {
+                              // location.href="http://www.test.manyhong:8081/laravel-shop/customer/";
+                        }
+                    }
+                });
+            });
+            $("#popup-submit").click(function () {
+                captchaObj.show();
+            });
+            captchaObj.appendTo("#popup-captcha");
+        };
+        $.ajax({
+            url: "{{url('getCaptcha')}}?type=pc&t=" + (new Date()).getTime(),
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                initGeetest({
+                    gt: data.gt,
+                    challenge: data.challenge,
+                    product: "popup",
+                    offline: !data.success
+                }, handlerPopup);
+            }
+        });
 
 
         //end
     });
+
+
 
 }
 )(jQuery)

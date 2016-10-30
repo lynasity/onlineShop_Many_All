@@ -8,10 +8,6 @@
 
 @section('style')
 <style>
-        body {
-            margin: 50px 0;
-            text-align: center;
-        }
         .inp {
             border: 1px solid gray;
             padding: 0 10px;
@@ -64,4 +60,3 @@
 <script src="http://static.geetest.com/static/tools/gt.js"></script> -->
 
 @stop
-

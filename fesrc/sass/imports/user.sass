@@ -1,0 +1,106 @@
+.page-user
+    overflow: hidden
+    margin-top: 40px
+    .side-nav
+        width: 200px
+        float: left
+        padding-right: 25px
+        text-align: right
+        h3
+            color: $dark-blue
+            font-size: 20px
+            margin-bottom: 10px
+        li
+            margin: 5px 0 6px 0
+    .order
+        float: left
+        width: 1200px - 200px
+
+    .order-header
+        @include inline(40px)
+        font-size: 20px
+        border-bottom: 2px solid #ccc
+        li
+            float: left
+        a
+            display: block
+            padding: 0 10px
+        a.selected
+            color: $dark-blue
+
+    .order-search
+        margin: 15px 0
+        input
+            @include inputclear
+            width: 300px
+            height: 30px
+            display: inline-block
+            border-color: #ccc
+            padding-left: 5px
+        button
+            @include btnclear
+            vertical-align: top
+            padding: 0px 10px
+            height: 30px
+            margin-left: -4px
+    .table-header
+        overflow: hidden
+        @include inline(40px)
+        background: #F5F5F5
+        border-radius: 3px
+        border: 1px solid #f6f6f6
+
+        &>div
+            float: left
+            text-align: center
+    .item
+        width: 40%
+    .single-price
+        width: 15%
+    .number
+        width: 15%
+    .payment
+        width: 15%
+    .opreation
+        width: 15%
+
+    .list
+        overflow: hidden
+        li
+            margin-top: 20px
+            height: 40px + 100px
+    .list-header
+        @include inline(40px)
+        overflow: hidden
+        background: #F5F5F5
+        font-size: 14px
+    .date
+        font-size: 16px
+        margin-right: 5px
+    .del
+        margin-right: 15px
+    .order-id
+        padding-left: 10px
+    .list-content
+        &>div
+            float: left
+            text-align: center
+            @include inline(100px)
+    div.fix-text
+        line-height: 1em
+    .item-img
+        margin: 10px
+        @include square(80px)
+        vertical-align: middle
+        float: left
+    .item-msg
+        padding-top: 35px
+        text-align: left
+    .rate
+        border: 1px solid #555
+        padding: 3px 7px
+        &:hover
+            transition: 100ms all ease
+            background: #999
+            border-color: #999
+            color: #fff

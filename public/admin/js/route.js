@@ -18,6 +18,7 @@ window.onload = function(){
     }
     var dashboard = function(){
         // var formdata = new FormData();
+        getView(baseURL + 'admin/dashboard')
         showName('仪表盘')
     }
 
@@ -36,7 +37,7 @@ window.onload = function(){
     }
 
     function getView(url){
-        return fetch(url).then(function(response){
+        fetch(url).then(function(response){
             view.innerHTML = loading.innerHTML;
             return response.text();
         }).then(function(err,body){
@@ -64,7 +65,6 @@ window.onload = function(){
         // '/profile': profile,
         '/orders': orders,
         '/dashboard': dashboard,
-        // '/': dashboard
     }
 
     var router = Router(routes);
